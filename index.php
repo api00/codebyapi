@@ -90,9 +90,7 @@
       width: 100%;
     }
 
-    .navlink {
-      margin-right: 3rem;
-    }
+
 
     /* Media query for tablets and mobile devices */
     @media (max-width: 768px) {
@@ -100,7 +98,6 @@
         display: none;
       }
     }
-   
   </style>
   <title>API ALAM | Programmer</title>
 </head>
@@ -118,9 +115,9 @@
         <div class="navlink ">
           <a href="./about.php">My Story</a>
           <a href="./coaching.php">Coaching</a>
+          <a href="./services.php">What I Offer</a>
           <a href="./resume.php">Resume</a>
           <a href="">Projects</a>
-          <a href="">Contact</a>
         </div>
 
         <a href="https://github.com/api00" target="_blank" class="header__social">
@@ -183,7 +180,7 @@
       </div>
     </section>
 
-    <section class="skills" style="margin-bottom: 8rem;">
+    <section class="skills " style="margin-bottom: 8rem;">
       <div class="wrapper skills__wrapper bottom-border ">
         <div class="skills__item">
           <h3 class="skills__title">HTML</h3>
@@ -221,79 +218,8 @@
       <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
     </section>
 
-    <div style="padding-top: 3rem;padding-bottom: 4rem;" class="resume bg-less-dark">
-      <section class="wrapper ">
-        <!-- ======= Resume Section ======= -->
-        <section id="resume" class="resume">
-          <div class="container">
-            <div style="margin-bottom: 2.5rem;" class="section-title">
-              <h2 class="projects__headline header-xl">My Resume</h2>
-            </div>
 
-            <div class="row">
-              <div class="col-lg-6" data-aos="fade-up">
-                <h3 class="resume-title">Sumary</h3>
-                <div class="resume-item pb-0">
-                  <h4>Api Alam</h4>
-                  <p><em>Hi, I am a lead software engineer at <b style="font-size: 19px;">iLearnX Technologies</b> (<a href="http://ilearnx.tech">ilearnx.tech</a>) where I am working as a full-stack web developer. I have completed my Bachelor in Computer Science from AIUB. I have a great passion for learning and sharing new skills in web development. I have been actively involved in medium to large web development both in front-end (HTML, CSS, JS) and back-end (PHP, MySQL, PostgreSQL).</em></p>
-                  <ul>
-                    <li>Dhaka Bangladesh</li>
-                    <li><a href="tel:+8801745815676">+880 1745815676</a></li>
-                    <li><a href="mailto:apialam.email@gmail.com">apialam.email@gmail.com</a></li>
-                  </ul>
-                </div>
-
-                <h3 class="resume-title">Education</h3>
-                <div class="resume-item">
-                  <h4>computer science and engineering</h4>
-                  <h5>2019 - 2023</h5>
-                  <p><em>American International University-Bangladesh </em></p>
-                  <p> At AIUB, I built a solid foundation in computer science and gained hands-on experience with various programming languages. I completed several projects, including a capstone project developing a web application for small businesses. As the ICT Lead at ESAB AIUB Unit Face, I led initiatives to enhance our unit's technological capabilities and organized coding challenges. These activities enhanced my problem-solving skills and teamwork. My commitment to academics and extracurriculars earned me
-                    <br> CGPA : 3.57/4.00
-                  </p>
-                </div>
-                <!-- <div class="resume-item">
-                  <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-                  <h5>2010 - 2014</h5>
-                  <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                  <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
-                </div> -->
-              </div>
-              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="resume-title">Professional Experience</h3>
-                <div class="resume-item">
-                  <h4>Co-founder &amp; Lead Software Engineer</h4>
-                  <h5>2023 - Present</h5>
-                  <p><em>iLearnX Technologies, Dhaka, Bangladesh </em></p>
-                  <ul>
-                    <li>Lead the creation of iLearnX (<a target="_blank" href="https://ilearnx.live/">ilearnx.live</a>), a cutting-edge educational platform that significantly boosted company revenue.</li>
-                    <li>Designed and implemented scalable infrastructure for handling over a million client files. </li>
-                    <li>Maintained 100% compliance with industry best practices. Significantly reduced security breaches by 84% through proactive measures.</li>
-                    <li>Spearheaded extensive research and development efforts for iLearnX Edu, resulting in a 35% increase in user engagement.</li>
-                    <li>Implemented data-driven strategies, boosting user retention by 20% and increasing session duration by 25%.</li>
-                  </ul>
-                </div>
-                <div class="resume-item">
-                  <h4>Software Engineer Intern</h4>
-                  <h5>jan 2023 - mar 2023</h5>
-                  <p><em>Robo Tech Valley, Dhaka, Bangladesh</em></p>
-                  <ul>
-                    <li>Collaborated in cross-functional teams for various projects at Robo Tech Valley.</li>
-                    <li>Gained experience with HTML, CSS, and JavaScript for user-friendly interfaces.</li>
-                    <li>Focused on PHP and Java, improving web app functionality with server logic, databases, and APIs.</li>
-                    <li>Actively pursued learning, staying updated on industry practices, and enhancing software engineering skills.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </section>
-        <!-- End Resume Section -->
-        <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
-      </section>
-    </div>
-
+<!-- 
     <section class="projects">
       <div class="wrapper projects__wrapper">
         <div class="projects__grid">
@@ -350,7 +276,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section id="contact" class="contact bg-less-dark">
       <div class="wrapper contact__wrapper bottom-border">
@@ -436,6 +362,7 @@
     <div class="line"></div>
     <div class="line"></div>
     <div class="line"></div>
+
   </div>
 </body>
 

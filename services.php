@@ -67,7 +67,7 @@
             width: 100%;
         }
 
-        
+    
 
         /* Media query for tablets and mobile devices */
         @media (max-width: 768px) {
@@ -79,6 +79,64 @@
         .header {
             margin-block-start: 40px;
             margin-block-end: 35px;
+        }
+
+        .proficiency-section {
+            padding: 3rem 0;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card-header {
+            border-bottom: 1px solid white;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        }
+
+        .card-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: #4CE09D;
+
+        }
+
+        .card-text {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: #4CE09D;
+            margin-top: 1rem;
+        }
+
+        .package-details,
+        .package-resources,
+        .package-benefits {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: left;
+            color: white;
+        }
+
+        .package-details li,
+        .package-resources li,
+        .package-benefits li {
+            margin-bottom: 0.5rem;
         }
     </style>
     <title>API ALAM | Programmer</title>
@@ -97,8 +155,8 @@
                 <div class="navlink ">
                     <a href="./about.php">My Story</a>
                     <a href="./coaching.php">Coaching</a>
-                    <a href="./services.php">What I Offer</a>
-                    <a style="color: #4CE09D;" href="./resume.php">Resume</a>
+                    <a style="color: #4CE09D;" href="./services.php">What I Offer</a>
+                    <a href="./resume.php">Resume</a>
                     <a href="">Projects</a>
                 </div>
 
@@ -138,74 +196,117 @@
 
 
 
-        <div style="padding-top: 3rem;padding-bottom: 4rem;" class="resume bg-less-dark">
-            <section class="wrapper ">
-                <!-- ======= Resume Section ======= -->
-                <section id="resume" class="resume">
+        <div style="padding-top: 3rem; padding-bottom: 4rem;" class="resume bg-less-dark">
+            <section class="wrapper">
+                <div class="proficiency-section">
                     <div class="container">
-                        <div style="margin-bottom: 2.5rem;" class="section-title">
-                            <h2 class="projects__headline header-xl">My Resume</h2>
-                        </div>
-
+                        <h1 class="text-center mb-5">My Professional Expertise</h1>
                         <div class="row">
-                            <div class="col-lg-6" data-aos="fade-up">
-                                <h3 class="resume-title">Sumary</h3>
-                                <div class="resume-item pb-0">
-                                    <h4>Api Alam</h4>
-                                    <p><em>Hi, I am a lead software engineer at <b style="font-size: 19px;">iLearnX Technologies</b> (<a href="http://ilearnx.tech">ilearnx.tech</a>) where I am working as a full-stack web developer. I have completed my Bachelor in Computer Science from AIUB. I have a great passion for learning and sharing new skills in web development. I have been actively involved in medium to large web development both in front-end (HTML, CSS, JS) and back-end (PHP, MySQL, PostgreSQL).</em></p>
-                                    <ul>
-                                        <li>Dhaka Bangladesh</li>
-                                        <li><a href="tel:+8801745815676">+880 1745815676</a></li>
-                                        <li><a href="mailto:apialam.email@gmail.com">apialam.email@gmail.com</a></li>
-                                    </ul>
+                            <!-- Card 1 -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Front-End Development</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Crafting engaging, user-centric web interfaces with a focus on responsiveness and performance. Key skills include:</p>
+                                        <ul class="package-details">
+                                            <li>HTML/CSS/JavaScript</li>
+                                            <li>React/Vue.js</li>
+                                            <li>Responsive Design</li>
+                                            <li>Performance Optimization</li>
+                                        </ul>
+                                    </div>
                                 </div>
-
-                                <h3 class="resume-title">Education</h3>
-                                <div class="resume-item">
-                                    <h4>computer science and engineering</h4>
-                                    <h5>2019 - 2023</h5>
-                                    <p><em>American International University-Bangladesh </em></p>
-                                    <p> At AIUB, I built a solid foundation in computer science and gained hands-on experience with various programming languages. I completed several projects, including a capstone project developing a web application for small businesses. As the ICT Lead at ESAB AIUB Unit Face, I led initiatives to enhance our unit's technological capabilities and organized coding challenges. These activities enhanced my problem-solving skills and teamwork. My commitment to academics and extracurriculars earned me
-                                        <br> CGPA : 3.57/4.00
-                                    </p>
-                                </div>
-                                <!-- <div class="resume-item">
-                  <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-                  <h5>2010 - 2014</h5>
-                  <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                  <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
-                </div> -->
                             </div>
-                            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                                <h3 class="resume-title">Professional Experience</h3>
-                                <div class="resume-item">
-                                    <h4>Co-founder &amp; Lead Software Engineer</h4>
-                                    <h5>2023 - Present</h5>
-                                    <p><em>iLearnX Technologies, Dhaka, Bangladesh </em></p>
-                                    <ul>
-                                        <li>Lead the creation of iLearnX (<a target="_blank" href="https://ilearnx.live/">ilearnx.live</a>), a cutting-edge educational platform that significantly boosted company revenue.</li>
-                                        <li>Designed and implemented scalable infrastructure for handling over a million client files. </li>
-                                        <li>Maintained 100% compliance with industry best practices. Significantly reduced security breaches by 84% through proactive measures.</li>
-                                        <li>Spearheaded extensive research and development efforts for iLearnX Edu, resulting in a 35% increase in user engagement.</li>
-                                        <li>Implemented data-driven strategies, boosting user retention by 20% and increasing session duration by 25%.</li>
-                                    </ul>
+                            <!-- Card 2 -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Back-End Development</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Developing robust, scalable server-side solutions and APIs to power dynamic web applications. Key skills include:</p>
+                                        <ul class="package-details">
+                                            <li>Node.js/Express</li>
+                                            <li>PHP/Laravel</li>
+                                            <li>Database Integration</li>
+                                            <li>API Development</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="resume-item">
-                                    <h4>Software Engineer Intern</h4>
-                                    <h5>jan 2023 - mar 2023</h5>
-                                    <p><em>Robo Tech Valley, Dhaka, Bangladesh</em></p>
-                                    <ul>
-                                        <li>Collaborated in cross-functional teams for various projects at Robo Tech Valley.</li>
-                                        <li>Gained experience with HTML, CSS, and JavaScript for user-friendly interfaces.</li>
-                                        <li>Focused on PHP and Java, improving web app functionality with server logic, databases, and APIs.</li>
-                                        <li>Actively pursued learning, staying updated on industry practices, and enhancing software engineering skills.</li>
-                                    </ul>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Full-Stack Development</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Integrating front-end and back-end expertise to create seamless, end-to-end web solutions. Key skills include:</p>
+                                        <ul class="package-details">
+                                            <li>Full-Stack Project Management</li>
+                                            <li>RESTful API Design</li>
+                                            <li>Database Architecture</li>
+                                            <li>Deployment & Maintenance</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Web Development Coaching</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Providing comprehensive coaching to help individuals become proficient web developers. Key topics include:</p>
+                                        <ul class="package-details">
+                                            <li>HTML/CSS Basics</li>
+                                            <li>JavaScript and Frameworks</li>
+                                            <li>PHP and Backend Development</li>
+                                            <li>Project-Based Learning</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 5 -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Career Guidance in Software Industry</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Guiding individuals through their career paths in the software industry. Key areas of focus include:</p>
+                                        <ul class="package-details">
+                                            <li>Resume and Portfolio Building</li>
+                                            <li>Interview Preparation</li>
+                                            <li>Job Search Strategies</li>
+                                            <li>Professional Networking</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 6 -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Digital Marketing Assistance</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Helping businesses and individuals improve their online presence and marketing strategies. Key services include:</p>
+                                        <ul class="package-details">
+                                            <li>SEO Optimization</li>
+                                            <li>Social Media Marketing</li>
+                                            <li>Content Marketing</li>
+                                            <li>Pay-Per-Click Advertising</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                </section><!-- End Resume Section -->
+                </div>
                 <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
             </section>
         </div>

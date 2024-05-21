@@ -67,9 +67,6 @@
             width: 100%;
         }
 
-        .navlink {
-            margin-right: 3rem;
-        }
 
         /* Media query for tablets and mobile devices */
         @media (max-width: 768px) {
@@ -99,9 +96,9 @@
                 <div class="navlink ">
                     <a style="color: #4CE09D;" href="./about.php">My Story</a>
                     <a href="./coaching.php">Coaching</a>
+                    <a href="./services.php">What I Offer</a>
                     <a href="./resume.php">Resume</a>
                     <a href="">Projects</a>
-                    <a href="">Contact</a>
                 </div>
 
                 <a href="https://github.com/api00" target="_blank" class="header__social">

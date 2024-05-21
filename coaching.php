@@ -67,9 +67,7 @@
             width: 100%;
         }
 
-        .navlink {
-            margin-right: 3rem;
-        }
+  
 
         /* Media query for tablets and mobile devices */
         @media (max-width: 768px) {
@@ -172,9 +170,9 @@
                 <div class="navlink ">
                     <a href="./about.php">My Story</a>
                     <a style="color: #4CE09D;" href="./coaching.php">Coaching</a>
+                    <a href="./services.php">What I Offer</a>
                     <a href="./resume.php">Resume</a>
                     <a href="">Projects</a>
-                    <a href="">Contact</a>
                 </div>
 
                 <a href="https://github.com/api00" target="_blank" class="header__social">
@@ -241,7 +239,6 @@
                                     <li>Foundation in Web Development</li>
                                     <li>Hands-on Project Experience</li>
                                     <li>Skill Building for Future Learning</li>
-                                    <li>1-on-1 Mentoring Sessions</li>
 
                                 </ul>
                                 <button class="enroll-button">Enroll Now</button>
