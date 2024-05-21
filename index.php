@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png" />
   <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css" />
@@ -37,7 +38,6 @@
 
       }
     }
-
     .float {
       position: fixed;
       width: 60px;
@@ -50,7 +50,6 @@
       overflow: hidden;
       /* Ensure content inside the icon doesn't overflow */
     }
-
     .my-float {
       margin: 6px;
       width: 48px;
@@ -97,6 +96,99 @@
       .navlink {
         display: none;
       }
+    }
+
+
+
+    .section-header {
+      position: relative;
+      padding-bottom: 10px;
+      text-align: center;
+      font-weight: 900;
+      padding-bottom: 25px;
+      color: #4CE09D;
+    }
+
+    .section-header:after {
+      content: '';
+      height: 3px;
+      width: 200px;
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 100px);
+      background: #4CE09D;
+    }
+
+    .section-header span {
+      display: block;
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    .testimonials {
+      max-width: 1200px;
+      margin: 0 auto 40px auto;
+    }
+
+    .single-item {
+      background: #111;
+      color: #fff;
+      padding: 15px;
+      margin: 50px 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+
+    .profile {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .img-area {
+      position: relative;
+      left: 5.3rem;
+      margin: 0 15px 15px 15px;
+    }
+
+    .img-area img {
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      border: 7px solid #4CE09D;
+      transition: transform 0.3s;
+    }
+
+    .img-area img:hover {
+      transform: scale(1.1);
+    }
+
+    .content {
+      font-size: 18px;
+    }
+
+    .content p {
+      text-align: justify;
+    }
+
+    .content p span {
+      font-size: 48px;
+      margin-right: 20px;
+      color: #4CE09D;
+    }
+
+    .socials i {
+      margin-right: 25px;
+    }
+
+    .bio h4 {
+      font-family: 'Berkshire Swash', cursive;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: #4CE09D;
     }
   </style>
   <title>API ALAM | Programmer</title>
@@ -180,7 +272,7 @@
       </div>
     </section>
 
-    <section class="skills " style="margin-bottom: 8rem;">
+    <section class="skills " style="margin-bottom: 5rem;">
       <div class="wrapper skills__wrapper bottom-border ">
         <div class="skills__item">
           <h3 class="skills__title">HTML</h3>
@@ -214,12 +306,16 @@
           <h3 class="skills__title">Software Architecture</h3>
           <p class="skills__description">2 Years Experience</p>
         </div>
+        <div class="skills__item">
+          <h3 class="skills__title">Teaching</h3>
+          <p class="skills__description">2 Years Experience</p>
+        </div>
       </div>
       <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
     </section>
 
 
-<!-- 
+    <!-- 
     <section class="projects">
       <div class="wrapper projects__wrapper">
         <div class="projects__grid">
@@ -278,7 +374,116 @@
       </div>
     </section> -->
 
-    <section id="contact" class="contact bg-less-dark">
+    <div style="padding-top: 3rem;padding-bottom: 4rem;" class="resume">
+      <section class="wrapper ">
+        <!-- ======= Resume Section ======= -->
+        <section id="resume" class="resume bottom-border">
+          <div class="container">
+            <div class="testimonials">
+              <h2 class="projects__headline header-xl">What Our Clients Say</h2> <br>
+              <p class="contact__description">
+                Hear directly from our satisfied clients about their experiences working with us. <br> Our commitment to excellence and customer satisfaction is reflected in their words.
+              </p>
+              <div id="carouselExampleControls" class="carousel " data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="single-item">
+                      <div class="row">
+                        <div class="col-md-5">
+                          <div class="profile">
+                            <div class="img-area">
+                              <img src="./assets/images/hero1.png" alt="">
+                            </div>
+                            <div class="bio">
+                              <h2>Dave Wood</h2>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="content">
+                            <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!</p>
+                            <p class="socials">
+                            <i class="fa fa-facebook"></i>
+                              <i class="fa fa-linkedin"></i>
+                              <i class="fa fa-instagram"></i>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="single-item">
+                      <div class="row">
+                        <div class="col-md-5">
+                          <div class="profile">
+                            <div class="img-area">
+                              <img src="img/2.jpg" alt="">
+                            </div>
+                            <div class="bio">
+                              <h2>Martin Guptill</h2>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="content">
+                            <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!</p>
+                            <p class="socials">
+                              <i class="fa fa-facebook"></i>
+                              <i class="fa fa-linkedin"></i>
+                              <i class="fa fa-instagram"></i>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="single-item">
+                      <div class="row">
+                        <div class="col-md-5">
+                          <div class="profile">
+                            <div class="img-area">
+                              <img src="img/3.jpg" alt="">
+                            </div>
+                            <div class="bio">
+                              <h2>Stephen Jones</h2>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="content">
+                            <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!</p>
+                            <p class="socials">
+                              <i class="fa fa-facebook"></i>
+                              <i class="fa fa-linkedin"></i>
+                              <i class="fa fa-instagram"></i>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </section><!-- End Resume Section -->
+        <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
+      </section>
+    </div>
+
+    <section id="contact" class="contact ">
       <div class="wrapper contact__wrapper bottom-border">
         <div class="contact__text">
           <h2 class="contact__headline header-xl">Contact</h2>
@@ -364,6 +569,9 @@
     <div class="line"></div>
 
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
