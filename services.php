@@ -67,7 +67,7 @@
             width: 100%;
         }
 
-    
+
 
         /* Media query for tablets and mobile devices */
         @media (max-width: 768px) {
@@ -157,7 +157,7 @@
                     <a href="./coaching.php">Coaching</a>
                     <a style="color: #4CE09D;" href="./services.php">What I Offer</a>
                     <a href="./resume.php">Resume</a>
-                    <a href="">Projects</a>
+                    <a href="./portfolio.php">My Portfolio</a>
                 </div>
 
                 <a href="https://github.com/api00" target="_blank" class="header__social">
@@ -206,7 +206,7 @@
                             <div class="col-md-4">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h2 class="card-title">Front-End Development</h2>
+                                        <h2 class="card-title">Web Designing</h2>
                                     </div>
                                     <div class="card-body">
                                         <p class="card-text">Crafting engaging, user-centric web interfaces with a focus on responsiveness and performance. Key skills include:</p>
@@ -223,7 +223,7 @@
                             <div class="col-md-4">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h2 class="card-title">Back-End Development</h2>
+                                        <h2 class="card-title">API Development </h2> 
                                     </div>
                                     <div class="card-body">
                                         <p class="card-text">Developing robust, scalable server-side solutions and APIs to power dynamic web applications. Key skills include:</p>

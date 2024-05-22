@@ -67,7 +67,7 @@
             width: 100%;
         }
 
-        
+
 
         /* Media query for tablets and mobile devices */
         @media (max-width: 768px) {
@@ -99,7 +99,7 @@
                     <a href="./coaching.php">Coaching</a>
                     <a href="./services.php">What I Offer</a>
                     <a style="color: #4CE09D;" href="./resume.php">Resume</a>
-                    <a href="">Projects</a>
+                    <a href="./portfolio.php">My Portfolio</a>
                 </div>
 
                 <a href="https://github.com/api00" target="_blank" class="header__social">

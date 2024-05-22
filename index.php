@@ -38,6 +38,7 @@
 
       }
     }
+
     .float {
       position: fixed;
       width: 60px;
@@ -50,6 +51,7 @@
       overflow: hidden;
       /* Ensure content inside the icon doesn't overflow */
     }
+
     .my-float {
       margin: 6px;
       width: 48px;
@@ -148,7 +150,7 @@
 
     .img-area {
       position: relative;
-      left: 5.3rem;
+      left: 6.5rem;
       margin: 0 15px 15px 15px;
     }
 
@@ -182,9 +184,10 @@
       margin-right: 25px;
     }
 
+    /* 
     .bio h4 {
       font-family: 'Berkshire Swash', cursive;
-    }
+    } */
 
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
@@ -209,7 +212,7 @@
           <a href="./coaching.php">Coaching</a>
           <a href="./services.php">What I Offer</a>
           <a href="./resume.php">Resume</a>
-          <a href="">Projects</a>
+          <a href="./portfolio.php">My Portfolio</a>
         </div>
 
         <a href="https://github.com/api00" target="_blank" class="header__social">
@@ -392,20 +395,22 @@
                         <div class="col-md-5">
                           <div class="profile">
                             <div class="img-area">
-                              <img src="./assets/images/hero1.png" alt="">
+                              <img src="./assets/images/img1.jpeg" alt="">
                             </div>
                             <div class="bio">
-                              <h2>Dave Wood</h2>
+                              <h2>Tanzina</h2>
+                              <h4>Digital Content planner</h4>
+
                             </div>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="content">
-                            <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!</p>
+                            <p><span><i class="fa fa-quote-left"></i></span>The professionalism and quality of work delivered by API are unmatched. They brought our vision to life with precision and creativity, making the entire process enjoyable and stress-free. Their commitment to excellence is truly commendable!</p>
                             <p class="socials">
-                            <i class="fa fa-facebook"></i>
-                              <i class="fa fa-linkedin"></i>
-                              <i class="fa fa-instagram"></i>
+                              <a style="color: #fff;" href="https://www.facebook.com/tanzina.smritee"><i class="fa fa-facebook"></i></a>
+                              <a style="color: #fff;" href="https://www.linkedin.com/in/tanzina-akhter-65b04b1b0/"><i class="fa fa-linkedin"></i></a>
+                              <a style="color: #fff;" href="https://www.instagram.com/this_is_tanzina/"><i class="fa fa-instagram"></i></a>
                             </p>
                           </div>
                         </div>
@@ -418,20 +423,21 @@
                         <div class="col-md-5">
                           <div class="profile">
                             <div class="img-area">
-                              <img src="img/2.jpg" alt="">
+                              <img src="./assets/images/img5.jpeg" alt="">
                             </div>
                             <div class="bio">
-                              <h2>Martin Guptill</h2>
+                              <h2>Sajib Barman</h2>
+                              <h4>Startup founder</h4>
                             </div>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="content">
-                            <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!</p>
+                            <p><span><i class="fa fa-quote-left"></i></span>API's technical skills and problem-solving abilities are top-notch. Their team delivered a robust and scalable solution that has significantly improved our operations. Their expertise and dedication have been invaluable to our success!</p>
                             <p class="socials">
-                              <i class="fa fa-facebook"></i>
-                              <i class="fa fa-linkedin"></i>
-                              <i class="fa fa-instagram"></i>
+                              <a style="color: #fff;" href="https://www.facebook.com/profile.php?id=100074754914545"><i class="fa fa-facebook"></i></a>
+                              <a style="color: #fff;" href="https://www.linkedin.com/in/sajib-barman-549698288/"><i class="fa fa-linkedin"></i></a>
+                              <!-- <i class="fa fa-instagram"></i> -->
                             </p>
                           </div>
                         </div>
@@ -444,23 +450,53 @@
                         <div class="col-md-5">
                           <div class="profile">
                             <div class="img-area">
-                              <img src="img/3.jpg" alt="">
+                              <img src="./assets/images/img4.jpeg" alt="">
                             </div>
                             <div class="bio">
-                              <h2>Stephen Jones</h2>
+                              <h2>Mir Monjur Morshed</h2>
+                              <h4>Dot NET Devloper</h4>
                             </div>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="content">
-                            <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!</p>
+                            <p><span><i class="fa fa-quote-left"></i></span>Choosing API was the best decision for our startup. Their insights and strategic approach helped us navigate complex challenges and achieve our goals faster than expected. They are true partners in success and we are grateful for their support!</p>
                             <p class="socials">
-                              <i class="fa fa-facebook"></i>
-                              <i class="fa fa-linkedin"></i>
-                              <i class="fa fa-instagram"></i>
+                              <a style="color: #fff;" href="https://www.facebook.com/morshedmirmonjur"><i class="fa fa-facebook"></i></a>
+                              <a style="color: #fff;" href="https://www.linkedin.com/in/mirmonjur/"><i class="fa fa-linkedin"></i></a>
+                              <a style="color: #fff;" href="https://www.instagram.com/morshedmirmonjur/"><i class="fa fa-instagram"></i></a>
                             </p>
                           </div>
                         </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="single-item">
+                      <div class="row">
+                        <div class="col-md-5">
+                          <div class="profile">
+                            <div class="img-area">
+                              <img src="./assets/images/img8.jpeg" alt="">
+                            </div>
+                            <div class="bio">
+                              <h2>Munira Zebin</h2>
+                              <h4>SQA</h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="content">
+                            <p><span><i class="fa fa-quote-left"></i></span>The team at API is a pleasure to work with. Their professionalism, coupled with their innovative solutions, has significantly enhanced our business operations. We highly recommend them to anyone seeking excellence and reliable partners!</p>
+                            <p class="socials">
+                              <a style="color: #fff;" href="https://www.facebook.com/christinajenifer.christinajenifar"><i class="fa fa-facebook"></i></a>
+                              <a style="color: #fff;" href="https://www.linkedin.com/in/munirazebin/"><i class="fa fa-linkedin"></i></a>
+                              <a style="color: #fff;" href="https://www.instagram.com/zebin_ruhi/"><i class="fa fa-instagram"></i></a>
+                            </p>
+                          </div>
+                        </div>
+
                       </div>
                     </div>
                   </div>
@@ -493,7 +529,7 @@
             possible.
           </p>
         </div>
-        <form action="" class="contact__form">
+        <form onsubmit="sendEmail(); reset(); return false;" class="contact__form">
           <div class="contact__control">
             <label for="name" class="visually-hidden">Name</label>
             <input type="text" id="name" name="name" placeholder="Name" required />
@@ -572,6 +608,25 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+  <script>
+    function sendEmail() {
+      var name = document.getElementById("name").value;
+
+      Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "apialam008@gmail.com",
+        Password: "76F7822DF9F0AE5D00901D66FD6A97E9A8B7",
+        To: 'apialam008@gmail.com',
+        From: document.getElementById("email").value,
+        Subject: name + " send you a messge!",
+        Body: document.getElementById("message").value
+      }).then(
+        message => alert("Thank you! Your message has been successfully sent. We will contact you very soon!")
+      );
+    }
+  </script>
 </body>
 
 </html>

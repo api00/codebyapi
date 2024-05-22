@@ -81,77 +81,111 @@
             margin-block-end: 35px;
         }
 
-        .package {
+        .portfolio-section {
+            padding: 3rem 0;
+        }
+
+        .portfolio-card {
             background-color: #1e1e1e;
-            /* Dark gray background */
             border: 1px solid #333;
-            /* Slightly lighter border */
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 2rem;
             box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
             transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
         }
 
-        .package:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-        }
-
-        .package-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #f0ad4e;
-            /* Orange color */
-        }
-
-        .package-price {
-            font-size: 1.25rem;
-            color: #28a745;
+        .portfolio-card-header {
+            border-bottom: 1px solid white;
             margin-bottom: 1rem;
         }
 
-        .package-benefits,
-        .package-details,
-        .package-resources {
+
+
+        .portfolio-card-title {
+            font-size: 1.75rem;
+            color: #4CE09D;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-card-text {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-details {
             list-style: disc;
             padding-left: 1.5rem;
-            margin-bottom: 1rem;
+            color: white;
         }
 
-        .package-benefits li,
-        .package-details li,
-        .package-resources li {
+        .portfolio-details li {
             margin-bottom: 0.5rem;
         }
 
-        .enroll-button {
-            display: block;
+        .portfolio-img {
             width: 100%;
-            padding: 0.5rem;
-            text-align: center;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #4CE09D;
+            color: #000;
+            text-decoration: none;
             border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
             transition: background-color 0.2s;
+            position: relative;
+            z-index: 1;
         }
 
-        .enroll-button:hover {
-            background-color: #0056b3;
+        .portfolio-link:hover {
+            background-color: #3caf82;
+            color: #fff;
         }
 
-        .section-title {
-            font-weight: bold;
-            color: #f0ad4e;
-            /* Orange color */
+        /* Rating styles */
+        .rating {
+            display: flex;
+            align-items: center;
             margin-top: 1rem;
         }
 
-        .section-content {
-            margin-bottom: 1rem;
+        .rating span {
+            color: gold;
+            font-size: 1.5rem;
+            margin-right: 0.25rem;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .portfolio-img {
+                height: 200px;
+                width: 300px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .portfolio-card {
+                margin-bottom: 1.5rem;
+            }
+
+            .portfolio-img {
+                height: auto;
+                width: 100%;
+            }
         }
     </style>
     <title>API ALAM | Programmer</title>
@@ -169,10 +203,10 @@
                 </a>
                 <div class="navlink ">
                     <a href="./about.php">My Story</a>
-                    <a style="color: #4CE09D;" href="./coaching.php">Coaching</a>
+                    <a href="./coaching.php">Coaching</a>
                     <a href="./services.php">What I Offer</a>
                     <a href="./resume.php">Resume</a>
-                    <a href="./portfolio.php">My Portfolio</a>
+                    <a style="color: #4CE09D;" href="./portfolio.php">My Portfolio</a>
                 </div>
 
                 <a href="https://github.com/api00" target="_blank" class="header__social">
@@ -211,139 +245,127 @@
 
 
 
-        <div style="padding-top: 3rem; padding-bottom: 4rem;" class="resume bg-less-dark">
-            <section class="wrapper">
-                <div class="container">
-                    <h1 class="text-center mb-5">Web Development Coaching Packages</h1>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="package">
-                                <h2 class="package-title">Starter Pack</h2>
-                                <p class="package-price"><del>৳3000</del> now ৳2000 BDT <br>(Limited offer)</p>
-                                <div class="section-title">Lectures Covered:</div>
-                                <ul class="package-details">
-                                    <li>HTML Basics</li>
-                                    <li>CSS Styling</li>
-                                    <li>JavaScript Fundamentals</li>
-                                    <li>Building Responsive Websites</li>
-                                </ul>
-                                <div class="section-title">Resources Provided:</div>
-                                <ul class="package-resources">
-                                    <li>Course Notes and Slides</li>
-                                    <li>Code Examples</li>
-                                    <li>Access to Online Learning Platform</li>
-                                    <li>Community Support Forum</li>
-                                </ul>
-                                <div class="section-title">Benefits:</div>
-                                <ul class="package-benefits">
-                                    <li>Foundation in Web Development</li>
-                                    <li>Hands-on Project Experience</li>
-                                    <li>Skill Building for Future Learning</li>
+        <div style="padding-top: 3rem;padding-bottom: 4rem;" class="resume bg-less-dark">
+            <section class="wrapper ">
+                <div class="portfolio-section">
+                    <div class="container">
+                        <h1 class="portfolio-title">My Projects and Works</h1> <br>
+                        <div class="row">
+                            <!-- Project 1 -->
+                            <div class="col-md-4">
+                                <div class="portfolio-card">
+                                    <div class="portfolio-card-header">
+                                        <h2 class="portfolio-card-title">Edtech Solution Platform</h2>
+                                    </div>
+                                    <div class="portfolio-card-body">
+                                        <img src="./assets/images/portfolio-1.png" alt="Project 1 Image" class="portfolio-img">
+                                        <p class="portfolio-card-text">Developed a cutting-edge tech solution for a leading company, enhancing their operational efficiency and productivity.</p>
+                                        <ul class="portfolio-details">
+                                            <li>Technologies: HTML, CSS, JavaScript</li>
+                                            <li>Custom software development</li>
+                                            <li>System integration</li>
+                                            <li>User-friendly interface design</li>
+                                        </ul>
+                                        <div class="rating">
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>(5.0)</span>
+                                        </div>
+                                        <a href="http://ilearnx.live" class="portfolio-link" target="_blank">View Live</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Project 2 -->
+                            <div class="col-md-4">
+                                <div class="portfolio-card">
+                                    <div class="portfolio-card-header">
+                                        <h2 class="portfolio-card-title">E-Commerce Delivery Solution</h2>
+                                    </div>
+                                    <div class="portfolio-card-body">
+                                        <img src="./assets/images/portfolio-2.png" alt="Project 2 Image" class="portfolio-img">
+                                        <p class="portfolio-card-text">LuxuryInBD is a pioneering online platform that redefines the concept of luxury shopping in Bangladesh. Our mission is to make top-tier, high-quality products accessible to everyone at reasonable prices.</p>
+                                        <ul class="portfolio-details">
+                                            <li>Technologies: Wordpress, Elementor</li>
+                                            <li>Strategic campaign planning</li>
+                                            <li>Delivery platform creation</li>
+                                        </ul>
+                                        <div class="rating">
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>(5.0)</span>
+                                        </div>
+                                        <a href="https://luxuryinbd.com/" class="portfolio-link" target="_blank">View Live</a>
 
-                                </ul>
-                                <button class="enroll-button">Enroll Now</button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="package">
-                                <h2 class="package-title">Intermediate Pack</h2>
-                                <p class="package-price"><del>৳4000</del> now ৳3000 BDT <br>(Limited offer)</p>
-                                <div class="section-title">Lectures Covered:</div>
-                                <ul class="package-details">
-                                    <li>Data Structures and Algorithms</li>
-                                    <li>Object-Oriented PHP (OOP)</li>
-                                    <li>Working with APIs</li>
-                                    <li>Asynchronous Programming</li>
-                                    <li>Project: Basic Web Application</li>
-                                </ul>
-                                <div class="section-title">Resources Provided:</div>
-                                <ul class="package-resources">
-                                    <li>Comprehensive Code Snippets</li>
-                                    <li>Interactive Coding Exercises</li>
-                                    <li>Access to Private GitHub Repository</li>
-                                    <li>1-on-1 Mentoring Sessions</li>
-                                    <li>Live Q&A Sessions</li>
-                                </ul>
-                                <div class="section-title">Benefits:</div>
-                                <ul class="package-benefits">
-                                    <li>Understanding of Core Web Technologies</li>
-                                    <li>Proficiency in PHP and OOP Concepts</li>
-                                    <li>Ability to Build Basic Web Applications</li>
+                            <!-- Project 3 -->
+                            <div class="col-md-4">
+                                <div class="portfolio-card">
+                                    <div class="portfolio-card-header">
+                                        <h2 class="portfolio-card-title">E-Commerce Solution Platform </h2>
+                                    </div>
+                                    <div class="portfolio-card-body">
+                                        <img src="./assets/images/portfolio-3.png" alt="Project 3 Image" class="portfolio-img">
+                                        <p class="portfolio-card-text">Homedeliverybd is your go-to destination for hassle-free online shopping in Bangladesh. </p>
+                                        <ul class="portfolio-details">
+                                            <li>Technologies: Wordpress, Elementor, Web design</li>
+                                            <li>Custom e-commerce development</li>
+                                            <li>Secure payment gateway integration</li>
+                                        </ul>
+                                        <div class="rating">
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9734;</span>
+                                            <span>(4.0)</span>
+                                        </div>
+                                        <a href="https://homedeliverybd.xyz/" class="portfolio-link" target="_blank">View Live</a>
+                                    </div>
+                                </div>
+                            </div> <br>
+                            <!-- Project 4 -->
+                            <div class="col-md-4">
+                                <div class="portfolio-card">
+                                    <div class="portfolio-card-header">
+                                        <h2 class="portfolio-card-title">Online System Management</h2>
+                                    </div>
+                                    <div class="portfolio-card-body">
+                                        <img src="./assets/images/portfolio-4.png" alt="Project 4 Image" class="portfolio-img">
+                                        <p class="portfolio-card-text">Under the leadership of Api and his team, we proposed the development of a web-based ice cream parlor management system. The system was designed to simplify operations and enhance customer satisfaction.</p>
+                                        <ul class="portfolio-details">
+                                            <li>Technologies: PHP, WEB API</li>
+                                            <li>Web app development</li>
+                                            <li>ice cream parlor engagement features</li>
+                                            <li>Secure data management</li>
+                                        </ul>
+                                        <div class="rating">
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9734;</span>
+                                            <span>(4.0)</span>
+                                        </div>
+                                        <a href="https://github.com/api00/ice-cream-parlor" class="portfolio-link" target="_blank">View Code</a>
+                                    </div>
+                                </div>
+                            </div>
 
-                                </ul>
-                                <button class="enroll-button">Enroll Now</button>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="package">
-                                <h2 class="package-title">Pro Pack</h2>
-                                <p class="package-price"><del>৳7000</del> now ৳5000 BDT <br>(Limited offer)</p>
-                                <div class="section-title">Lectures Covered:</div>
-                                <ul class="package-details">
-                                    <li>Advanced PHP</li>
-                                    <li>Building E-commerce Websites with PHP</li>
-                                    <li>RESTful API Development</li>
-                                    <li>Additional PHP Features and Libraries</li>
-                                    <li>Database Design and Integration</li>
-                                    <li>Deploying Web Applications</li>
-                                </ul>
-                                <div class="section-title">Resources Provided:</div>
-                                <ul class="package-resources">
-                                    <li>Detailed Project Guides</li>
-                                    <li>Access to Advanced Tools and Libraries</li>
-                                    <li>1-on-1 Mentoring Sessions</li>
-                                    <li>Career Advice and Support</li>
-                                </ul>
-                                <div class="section-title">Benefits:</div>
-                                <ul class="package-benefits">
-                                    <li>Comprehensive Full-Stack Knowledge</li>
-                                    <li>Building and Deploying Complex Applications</li>
-                                    <li>Preparation for a Career in Web Development</li>
-                                </ul>
-                                <button class="enroll-button">Enroll Now</button>
-                            </div>
                         </div>
                     </div>
                 </div>
-
                 <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
             </section>
         </div>
 
-
-        <!-- Terms & Conditions -->
-        <div class="row mt-5 mb-5">
-            <div class="col-md-12">
-                <div class="container">
-
-                    <h2 class="text-center">Terms & Conditions</h2> <br>
-                    <p>
-                        By enrolling in any of our coaching packages, you agree to abide by the following terms and conditions:
-                    </p>
-                    <ol>
-                        <li>All coaching materials provided are for educational purposes only and should not be redistributed or used for commercial gain.</li>
-                        <li>Enrollment in a coaching package does not guarantee employment or success in any specific field.</li>
-                        <li>Participants are responsible for ensuring they meet any prerequisites or technical requirements specified for the coaching package.</li>
-                        <li>Course content and schedule may be subject to change at the discretion of the coaching provider.</li>
-                        <li>Participants are expected to conduct themselves in a respectful manner towards instructors and fellow participants.</li>
-                        <li>Any misuse of course materials or violations of the terms of service may result in immediate termination of access without refund.</li>
-                    </ol>
-                    <h3 class="mt-4">Required Terms & Conditions</h3>
-                    <p>
-                        In addition to the above terms and conditions, participants must agree to the following requirements before purchasing a coaching package:
-                    </p>
-                    <ul>
-                        <li>Provide accurate and complete information during the enrollment process.</li>
-                        <li>Adhere to the payment schedule and terms specified for the selected coaching package.</li>
-                        <li>Notify the coaching provider of any technical issues or concerns regarding the course materials or delivery.</li>
-                        <li>Abide by any additional rules or guidelines provided by the coaching provider for the smooth functioning of the course.</li>
-                    </ul>
-                    <p>
-                        Note: We are committed to delivering high-quality coaching services. If, for any reason, you are not satisfied with the coaching package you have purchased, please contact us within 10 days of enrollment for a full refund, no questions asked.
-                    </p>
-                </div>
-            </div>
-        </div>
     </main>
 
 
