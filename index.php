@@ -12,6 +12,7 @@
   <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="./assets/css/line.css" />
+  <link rel="stylesheet" href="./assets/css/nav.css">
 
   <style>
     .hero__image {
@@ -37,6 +38,7 @@
         translate: -50%;
 
       }
+
     }
 
     .float {
@@ -57,50 +59,6 @@
       width: 48px;
       height: 50px;
     }
-
-    /* Base styles */
-    .navlink a {
-      position: relative;
-      color: inherit;
-      text-decoration: none;
-      padding-right: 1.7rem;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 20px;
-    }
-
-    /* Hover effect styles */
-    .navlink a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -10px;
-      /* Adjust as needed */
-      width: 0;
-      height: 1px;
-      background-color: #4CE09D;
-      transition: width 0.3s ease-out;
-    }
-
-    .navlink a:hover {
-      color: #4CE09D;
-
-    }
-
-    /* Hover state */
-    .navlink a:hover::after {
-      width: 100%;
-    }
-
-
-
-    /* Media query for tablets and mobile devices */
-    @media (max-width: 768px) {
-      .navlink {
-        display: none;
-      }
-    }
-
-
 
     .section-header {
       position: relative;
@@ -148,12 +106,6 @@
       text-align: center;
     }
 
-    .img-area {
-      position: relative;
-      left: 6.5rem;
-      margin: 0 15px 15px 15px;
-    }
-
     .img-area img {
       height: 200px;
       width: 200px;
@@ -193,6 +145,16 @@
     .carousel-control-next-icon {
       background-color: #4CE09D;
     }
+
+    @media (min-width: 769px) and (max-width: 1000px) {
+      .hero__text {
+        margin-block-start: 90px;
+        margin-right: -30px;
+        flex: 1 0 58vw;
+        text-align: left;
+        z-index: 1;
+      }
+    }
   </style>
   <title>API ALAM | Programmer</title>
 </head>
@@ -207,7 +169,10 @@
           codebyapi
           <span class="visually-hidden">(to home page)</span>
         </a>
-        <div class="navlink ">
+        <div class="nav-toggle" id="navToggle">
+          ☰
+        </div>
+        <div class="navlink" id="navLink">
           <a href="./about.php">My Story</a>
           <a href="./coaching.php">Coaching</a>
           <a href="./services.php">What I Offer</a>
@@ -627,6 +592,7 @@
       );
     }
   </script>
+  <script src="./assets/js/nav.js"></script>
 </body>
 
 </html>

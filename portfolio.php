@@ -187,6 +187,121 @@
                 width: 100%;
             }
         }
+
+        /* Base styles */
+        .navlink a {
+            position: relative;
+            color: inherit;
+            text-decoration: none;
+            padding-right: 1.7rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+        }
+
+        /* Hover effect styles */
+        .navlink a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 0;
+            height: 1px;
+            background-color: #4CE09D;
+            transition: width 0.3s ease-out;
+        }
+
+        .navlink a:hover {
+            color: #4CE09D;
+        }
+
+        /* Hover state */
+        .navlink a:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #4CE09D;
+        }
+
+        /* Media query for tablets and mobile devices */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+                font-size: 29px;
+                margin-top: -8px;
+            }
+
+            .navlink {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 0;
+                background-color: #1e1e1e;
+                opacity: 0;
+                overflow: hidden;
+                transition: width 0.3s ease-out, opacity 0.3s ease-out;
+            }
+
+            .navlink.show {
+                opacity: 1;
+                width: 250px;
+                /* Adjust this value to the desired width */
+            }
+
+            .navlink a {
+                margin: 10px 0;
+                /* Add top and bottom margin */
+                padding: 10px;
+                /* Add padding for better touch targets */
+            }
+
+            .skills__rings {
+                display: none;
+            }
+
+            .img-area {
+                position: relative;
+                left: 7rem;
+                margin: 0 15px 15px 15px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .navlink {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .navlink {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .img-area {
+                position: relative;
+                left: 6rem;
+                margin: 0 15px 15px 15px;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+
+            .img-area {
+                position: relative;
+                left: 3rem;
+                margin: 0 15px 15px 15px;
+            }
+
+        }
     </style>
     <title>API ALAM | Programmer</title>
 </head>
@@ -201,7 +316,10 @@
                     codebyapi
                     <span class="visually-hidden">(to home page)</span>
                 </a>
-                <div class="navlink ">
+                <div class="nav-toggle" id="navToggle">
+                    ☰
+                </div>
+                <div class="navlink" id="navLink">
                     <a href="./about.php">My Story</a>
                     <a href="./coaching.php">Coaching</a>
                     <a href="./services.php">What I Offer</a>
@@ -261,7 +379,7 @@
                                         <img src="./assets/images/portfolio-1.png" alt="Project 1 Image" class="portfolio-img">
                                         <p class="portfolio-card-text">Developed a cutting-edge tech solution for a leading company, enhancing their operational efficiency and productivity.</p>
                                         <ul class="portfolio-details">
-                                            <li>Technologies: HTML, CSS, JavaScript</li>
+                                            <li>Technologies: HTML, CSS, JavaScript, PHP, AJAX, Postgresql</li>
                                             <li>Custom software development</li>
                                             <li>System integration</li>
                                             <li>User-friendly interface design</li>
@@ -418,6 +536,7 @@
         <div class="line"></div>
         <div class="line"></div>
     </div>
+    <script src="./assets/js/nav.js"> </script>
 </body>
 
 </html>
