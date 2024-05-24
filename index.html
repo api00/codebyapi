@@ -155,6 +155,81 @@
         z-index: 1;
       }
     }
+    .skills-section {
+      padding: 4rem 0;
+      background-color: #1e1e1e;
+
+    }
+    
+    .section-title {
+      font-weight: bold;
+      color: #4CE09D;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 2rem;
+    }
+    
+    .skill-card {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 1.5rem;
+      width: 300px;
+      height: 250px;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
+    }
+    .skill-header {
+      border-bottom: 1px solid #4CE09D;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+    }
+    
+    .skill-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    }
+    
+    .skill-title {
+      font-size: 1.5rem;
+      color: #4CE09D;
+      text-align: center;
+    }
+    
+    .skill-body {
+      text-align: left;
+    }
+    
+    .skill-description {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #fff;
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    /* Media query for responsiveness */
+    @media (max-width: 768px) {
+      .skills-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    
+      .skill-card {
+        flex: 1 1 calc(50% - 1rem);
+        margin-bottom: 2rem;
+      }
+    }
+    
+    
   </style>
   <title>API ALAM | Programmer</title>
 </head>
@@ -240,47 +315,104 @@
       </div>
     </section>
 
-    <section class="skills " style="margin-bottom: 5rem;">
-      <div class="wrapper skills__wrapper bottom-border ">
-        <div class="skills__item">
-          <h3 class="skills__title">HTML</h3>
-          <p class="skills__description">4 Years Experience</p>
+    
+ <!-- skill section -->
+
+    <div class="skills-section">
+      <section class="wrapper">
+        <div class="skills-container">
+          <!-- Skill 1 -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <h2 class="skill-title">API Development</h2>
+            </div>
+            <div class="skill-body">
+              <ul class="skill-description">
+                <li>RESTful API Design</li>
+                <li>GraphQL</li>
+                <li>Integration</li>
+                <li>Authentication</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Skill 2 -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <h2 class="skill-title">PHP & Laravel</h2>
+            </div>
+            <div class="skill-body">
+              <ul class="skill-description">
+                <li>Backend Development</li>
+                <li>Laravel Framework</li>
+                <li>Web Applications</li>
+                <li>Security</li>
+              </ul>
+            </div>
+          </div>
+        
+          <!-- Skill 4 -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <h2 class="skill-title">Database Management</h2>
+            </div>
+            <div class="skill-body">
+              <ul class="skill-description">
+                <li>SQL</li>
+                <li>MySQL & PostgreSQL</li>
+                <li>Database Design</li>
+                <li>Performance Tuning</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Skill 5 -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <h2 class="skill-title">Data Structures & Algorithms</h2>
+            </div>
+            <div class="skill-body">
+              <ul class="skill-description">
+                <li>Complex Problem Solving</li>
+                <li>Optimization Techniques</li>
+                <li>Algorithm Design</li>
+                <li>Data Handling</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Skill 6 -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <h2 class="skill-title">Software Architecture</h2>
+            </div>
+            <div class="skill-body">
+              <ul class="skill-description">
+                <li>System Design</li>
+                <li>Scalability</li>
+                <li>Microservices</li>
+                <li>Architecture Patterns</li>
+              </ul>
+            </div>
+          </div>
+         
+          <!-- Skill 8 -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <h2 class="skill-title">Teaching & Mentoring</h2>
+            </div>
+            <div class="skill-body">
+              <ul class="skill-description">
+                <li>Web Development</li>
+                <li>Mobile Development with Flutter</li>
+                <li>Project-Based Learning</li>
+                <li>Professional Development</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="skills__item">
-          <h3 class="skills__title">CSS</h3>
-          <p class="skills__description">4 Years Experience</p>
-        </div>
-        <div class="skills__item">
-          <h3 class="skills__title">JavaScript</h3>
-          <p class="skills__description">4 Years Experience</p>
-        </div>
-        <div class="skills__item">
-          <h3 class="skills__title">DSA</h3>
-          <p class="skills__description">2 Years Experience</p>
-        </div>
-        <div class="skills__item">
-          <h3 class="skills__title">StartUp </h3>
-          <p class="skills__description">2 Years Experience</p>
-        </div>
-        <div class="skills__item">
-          <h3 class="skills__title">PHP</h3>
-          <p class="skills__description">3 Years Experience</p>
-        </div>
-        <div class="skills__item">
-          <h3 class="skills__title">JAVA</h3>
-          <p class="skills__description">3 Years Experience</p>
-        </div>
-        <div class="skills__item">
-          <h3 class="skills__title">Software Architecture</h3>
-          <p class="skills__description">2 Years Experience</p>
-        </div>
-        <div class="skills__item">
-          <h3 class="skills__title">Teaching</h3>
-          <p class="skills__description">2 Years Experience</p>
-        </div>
-      </div>
-      <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
-    </section>
+      </section>
+    </div>
+    
+    
+    
 
 
     <!-- 
