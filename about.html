@@ -11,8 +11,7 @@
     <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/line.css" />
-
-
+    <link rel="stylesheet" href="./assets/css/nav.css" />
 
     <style>
         .float {
@@ -68,7 +67,6 @@
         }
 
 
-
         /* Media query for tablets and mobile devices */
         @media (max-width: 768px) {
             .navlink {
@@ -81,78 +79,6 @@
             margin-block-end: 35px;
         }
 
-        .package {
-            background-color: #1e1e1e;
-            /* Dark gray background */
-            border: 1px solid #333;
-            /* Slightly lighter border */
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .package:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-        }
-
-        .package-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #f0ad4e;
-            /* Orange color */
-        }
-
-        .package-price {
-            font-size: 1.25rem;
-            color: #28a745;
-            margin-bottom: 1rem;
-        }
-
-        .package-benefits,
-        .package-details,
-        .package-resources {
-            list-style: disc;
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .package-benefits li,
-        .package-details li,
-        .package-resources li {
-            margin-bottom: 0.5rem;
-        }
-
-        .enroll-button {
-            display: block;
-            width: 100%;
-            padding: 0.5rem;
-            text-align: center;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .enroll-button:hover {
-            background-color: #0056b3;
-        }
-
-        .section-title {
-            font-weight: bold;
-            color: #f0ad4e;
-            /* Orange color */
-            margin-top: 1rem;
-        }
-
-        .section-content {
-            margin-bottom: 1rem;
-        }
 
         /* Base styles */
         .navlink a {
@@ -278,7 +204,7 @@
         <div class="wrapper">
             <nav class="header__nav">
                 <h2 class="visually-hidden">Navigation</h2>
-                <a href="./index.php" class="header__home">
+                <a href="./index.html" class="header__home">
                     codebyapi
                     <span class="visually-hidden">(to home page)</span>
                 </a>
@@ -286,11 +212,11 @@
                     ☰
                 </div>
                 <div class="navlink" id="navLink">
-                    <a href="./about.php">My Story</a>
-                    <a style="color: #4CE09D;" href="./coaching.php">Coaching</a>
-                    <a href="./services.php">What I Offer</a>
-                    <a href="./resume.php">Resume</a>
-                    <a href="./portfolio.php">My Portfolio</a>
+                    <a style="color: #4CE09D;" href="./about.html">My Story</a>
+                    <a href="./coaching.html">Coaching</a>
+                    <a href="./services.html">What I Offer</a>
+                    <a href="./resume.html">Resume</a>
+                    <a href="./portfolio.html">My Portfolio</a>
                 </div>
 
                 <a href="https://github.com/api00" target="_blank" class="header__social">
@@ -331,137 +257,51 @@
 
         <div style="padding-top: 3rem; padding-bottom: 4rem;" class="resume bg-less-dark">
             <section class="wrapper">
-                <div class="container">
-                    <h1 class="text-center mb-5">Web Development Coaching Packages</h1>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="package">
-                                <h2 class="package-title">Starter Pack</h2>
-                                <p class="package-price"><del>৳3000</del> now ৳2000 BDT <br>(Limited offer)</p>
-                                <div class="section-title">Lectures Covered:</div>
-                                <ul class="package-details">
-                                    <li>HTML Basics</li>
-                                    <li>CSS Styling</li>
-                                    <li>JavaScript Fundamentals</li>
-                                    <li>Building Responsive Websites</li>
-                                </ul>
-                                <div class="section-title">Resources Provided:</div>
-                                <ul class="package-resources">
-                                    <li>Course Notes and Slides</li>
-                                    <li>Code Examples</li>
-                                    <li>Access to Online Learning Platform</li>
-                                    <li>Community Support Forum</li>
-                                </ul>
-                                <div class="section-title">Benefits:</div>
-                                <ul class="package-benefits">
-                                    <li>Foundation in Web Development</li>
-                                    <li>Hands-on Project Experience</li>
-                                    <li>Skill Building for Future Learning</li>
+                <section id="resume" class="resume">
+                    <div class="container">
+                        <div style="margin-bottom: 2.5rem;" class="section-title">
+                            <h2 class="projects__headline header-xl">My Story</h2>
+                        </div>
 
-                                </ul>
-                                <button class="enroll-button">Enroll Now</button>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="package">
-                                <h2 class="package-title">Intermediate Pack</h2>
-                                <p class="package-price"><del>৳4000</del> now ৳3000 BDT <br>(Limited offer)</p>
-                                <div class="section-title">Lectures Covered:</div>
-                                <ul class="package-details">
-                                    <li>Data Structures and Algorithms</li>
-                                    <li>Object-Oriented PHP (OOP)</li>
-                                    <li>Working with APIs</li>
-                                    <li>Asynchronous Programming</li>
-                                    <li>Project: Basic Web Application</li>
-                                </ul>
-                                <div class="section-title">Resources Provided:</div>
-                                <ul class="package-resources">
-                                    <li>Comprehensive Code Snippets</li>
-                                    <li>Interactive Coding Exercises</li>
-                                    <li>Access to Private GitHub Repository</li>
-                                    <li>1-on-1 Mentoring Sessions</li>
-                                    <li>Live Q&A Sessions</li>
-                                </ul>
-                                <div class="section-title">Benefits:</div>
-                                <ul class="package-benefits">
-                                    <li>Understanding of Core Web Technologies</li>
-                                    <li>Proficiency in PHP and OOP Concepts</li>
-                                    <li>Ability to Build Basic Web Applications</li>
+                        <div class="row">
+                            <div class="col-lg-12" data-aos="fade-up">
 
-                                </ul>
-                                <button class="enroll-button">Enroll Now</button>
+                                <div class="resume-item">
+                                    <h4>Early Childhood</h4>
+                                    <p>
+                                        Growing up, I was not the brightest student in the classroom. I was often found in the middle rows, striving to sit next to the top performers in hopes that their excellence might rub off on me. My hometown was a small, close-knit community where technology wasn't prevalent. Despite not having a computer, I developed a deep fascination with the stars and the universe, which sparked my interest in astronomy. This early curiosity made me ponder the depths of anything I encountered. When I finally saw a computer, I wasn’t captivated by games or its immediate functions. Instead, I was intrigued by its construction and inner workings, constantly questioning how it was built and operated. This analytical thinking became a hallmark of my early days.
+                                    </p>
+                                </div>
+
+                                <div class="resume-item">
+                                    <h4>Adulthood</h4>
+                                    <p>
+                                        Transitioning into my college years, I chose the science stream, which turned out to be a challenging period. The immense pressure from subjects like chemistry, biology, and physics was overwhelming, and I struggled to stay afloat. However, one subject, ICT (Information and Communications Technology), stood out and resonated with me. It felt philosophical, delving into computers and programming, areas that seemed to align with my intrinsic interests. Upon entering university, I pursued a degree in computer science. My first semester was a tough ride, as I failed in both physics and C++. This failure fueled my anger and determination. I delved deeper into C++ and programming, reminiscent of my childhood curiosity. Programming became an integral part of my life, and I thrived in it, securing A+ grades in all subsequent programming subjects. I graduated with a commendable GPA of 3.57/4.00.
+                                    </p>
+                                </div>
+
+                                <div class="resume-item">
+                                    <h4>Current Situation</h4>
+                                    <p>
+                                        After university, I co-founded a startup (<a target="_blank" href="https://ilearnx.live/">IlearnX.live</a>), driven by my newfound passion for creating solutions that address real-world problems. This entrepreneurial journey was a natural progression from my university projects. Today, I am thriving in my startup, constantly innovating and solving problems. Alongside this, I have ventured into coaching, teaching programming and web development to help others simplify their lives and achieve their goals.
+                                    </p>
+                                </div>
+
+                                <div class="resume-item">
+                                    <h4>Future Moves</h4>
+                                    <p>
+                                        Looking ahead, my aspirations are to scale my startup, making a significant impact in the tech industry by developing innovative solutions that improve people's lives. I aim to expand my coaching efforts, fostering a new generation of programmers who are not only skilled but also passionate about solving problems. My ultimate goal is to continue growing both professionally and personally, contributing to the tech community and making a difference in the world.
+                                    </p>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="package">
-                                <h2 class="package-title">Pro Pack</h2>
-                                <p class="package-price"><del>৳7000</del> now ৳5000 BDT <br>(Limited offer)</p>
-                                <div class="section-title">Lectures Covered:</div>
-                                <ul class="package-details">
-                                    <li>Advanced PHP</li>
-                                    <li>Building E-commerce Websites with PHP</li>
-                                    <li>RESTful API Development</li>
-                                    <li>Additional PHP Features and Libraries</li>
-                                    <li>Database Design and Integration</li>
-                                    <li>Deploying Web Applications</li>
-                                </ul>
-                                <div class="section-title">Resources Provided:</div>
-                                <ul class="package-resources">
-                                    <li>Detailed Project Guides</li>
-                                    <li>Access to Advanced Tools and Libraries</li>
-                                    <li>1-on-1 Mentoring Sessions</li>
-                                    <li>Career Advice and Support</li>
-                                </ul>
-                                <div class="section-title">Benefits:</div>
-                                <ul class="package-benefits">
-                                    <li>Comprehensive Full-Stack Knowledge</li>
-                                    <li>Building and Deploying Complex Applications</li>
-                                    <li>Preparation for a Career in Web Development</li>
-                                </ul>
-                                <button class="enroll-button">Enroll Now</button>
-                            </div>
-                        </div>
+
                     </div>
-                </div>
-
-                <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
+                </section><img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
             </section>
         </div>
 
-
-        <!-- Terms & Conditions -->
-        <div class="row mt-5 mb-5">
-            <div class="col-md-12">
-                <div class="container">
-
-                    <h2 class="text-center">Terms & Conditions</h2> <br>
-                    <p>
-                        By enrolling in any of our coaching packages, you agree to abide by the following terms and conditions:
-                    </p>
-                    <ol>
-                        <li>All coaching materials provided are for educational purposes only and should not be redistributed or used for commercial gain.</li>
-                        <li>Enrollment in a coaching package does not guarantee employment or success in any specific field.</li>
-                        <li>Participants are responsible for ensuring they meet any prerequisites or technical requirements specified for the coaching package.</li>
-                        <li>Course content and schedule may be subject to change at the discretion of the coaching provider.</li>
-                        <li>Participants are expected to conduct themselves in a respectful manner towards instructors and fellow participants.</li>
-                        <li>Any misuse of course materials or violations of the terms of service may result in immediate termination of access without refund.</li>
-                    </ol>
-                    <h3 class="mt-4">Required Terms & Conditions</h3>
-                    <p>
-                        In addition to the above terms and conditions, participants must agree to the following requirements before purchasing a coaching package:
-                    </p>
-                    <ul>
-                        <li>Provide accurate and complete information during the enrollment process.</li>
-                        <li>Adhere to the payment schedule and terms specified for the selected coaching package.</li>
-                        <li>Notify the coaching provider of any technical issues or concerns regarding the course materials or delivery.</li>
-                        <li>Abide by any additional rules or guidelines provided by the coaching provider for the smooth functioning of the course.</li>
-                    </ul>
-                    <p>
-                        Note: We are committed to delivering high-quality coaching services. If, for any reason, you are not satisfied with the coaching package you have purchased, please contact us within 10 days of enrollment for a full refund, no questions asked.
-                    </p>
-                </div>
-            </div>
-        </div>
     </main>
 
 
@@ -474,7 +314,7 @@
         <div class="wrapper">
             <nav class="header__nav">
                 <h2 class="visually-hidden">Navigation</h2>
-                <a href="/index.php" class="header__home">
+                <a href="/index.html" class="header__home">
                     codebyapi
                     <span class="visually-hidden">(to home page)</span>
                 </a>
@@ -515,6 +355,7 @@
         <div class="line"></div>
     </div>
     <script src="./assets/js/nav.js"> </script>
+
 </body>
 
 </html>

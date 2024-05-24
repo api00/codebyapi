@@ -81,6 +81,113 @@
             margin-block-end: 35px;
         }
 
+        .portfolio-section {
+            padding: 3rem 0;
+        }
+
+        .portfolio-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-card-header {
+            border-bottom: 1px solid white;
+            margin-bottom: 1rem;
+        }
+
+
+
+        .portfolio-card-title {
+            font-size: 1.75rem;
+            color: #4CE09D;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-card-text {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-details {
+            list-style: disc;
+            padding-left: 1.5rem;
+            color: white;
+        }
+
+        .portfolio-details li {
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #4CE09D;
+            color: #000;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .portfolio-link:hover {
+            background-color: #3caf82;
+            color: #fff;
+        }
+
+        /* Rating styles */
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .rating span {
+            color: gold;
+            font-size: 1.5rem;
+            margin-right: 0.25rem;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .portfolio-img {
+                height: 200px;
+                width: 300px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .portfolio-card {
+                margin-bottom: 1.5rem;
+            }
+
+            .portfolio-img {
+                height: auto;
+                width: 100%;
+            }
+        }
+
         /* Base styles */
         .navlink a {
             position: relative;
@@ -205,7 +312,7 @@
         <div class="wrapper">
             <nav class="header__nav">
                 <h2 class="visually-hidden">Navigation</h2>
-                <a href="./index.php" class="header__home">
+                <a href="./index.html" class="header__home">
                     codebyapi
                     <span class="visually-hidden">(to home page)</span>
                 </a>
@@ -213,11 +320,11 @@
                     ☰
                 </div>
                 <div class="navlink" id="navLink">
-                    <a href="./about.php">My Story</a>
-                    <a href="./coaching.php">Coaching</a>
-                    <a href="./services.php">What I Offer</a>
-                    <a style="color: #4CE09D;" href="./resume.php">Resume</a>
-                    <a href="./portfolio.php">My Portfolio</a>
+                    <a href="./about.html">My Story</a>
+                    <a href="./coaching.html">Coaching</a>
+                    <a href="./services.html">What I Offer</a>
+                    <a href="./resume.html">Resume</a>
+                    <a style="color: #4CE09D;" href="./portfolio.html">My Portfolio</a>
                 </div>
 
                 <a href="https://github.com/api00" target="_blank" class="header__social">
@@ -258,72 +365,121 @@
 
         <div style="padding-top: 3rem;padding-bottom: 4rem;" class="resume bg-less-dark">
             <section class="wrapper ">
-                <!-- ======= Resume Section ======= -->
-                <section id="resume" class="resume">
+                <div class="portfolio-section">
                     <div class="container">
-                        <div style="margin-bottom: 2.5rem;" class="section-title">
-                            <h2 class="projects__headline header-xl">My Resume</h2>
-                        </div>
-
+                        <h1 class="portfolio-title">My Projects and Works</h1> <br>
                         <div class="row">
-                            <div class="col-lg-6" data-aos="fade-up">
-                                <h3 class="resume-title">Sumary</h3>
-                                <div class="resume-item pb-0">
-                                    <h4>Api Alam</h4>
-                                    <p><em>Hi, I am a lead software engineer at <b style="font-size: 19px;">iLearnX Technologies</b> (<a href="http://ilearnx.tech">ilearnx.tech</a>) where I am working as a full-stack web developer. I have completed my Bachelor in Computer Science from AIUB. I have a great passion for learning and sharing new skills in web development. I have been actively involved in medium to large web development both in front-end (HTML, CSS, JS) and back-end (PHP, MySQL, PostgreSQL).</em></p>
-                                    <ul>
-                                        <li>Dhaka Bangladesh</li>
-                                        <li><a href="tel:+8801745815676">+880 1745815676</a></li>
-                                        <li><a href="mailto:apialam.email@gmail.com">apialam.email@gmail.com</a></li>
-                                    </ul>
+                            <!-- Project 1 -->
+                            <div class="col-md-4">
+                                <div class="portfolio-card">
+                                    <div class="portfolio-card-header">
+                                        <h2 class="portfolio-card-title">Edtech Solution Platform</h2>
+                                    </div>
+                                    <div class="portfolio-card-body">
+                                        <img src="./assets/images/portfolio-1.png" alt="Project 1 Image" class="portfolio-img">
+                                        <p class="portfolio-card-text">Developed a cutting-edge tech solution for a leading company, enhancing their operational efficiency and productivity.</p>
+                                        <ul class="portfolio-details">
+                                            <li>Technologies: HTML, CSS, JavaScript, PHP, AJAX, Postgresql</li>
+                                            <li>Custom software development</li>
+                                            <li>System integration</li>
+                                            <li>User-friendly interface design</li>
+                                        </ul>
+                                        <div class="rating">
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>(5.0)</span>
+                                        </div>
+                                        <a href="http://ilearnx.live" class="portfolio-link" target="_blank">View Live</a>
+                                    </div>
                                 </div>
+                            </div>
+                            <!-- Project 2 -->
+                            <div class="col-md-4">
+                                <div class="portfolio-card">
+                                    <div class="portfolio-card-header">
+                                        <h2 class="portfolio-card-title">E-Commerce Delivery Solution</h2>
+                                    </div>
+                                    <div class="portfolio-card-body">
+                                        <img src="./assets/images/portfolio-2.png" alt="Project 2 Image" class="portfolio-img">
+                                        <p class="portfolio-card-text">LuxuryInBD is a pioneering online platform that redefines the concept of luxury shopping in Bangladesh. Our mission is to make top-tier, high-quality products accessible to everyone at reasonable prices.</p>
+                                        <ul class="portfolio-details">
+                                            <li>Technologies: Wordpress, Elementor</li>
+                                            <li>Strategic campaign planning</li>
+                                            <li>Delivery platform creation</li>
+                                        </ul>
+                                        <div class="rating">
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>(5.0)</span>
+                                        </div>
+                                        <a href="https://luxuryinbd.com/" class="portfolio-link" target="_blank">View Live</a>
 
-                                <h3 class="resume-title">Education</h3>
-                                <div class="resume-item">
-                                    <h4>computer science and engineering</h4>
-                                    <h5>2019 - 2023</h5>
-                                    <p><em>American International University-Bangladesh </em></p>
-                                    <p> At AIUB, I built a solid foundation in computer science and gained hands-on experience with various programming languages. I completed several projects, including a capstone project developing a web application for small businesses. As the ICT Lead at ESAB AIUB Unit Face, I led initiatives to enhance our unit's technological capabilities and organized coding challenges. These activities enhanced my problem-solving skills and teamwork. My commitment to academics and extracurriculars earned me
-                                        <br> CGPA : 3.57/4.00
-                                    </p>
-                                </div>
-                                <!-- <div class="resume-item">
-                  <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-                  <h5>2010 - 2014</h5>
-                  <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                  <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
-                </div> -->
-                            </div>
-                            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                                <h3 class="resume-title">Professional Experience</h3>
-                                <div class="resume-item">
-                                    <h4>Co-founder &amp; Lead Software Engineer</h4>
-                                    <h5>2023 - Present</h5>
-                                    <p><em>iLearnX Technologies, Dhaka, Bangladesh </em></p>
-                                    <ul>
-                                        <li>Lead the creation of iLearnX (<a target="_blank" href="https://ilearnx.live/">ilearnx.live</a>), a cutting-edge educational platform that significantly boosted company revenue.</li>
-                                        <li>Designed and implemented scalable infrastructure for handling over a million client files. </li>
-                                        <li>Maintained 100% compliance with industry best practices. Significantly reduced security breaches by 84% through proactive measures.</li>
-                                        <li>Spearheaded extensive research and development efforts for iLearnX Edu, resulting in a 35% increase in user engagement.</li>
-                                        <li>Implemented data-driven strategies, boosting user retention by 20% and increasing session duration by 25%.</li>
-                                    </ul>
-                                </div>
-                                <div class="resume-item">
-                                    <h4>Software Engineer Intern</h4>
-                                    <h5>jan 2023 - mar 2023</h5>
-                                    <p><em>Robo Tech Valley, Dhaka, Bangladesh</em></p>
-                                    <ul>
-                                        <li>Collaborated in cross-functional teams for various projects at Robo Tech Valley.</li>
-                                        <li>Gained experience with HTML, CSS, and JavaScript for user-friendly interfaces.</li>
-                                        <li>Focused on PHP and Java, improving web app functionality with server logic, databases, and APIs.</li>
-                                        <li>Actively pursued learning, staying updated on industry practices, and enhancing software engineering skills.</li>
-                                    </ul>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- Project 3 -->
+                            <div class="col-md-4">
+                                <div class="portfolio-card">
+                                    <div class="portfolio-card-header">
+                                        <h2 class="portfolio-card-title">E-Commerce Solution Platform </h2>
+                                    </div>
+                                    <div class="portfolio-card-body">
+                                        <img src="./assets/images/portfolio-3.png" alt="Project 3 Image" class="portfolio-img">
+                                        <p class="portfolio-card-text">Homedeliverybd is your go-to destination for hassle-free online shopping in Bangladesh. </p>
+                                        <ul class="portfolio-details">
+                                            <li>Technologies: Wordpress, Elementor, Web design</li>
+                                            <li>Custom e-commerce development</li>
+                                            <li>Secure payment gateway integration</li>
+                                        </ul>
+                                        <div class="rating">
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9734;</span>
+                                            <span>(4.0)</span>
+                                        </div>
+                                        <a href="https://homedeliverybd.xyz/" class="portfolio-link" target="_blank">View Live</a>
+                                    </div>
+                                </div>
+                            </div> <br>
+                            <!-- Project 4 -->
+                            <div class="col-md-4">
+                                <div class="portfolio-card">
+                                    <div class="portfolio-card-header">
+                                        <h2 class="portfolio-card-title">Online System Management</h2>
+                                    </div>
+                                    <div class="portfolio-card-body">
+                                        <img src="./assets/images/portfolio-4.png" alt="Project 4 Image" class="portfolio-img">
+                                        <p class="portfolio-card-text">Under the leadership of Api and his team, we proposed the development of a web-based ice cream parlor management system. The system was designed to simplify operations and enhance customer satisfaction.</p>
+                                        <ul class="portfolio-details">
+                                            <li>Technologies: PHP, WEB API</li>
+                                            <li>Web app development</li>
+                                            <li>ice cream parlor engagement features</li>
+                                            <li>Secure data management</li>
+                                        </ul>
+                                        <div class="rating">
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9733;</span>
+                                            <span>&#9734;</span>
+                                            <span>(4.0)</span>
+                                        </div>
+                                        <a href="https://github.com/api00/ice-cream-parlor" class="portfolio-link" target="_blank">View Code</a>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-
                     </div>
-                </section><!-- End Resume Section -->
+                </div>
                 <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
             </section>
         </div>
@@ -340,7 +496,7 @@
         <div class="wrapper">
             <nav class="header__nav">
                 <h2 class="visually-hidden">Navigation</h2>
-                <a href="/index.php" class="header__home">
+                <a href="/index.html" class="header__home">
                     codebyapi
                     <span class="visually-hidden">(to home page)</span>
                 </a>

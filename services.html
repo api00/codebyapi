@@ -11,7 +11,8 @@
     <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/line.css" />
-    <link rel="stylesheet" href="./assets/css/nav.css" />
+
+
 
     <style>
         .float {
@@ -67,6 +68,7 @@
         }
 
 
+
         /* Media query for tablets and mobile devices */
         @media (max-width: 768px) {
             .navlink {
@@ -78,6 +80,66 @@
             margin-block-start: 40px;
             margin-block-end: 35px;
         }
+
+        .proficiency-section {
+            padding: 3rem 0;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card-header {
+            border-bottom: 1px solid white;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        }
+
+        .card-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: #4CE09D;
+
+        }
+
+        .card-text {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: #4CE09D;
+            margin-top: 1rem;
+        }
+
+        .package-details,
+        .package-resources,
+        .package-benefits {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: left;
+            color: white;
+        }
+
+        .package-details li,
+        .package-resources li,
+        .package-benefits li {
+            margin-bottom: 0.5rem;
+        }
+
+
 
 
         /* Base styles */
@@ -125,6 +187,7 @@
                 font-size: 29px;
                 margin-top: -8px;
             }
+            
 
             .navlink {
                 display: flex;
@@ -204,7 +267,7 @@
         <div class="wrapper">
             <nav class="header__nav">
                 <h2 class="visually-hidden">Navigation</h2>
-                <a href="./index.php" class="header__home">
+                <a href="./index.html" class="header__home">
                     codebyapi
                     <span class="visually-hidden">(to home page)</span>
                 </a>
@@ -212,11 +275,11 @@
                     ☰
                 </div>
                 <div class="navlink" id="navLink">
-                    <a style="color: #4CE09D;" href="./about.php">My Story</a>
-                    <a href="./coaching.php">Coaching</a>
-                    <a href="./services.php">What I Offer</a>
-                    <a href="./resume.php">Resume</a>
-                    <a href="./portfolio.php">My Portfolio</a>
+                    <a href="./about.html">My Story</a>
+                    <a href="./coaching.html">Coaching</a>
+                    <a style="color: #4CE09D;" href="./services.html">What I Offer</a>
+                    <a href="./resume.html">Resume</a>
+                    <a href="./portfolio.html">My Portfolio</a>
                 </div>
 
                 <a href="https://github.com/api00" target="_blank" class="header__social">
@@ -257,48 +320,116 @@
 
         <div style="padding-top: 3rem; padding-bottom: 4rem;" class="resume bg-less-dark">
             <section class="wrapper">
-                <section id="resume" class="resume">
+                <div class="proficiency-section">
                     <div class="container">
-                        <div style="margin-bottom: 2.5rem;" class="section-title">
-                            <h2 class="projects__headline header-xl">My Story</h2>
-                        </div>
-
+                        <h1 class="text-center mb-5">My Professional Expertise</h1>
                         <div class="row">
-                            <div class="col-lg-12" data-aos="fade-up">
-
-                                <div class="resume-item">
-                                    <h4>Early Childhood</h4>
-                                    <p>
-                                        Growing up, I was not the brightest student in the classroom. I was often found in the middle rows, striving to sit next to the top performers in hopes that their excellence might rub off on me. My hometown was a small, close-knit community where technology wasn't prevalent. Despite not having a computer, I developed a deep fascination with the stars and the universe, which sparked my interest in astronomy. This early curiosity made me ponder the depths of anything I encountered. When I finally saw a computer, I wasn’t captivated by games or its immediate functions. Instead, I was intrigued by its construction and inner workings, constantly questioning how it was built and operated. This analytical thinking became a hallmark of my early days.
-                                    </p>
+                            <!-- Card 1 -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Web Designing</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Crafting engaging, user-centric web interfaces with a focus on responsiveness and performance. Key skills include:</p>
+                                        <ul class="package-details">
+                                            <li>HTML/CSS/JavaScript</li>
+                                            <li>React/Vue.js</li>
+                                            <li>Responsive Design</li>
+                                            <li>Performance Optimization</li>
+                                        </ul>
+                                    </div>
                                 </div>
-
-                                <div class="resume-item">
-                                    <h4>Adulthood</h4>
-                                    <p>
-                                        Transitioning into my college years, I chose the science stream, which turned out to be a challenging period. The immense pressure from subjects like chemistry, biology, and physics was overwhelming, and I struggled to stay afloat. However, one subject, ICT (Information and Communications Technology), stood out and resonated with me. It felt philosophical, delving into computers and programming, areas that seemed to align with my intrinsic interests. Upon entering university, I pursued a degree in computer science. My first semester was a tough ride, as I failed in both physics and C++. This failure fueled my anger and determination. I delved deeper into C++ and programming, reminiscent of my childhood curiosity. Programming became an integral part of my life, and I thrived in it, securing A+ grades in all subsequent programming subjects. I graduated with a commendable GPA of 3.57/4.00.
-                                    </p>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">API Development </h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Developing robust, scalable server-side solutions and APIs to power dynamic web applications. Key skills include:</p>
+                                        <ul class="package-details">
+                                            <li>Node.js/Express</li>
+                                            <li>PHP/Laravel</li>
+                                            <li>Database Integration</li>
+                                            <li>API Development</li>
+                                        </ul>
+                                    </div>
                                 </div>
-
-                                <div class="resume-item">
-                                    <h4>Current Situation</h4>
-                                    <p>
-                                        After university, I co-founded a startup (<a target="_blank" href="https://ilearnx.live/">IlearnX.live</a>), driven by my newfound passion for creating solutions that address real-world problems. This entrepreneurial journey was a natural progression from my university projects. Today, I am thriving in my startup, constantly innovating and solving problems. Alongside this, I have ventured into coaching, teaching programming and web development to help others simplify their lives and achieve their goals.
-                                    </p>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Full-Stack Development</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Integrating front-end and back-end expertise to create seamless, end-to-end web solutions. Key skills include:</p>
+                                        <ul class="package-details">
+                                            <li>Full-Stack Project Management</li>
+                                            <li>RESTful API Design</li>
+                                            <li>Database Architecture</li>
+                                            <li>Deployment & Maintenance</li>
+                                        </ul>
+                                    </div>
                                 </div>
-
-                                <div class="resume-item">
-                                    <h4>Future Moves</h4>
-                                    <p>
-                                        Looking ahead, my aspirations are to scale my startup, making a significant impact in the tech industry by developing innovative solutions that improve people's lives. I aim to expand my coaching efforts, fostering a new generation of programmers who are not only skilled but also passionate about solving problems. My ultimate goal is to continue growing both professionally and personally, contributing to the tech community and making a difference in the world.
-                                    </p>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Web Development Coaching</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Providing comprehensive coaching to help individuals become proficient web developers. Key topics include:</p>
+                                        <ul class="package-details">
+                                            <li>HTML/CSS Basics</li>
+                                            <li>JavaScript and Frameworks</li>
+                                            <li>PHP and Backend Development</li>
+                                            <li>Project-Based Learning</li>
+                                        </ul>
+                                    </div>
                                 </div>
-
+                            </div>
+                            <!-- Card 5 -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Career Guidance in Software Industry</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Guiding individuals through their career paths in the software industry. Key areas of focus include:</p>
+                                        <ul class="package-details">
+                                            <li>Resume and Portfolio Building</li>
+                                            <li>Interview Preparation</li>
+                                            <li>Job Search Strategies</li>
+                                            <li>Professional Networking</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 6 -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Digital Marketing Assistance</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Helping businesses and individuals improve their online presence and marketing strategies. Key services include:</p>
+                                        <ul class="package-details">
+                                            <li>SEO Optimization</li>
+                                            <li>Social Media Marketing</li>
+                                            <li>Content Marketing</li>
+                                            <li>Pay-Per-Click Advertising</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
                     </div>
-                </section><img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
+                </div>
+                <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
             </section>
         </div>
 
@@ -314,7 +445,7 @@
         <div class="wrapper">
             <nav class="header__nav">
                 <h2 class="visually-hidden">Navigation</h2>
-                <a href="/index.php" class="header__home">
+                <a href="/index.html" class="header__home">
                     codebyapi
                     <span class="visually-hidden">(to home page)</span>
                 </a>
@@ -355,7 +486,6 @@
         <div class="line"></div>
     </div>
     <script src="./assets/js/nav.js"> </script>
-
 </body>
 
 </html>
