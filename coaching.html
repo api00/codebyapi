@@ -268,6 +268,73 @@
             }
 
         }
+
+
+
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .modal-content {
+            background-color: #2a2a2a;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #333;
+            width: 80%;
+            max-width: 600px;
+            color: #fff;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        /* Fixed size for the QR image */
+        .payment-qr {
+            width: 250px; /* Fixed width */
+            height: 250px; /* Fixed height */
+            margin: 20px auto; /* Centered */
+            display: block;
+        }
+        
+        /* Enroll Button Styles */
+        .enroll-button {
+            background-color: #4CE09D;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            color: #1e1e1e;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            font-family: 'Space Grotesk', sans-serif;
+            cursor: pointer;
+        }
+        
+        .enroll-button:hover {
+            background-color: #39a879;
+        }
+        
+        
     </style>
     <title>API ALAM | Programmer</title>
 </head>
@@ -334,6 +401,7 @@
                 <div class="container">
                     <h1 class="text-center mb-5">Web Development Coaching Packages</h1>
                     <div class="row">
+                        <!-- Starter Pack -->
                         <div class="col-md-4">
                             <div class="package">
                                 <h2 class="package-title">Starter Pack</h2>
@@ -357,11 +425,11 @@
                                     <li>Foundation in Web Development</li>
                                     <li>Hands-on Project Experience</li>
                                     <li>Skill Building for Future Learning</li>
-
                                 </ul>
-                                <button class="enroll-button">Enroll Now</button>
+                                <button class="enroll-button" data-package="Starter Pack">Enroll Now</button>
                             </div>
                         </div>
+                        <!-- Intermediate Pack -->
                         <div class="col-md-4">
                             <div class="package">
                                 <h2 class="package-title">Intermediate Pack</h2>
@@ -387,11 +455,11 @@
                                     <li>Understanding of Core Web Technologies</li>
                                     <li>Proficiency in PHP and OOP Concepts</li>
                                     <li>Ability to Build Basic Web Applications</li>
-
                                 </ul>
-                                <button class="enroll-button">Enroll Now</button>
+                                <button class="enroll-button" data-package="Intermediate Pack">Enroll Now</button>
                             </div>
                         </div>
+                        <!-- Pro Pack -->
                         <div class="col-md-4">
                             <div class="package">
                                 <h2 class="package-title">Pro Pack</h2>
@@ -418,15 +486,31 @@
                                     <li>Building and Deploying Complex Applications</li>
                                     <li>Preparation for a Career in Web Development</li>
                                 </ul>
-                                <button class="enroll-button">Enroll Now</button>
+                                <button class="enroll-button" data-package="Pro Pack">Enroll Now</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
+        
                 <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
             </section>
         </div>
+  <!-- Enroll Modal -->
+<div id="enrollModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Enroll in <span id="packageName"></span></h2>
+        <p>Please scan the QR code below to make a payment via <br><strong style="font-size: 20px;">Rocket mobile banking</strong> <br>and complete your enrollment.</p>
+        <img src="./assets/images/rocket-qr.jpeg" alt="Scan to Pay" class="payment-qr">
+        <strong>Or</strong>
+        <strong>01745815676</strong>
+        <p>Accepted payment methods: bKash, Nagad, Rocket.</p>
+        <p>After payment, please send your transaction ID to: <a href="https://wa.me/+8801745815676">01745815676</a></p>
+        <p>Or send it via SMS to: <strong>01745815676</strong></p>
+    </div>
+</div>
+
+        
 
 
         <!-- Terms & Conditions -->
@@ -515,6 +599,33 @@
         <div class="line"></div>
     </div>
     <script src="./assets/js/nav.js"> </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('enrollModal');
+            const span = document.getElementsByClassName('close')[0];
+            const enrollButtons = document.querySelectorAll('.enroll-button');
+            const packageNameSpan = document.getElementById('packageName');
+        
+            enrollButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const packageName = button.getAttribute('data-package');
+                    packageNameSpan.textContent = packageName;
+                    modal.style.display = 'block';
+                });
+            });
+        
+            span.onclick = () => {
+                modal.style.display = 'none';
+            }
+        
+            window.onclick = (event) => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
+        });
+        
+    </script>
 </body>
 
 </html>
