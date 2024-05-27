@@ -222,6 +222,11 @@
             font-size: 1.8rem;
             margin-bottom: 1rem;
         }
+        .blog-title:hover{
+            transition: .7s;
+            text-decoration: underline;
+
+        }
         
         .blog-excerpt {
             color: #ffffff;
@@ -242,6 +247,10 @@
         
         .blog-read-more:hover {
             background-color: #3bb47e;
+            color: #ffffff;
+            transition: .6s;
+
+
         }
         
         .text-center .btn {
@@ -257,6 +266,7 @@
         
         .text-center .btn:hover {
             background-color: #3bb47e;
+            color: #ffffff;
         }
         @media (max-width: 768px) {
             .blog-card {
@@ -334,7 +344,7 @@
         </div>
     </header>
 
-    <div style="padding-top: 3rem; padding-bottom: 4rem;" class="resume bg-less-dark">
+    <div style="padding-bottom: 4rem;" class="resume bg-less-dark">
         <div style="padding-top: 3rem; padding-bottom: 4rem;" class="blogs bg-less-dark">
             <section class="wrapper">
                 <div class="container">
@@ -343,7 +353,7 @@
                             <div class="blog-card">
                                 <img src="./assets/images/js-closer.png" alt="Understanding JavaScript Closures" class="blog-image">
                                 <div class="blog-content">
-                                    <h2 class="blog-title">Understanding JavaScript Closures</h2>
+                                    <a style="background-color:#3bb47e; color:#3bb47e;text-decoration:none;" href="./blog_details/Understanding-JavaScript-Closures"><h2 class="blog-title">Understanding JavaScript Closures</h2></a>
                                     <p class="blog-excerpt">A deep dive into how closures work in JavaScript and why they are useful.</p>
                                     <a href="./blog_details/Understanding-JavaScript-Closures" class="blog-read-more">Read More</a>
                                 </div>
@@ -353,7 +363,7 @@
                             <div class="blog-card">
                                 <img src="./assets/images/top-5-books-programmer.png" alt="Top 5 Books for Aspiring Programmers" class="blog-image">
                                 <div class="blog-content">
-                                    <h2 class="blog-title">Top 5 Books for Aspiring Programmers</h2>
+                                    <a style="background-color:#3bb47e; color:#3bb47e;text-decoration:none;" href="./blog_details/Top-5-Books-for-Aspiring-Programmers.html"><h2 class="blog-title">Top 5 Books for Aspiring Programmers</h2></a>
                                     <p class="blog-excerpt">A curated list of must-read books for anyone looking to get into programming.</p>
                                     <a href="./blog_details/Top-5-Books-for-Aspiring-Programmers" class="blog-read-more">Read More</a>
                                 </div>
@@ -414,7 +424,7 @@
         <img src="./assets/images/whatsapp-svgrepo-com (2).png" class="my-float" alt="WhatsApp">
     </a>
 
-    <footer class="footer bg-less-dark">
+    <footer style="background-color: #131212;" class="footer bg-less-dark">
         <h2 class="visually-hidden">Footer</h2>
         <div class="wrapper">
             <nav class="header__nav">

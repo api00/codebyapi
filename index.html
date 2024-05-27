@@ -237,8 +237,11 @@
       text-decoration: none;
       font-family: 'Space Grotesk', sans-serif;
     }
-    .text-center .btn-primary:hover {
+  
+    .text-center .btn-primary:hover{
+      color: #fff;
       background-color: #39a879;
+      transition: 0.6s;
     }
 
 
@@ -280,6 +283,9 @@
       margin-top: 1rem;
       color: #4CE09D;
   }
+  .blog-title:hover{
+    text-decoration: underline;
+}
   
   .blog-text {
       font-size: 1rem;
@@ -313,6 +319,7 @@
 .read-more-blogs-btn:hover {
     background-color: #3bb47e;
     color: #fff;
+    transition: 0.6s;
 }
   
   @media (max-width: 768px) {
@@ -324,6 +331,33 @@
           height: 150px;
       }
   }
+
+
+  .line{
+    height: 500vh;
+
+}
+@keyframes drop {
+  0% {
+    top: -50%;
+  }
+  20% {
+    top: 20%;
+  }
+  40% {
+    top: 50%;
+  }
+  60% {
+    top: 70%;
+  }
+  80% {
+    top: 90%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
   
     
   </style>
@@ -723,7 +757,7 @@
       <div style="padding-top: 3rem; padding-bottom: 4rem;" class="resume bg-less-dark">
         <section class="wrapper">
             <div class="container">
-              <h2 class="contact__headline header-xl">Explore My Blog's</h2>
+              <h2 class="contact__headline header-xl">Latest Blog's</h2>
               <br>
                 <div class="row">
                     <!-- Blog Post 1 -->
@@ -731,9 +765,9 @@
                         <div class="blog-card">
                             <img src="./assets/images/js-closer.png" alt="Blog Post 1" class="blog-img">
                             <div class="blog-content">
-                                <h2 class="blog-title">Understanding JavaScript Closures</h2>
+                              <a style="color:#3bb47e;text-decoration:none;" href="./blog_details/Understanding-JavaScript-Closures"> <h2 class="blog-title">Understanding JavaScript Closures</h2></a> 
                                 <p class="blog-text">Dive deep into the concept of closures in JavaScript, understand how they work, and see practical examples.</p>
-                                <a href="./blog_details/Understanding-JavaScript-Closures" class="blog-link">Read More</a>
+                                <a href="./blog_details/Understanding-JavaScript-Closures.html" class="blog-link">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -742,9 +776,9 @@
                         <div class="blog-card">
                             <img src="./assets/images/top-5-books-programmer.png" alt="Blog Post 2" class="blog-img">
                             <div class="blog-content">
-                                <h2 class="blog-title">Top 5 Books for Developers</h2>
+                                <a style="color:#3bb47e;text-decoration:none;" href="./blog_details/Top-5-Books-for-Aspiring-Programmers"><h2 class="blog-title">Top 5 Books for Developers</h2></a>
                                 <p class="blog-text">A curated list of must-read books for developers, covering topics from programming to personal growth.</p>
-                                <a href="./blog_details/Top-5-Books-for-Aspiring-Programmers" class="blog-link">Read More</a>
+                                <a href="./blog_details/Top-5-Books-for-Aspiring-Programmers.html" class="blog-link">Read More</a>
                             </div>
                         </div>
                     </div>
