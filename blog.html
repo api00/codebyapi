@@ -10,9 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png" />
     <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <!-- <link rel="stylesheet" href="./assets/css/line.css" /> -->
-
-
+    <link rel="stylesheet" href="./assets/css/nav.css" />
 
     <style>
         .float {
@@ -68,7 +66,6 @@
         }
 
 
-
         /* Media query for tablets and mobile devices */
         @media (max-width: 768px) {
             .navlink {
@@ -80,66 +77,6 @@
             margin-block-start: 40px;
             margin-block-end: 35px;
         }
-
-        .proficiency-section {
-            padding: 3rem 0;
-        }
-
-        .card {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card-header {
-            border-bottom: 1px solid white;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-        }
-
-        .card-title {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-            color: #4CE09D;
-
-        }
-
-        .card-text {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            text-align: left;
-        }
-
-        .section-title {
-            font-weight: bold;
-            color: #4CE09D;
-            margin-top: 1rem;
-        }
-
-        .package-details,
-        .package-resources,
-        .package-benefits {
-            list-style: disc;
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-            text-align: left;
-            color: white;
-        }
-
-        .package-details li,
-        .package-resources li,
-        .package-benefits li {
-            margin-bottom: 0.5rem;
-        }
-
-
 
 
         /* Base styles */
@@ -187,7 +124,6 @@
                 font-size: 29px;
                 margin-top: -8px;
             }
-            
 
             .navlink {
                 display: flex;
@@ -209,7 +145,7 @@
             }
 
             .navlink a {
-                margin: 10px 0;
+                margin: 0px 0;
                 /* Add top and bottom margin */
                 padding: 10px;
                 /* Add padding for better touch targets */
@@ -257,8 +193,75 @@
             }
 
         }
+        .blog-card {
+            background-color: #262626;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        .blog-image {
+            max-width: 300px;
+            max-height: 200px;
+            border-radius: 8px;
+            margin-right: 1.5rem;
+            object-fit: cover; /* Ensures the image covers the specified dimensions */
+        }
+        
+        .blog-content {
+            flex: 1;
+        }
+        
+        .blog-title {
+            color: #4CE09D;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-excerpt {
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .blog-read-more {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CE09D;
+            color: #1e1e1e;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .blog-read-more:hover {
+            background-color: #3bb47e;
+        }
+        
+        .text-center .btn {
+            padding: 10px 20px;
+            background-color: #4CE09D;
+            color: #1e1e1e;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+        
+        .text-center .btn:hover {
+            background-color: #3bb47e;
+        }
+        
+        
     </style>
-    <title>API ALAM | programmer</title>
+    <title>API ALAM | Programmer</title>
 </head>
 
 <body>
@@ -275,12 +278,12 @@
                     ☰
                 </div>
                 <div class="navlink" id="navLink">
-                    <a href="./about">My Story</a>
+                    <a  href="./about">My Story</a>
                     <a href="./coaching">Coaching</a>
-                    <a style="color: #4CE09D;" href="./services">What I Offer</a>
+                    <a href="./services">What I Offer</a>
                     <a href="./resume">Resume</a>
                     <a href="./portfolio">My Portfolio</a>
-                    <a href="./blog">Blogs</a>
+                    <a style="color: #4CE09D;" href="./blog">Blogs</a>
 
                 </div>
 
@@ -316,126 +319,80 @@
         </div>
     </header>
 
-    <main id="main">
-
-
-
-        <div style="padding-top: 3rem; padding-bottom: 4rem;" class="resume bg-less-dark">
+    <div style="padding-top: 3rem; padding-bottom: 4rem;" class="resume bg-less-dark">
+        <div style="padding-top: 3rem; padding-bottom: 4rem;" class="blogs bg-less-dark">
             <section class="wrapper">
-                <div class="proficiency-section">
-                    <div class="container">
-                        <h1 class="text-center mb-5">My Professional Expertise</h1>
-                        <div class="row">
-                            <!-- Card 1 -->
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h2 class="card-title">Web Designing</h2>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Crafting engaging, user-centric web interfaces with a focus on responsiveness and performance. Key skills include:</p>
-                                        <ul class="package-details">
-                                            <li>HTML/CSS/JavaScript</li>
-                                            <li>React/Vue.js</li>
-                                            <li>Responsive Design</li>
-                                            <li>Performance Optimization</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card 2 -->
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h2 class="card-title">API Development </h2>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Developing robust, scalable server-side solutions and APIs to power dynamic web applications. Key skills include:</p>
-                                        <ul class="package-details">
-                                            <li>Node.js/Express</li>
-                                            <li>PHP/Laravel</li>
-                                            <li>Database Integration</li>
-                                            <li>API Development</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card 3 -->
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h2 class="card-title">Full-Stack Development</h2>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Integrating front-end and back-end expertise to create seamless, end-to-end web solutions. Key skills include:</p>
-                                        <ul class="package-details">
-                                            <li>Full-Stack Project Management</li>
-                                            <li>RESTful API Design</li>
-                                            <li>Database Architecture</li>
-                                            <li>Deployment & Maintenance</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card 4 -->
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h2 class="card-title">Web Development Coaching</h2>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Providing comprehensive coaching to help individuals become proficient web developers. Key topics include:</p>
-                                        <ul class="package-details">
-                                            <li>HTML/CSS Basics</li>
-                                            <li>JavaScript and Frameworks</li>
-                                            <li>PHP and Backend Development</li>
-                                            <li>Project-Based Learning</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card 5 -->
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h2 class="card-title">Career Guidance in Software Industry</h2>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Guiding individuals through their career paths in the software industry. Key areas of focus include:</p>
-                                        <ul class="package-details">
-                                            <li>Resume and Portfolio Building</li>
-                                            <li>Interview Preparation</li>
-                                            <li>Job Search Strategies</li>
-                                            <li>Professional Networking</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card 6 -->
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h2 class="card-title">Digital Marketing Assistance</h2>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Helping businesses and individuals improve their online presence and marketing strategies. Key services include:</p>
-                                        <ul class="package-details">
-                                            <li>SEO Optimization</li>
-                                            <li>Social Media Marketing</li>
-                                            <li>Content Marketing</li>
-                                            <li>Pay-Per-Click Advertising</li>
-                                        </ul>
-                                    </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="blog-card">
+                                <img src="./assets/images/js-closer.png" alt="Understanding JavaScript Closures" class="blog-image">
+                                <div class="blog-content">
+                                    <h2 class="blog-title">Understanding JavaScript Closures</h2>
+                                    <p class="blog-excerpt">A deep dive into how closures work in JavaScript and why they are useful.</p>
+                                    <a href="./blog_details/Understanding-JavaScript-Closures" class="blog-read-more">Read More</a>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12">
+                            <div class="blog-card">
+                                <img src="./assets/images/top-5-books-programmer.png" alt="Top 5 Books for Aspiring Programmers" class="blog-image">
+                                <div class="blog-content">
+                                    <h2 class="blog-title">Top 5 Books for Aspiring Programmers</h2>
+                                    <p class="blog-excerpt">A curated list of must-read books for anyone looking to get into programming.</p>
+                                    <a href="./blog_details/Top-5-Books-for-Aspiring-Programmers" class="blog-read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-12">
+                            <div class="blog-card">
+                                <img src="./assets/images/tech-updates.jpg" alt="Latest Tech Updates in 2024" class="blog-image">
+                                <div class="blog-content">
+                                    <h2 class="blog-title">Latest Tech Updates in 2024</h2>
+                                    <p class="blog-excerpt">Stay updated with the latest trends and technologies emerging in 2024.</p>
+                                    <a href="#" class="blog-read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="col-12">
+                            <div class="blog-card">
+                                <img src="./assets/images/entrepreneurship.jpg" alt="Entrepreneurship in the Digital Age" class="blog-image">
+                                <div class="blog-content">
+                                    <h2 class="blog-title">Entrepreneurship in the Digital Age</h2>
+                                    <p class="blog-excerpt">Tips and insights for aspiring entrepreneurs navigating the digital landscape.</p>
+                                    <a href="#" class="blog-read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="col-12">
+                            <div class="blog-card">
+                                <img src="./assets/images/flutter-app.jpg" alt="Building Your First Mobile App with Flutter" class="blog-image">
+                                <div class="blog-content">
+                                    <h2 class="blog-title">Building Your First Mobile App with Flutter</h2>
+                                    <p class="blog-excerpt">A comprehensive guide to building your first mobile app using Flutter.</p>
+                                    <a href="#" class="blog-read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="col-12">
+                            <div class="blog-card">
+                                <img src="./assets/images/dsa.jpg" alt="Mastering Data Structures and Algorithms" class="blog-image">
+                                <div class="blog-content">
+                                    <h2 class="blog-title">Mastering Data Structures and Algorithms</h2>
+                                    <p class="blog-excerpt">An essential guide to understanding and mastering data structures and algorithms.</p>
+                                    <a href="#" class="blog-read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
+                   
                 </div>
                 <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
             </section>
         </div>
+    </div>
+    
 
-    </main>
 
 
     <a href="https://wa.me/+8801745815676" class="float" target="_blank">
@@ -447,7 +404,7 @@
         <div class="wrapper">
             <nav class="header__nav">
                 <h2 class="visually-hidden">Navigation</h2>
-                <a href="./" class="header__home">
+                <a href="/index" class="header__home">
                     codebyapi
                     <span class="visually-hidden">(to home page)</span>
                 </a>
@@ -488,6 +445,7 @@
         <div class="line"></div>
     </div>
     <script src="./assets/js/nav.js"> </script>
+
 </body>
 
 </html>
