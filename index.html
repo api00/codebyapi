@@ -331,32 +331,34 @@
           height: 150px;
       }
   }
+  @media (min-width: 900px) {
+    .line{
+      height: 500vh;
+  
+  }
+  @keyframes drop {
+    0% {
+      top: -50%;
+    }
+    20% {
+      top: 20%;
+    }
+    40% {
+      top: 50%;
+    }
+    60% {
+      top: 70%;
+    }
+    80% {
+      top: 90%;
+    }
+    100% {
+      top: 110%;
+    }
+  }  
+  
+  }
 
-
-  .line{
-    height: 500vh;
-
-}
-@keyframes drop {
-  0% {
-    top: -50%;
-  }
-  20% {
-    top: 20%;
-  }
-  40% {
-    top: 50%;
-  }
-  60% {
-    top: 70%;
-  }
-  80% {
-    top: 90%;
-  }
-  100% {
-    top: 110%;
-  }
-}
 
   
     
@@ -783,17 +785,17 @@
                         </div>
                     </div>
                     <!-- Blog Post 3 -->
-                    <!-- <div class="col-md-4">
+                    <div class="col-md-4">
                         <div class="blog-card">
                             <img src="./assets/images/blog3.jpg" alt="Blog Post 3" class="blog-img">
                             <div class="blog-content">
-                                <h2 class="blog-title">Latest Tech Updates</h2>
+                                <h2 class="blog-title">Why You Should Learn Programming</h2>
                                 <p class="blog-text">Stay updated with the latest trends and news in the tech world, from new frameworks to industry changes.</p>
                                 <a href="./blog3.php" class="blog-link">Read More</a>
                             </div>
                         </div>
                     </div>
-                </div> -->
+                </div>
                 <div class="text-center mt-4">
                   <a href="./blog" class="read-more-blogs-btn">Read More Blogs</a>
               </div>

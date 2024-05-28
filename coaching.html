@@ -97,7 +97,7 @@
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
         }
-
+     
         .package-title {
             font-size: 1.5rem;
             margin-bottom: 1rem;
@@ -335,6 +335,204 @@
         .enroll-button:hover {
             background-color: #39a879;
         }
+
+
+        .counter-section {
+            padding: 3rem 0;
+        }
+        
+        .counter-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        .counter {
+            text-align: center;
+            color: #ffffff;
+            flex-basis: 30%; /* Adjust as needed for responsiveness */
+            margin-bottom: 2rem;
+        }
+        
+        .count {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #4CE09D; /* Accent color */
+        }
+        
+        .counter p {
+            color: #999999;
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .coaching-details {
+            background-color: #1a1a1a; /* Adjust based on your color scheme */
+            color: #fff;
+            padding: 3rem 0;
+        }
+        
+        .coaching-details .wrapper {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+        
+        .coaching-details h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #f0ad4e; /* Gold color for heading */
+        }
+        
+        .coaching-details p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .coaching-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .coaching-details ul li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        
+        .coaching-details ul li:before {
+            content: "\2022";
+            color: #f0ad4e; /* Gold color for bullet points */
+            font-weight: bold;
+            display: inline-block;
+            width: 1rem;
+            margin-left: -1.5rem;
+        }
+
+
+
+        .instructor-section {
+            padding: 3rem 0;
+        }
+      
+        
+        .instructor-section .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .instructor-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .instructor-details {
+            background: #333;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .instructor-details h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .instructor-details p {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .instructor-info {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .instructor-info li {
+            color: #f0ad4e;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .instructor-details {
+                padding: 1.5rem;
+            }
+            .instructor-section h2 {
+                font-size: 2rem;
+            }
+            .instructor-details h3 {
+                font-size: 1.5rem;
+            }
+            .instructor-info li {
+                font-size: 1rem;
+            }
+        }
+
+
+
+        .feedback-section {
+            padding: 3rem 0;
+        }
+        
+        .feedback-section .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .feedback-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feedback {
+            background: #333;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .feedback-quote {
+            color: #fff;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .feedback-author {
+            color: #ffdd40;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+            filter: invert(1);
+            color: #28a745;
+        }
+        
+        @media (max-width: 768px) {
+            .feedback {
+                padding: 1.5rem;
+            }
+            .feedback-section h2 {
+                font-size: 2rem;
+            }
+            .feedback-quote {
+                font-size: 1rem;
+            }
+            .feedback-author {
+                font-size: 0.9rem;
+            }
+        }
+        
+        
+  
+        
         
         
     </style>
@@ -399,8 +597,57 @@
     <main id="main">
 
 
+     <!-- About My Web Development Coaching Section -->
+        <div style="padding-top: 3rem; padding-bottom: 4rem;" class="coaching-details bg-less-dark">
+            <section class="wrapper">
+                <div class="container">
+                    <h1 class="text-center mb-5">About My Web Development Coaching</h1>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p >Welcome to my web development coaching program! With over 4+ years of experience in the industry, I have helped countless students transform into skilled developers and secure placements in top companies.</p>
+                            <p>My coaching program is designed to be comprehensive and hands-on, covering everything from basic HTML and CSS to advanced web development techniques. Whether you're a beginner or looking to enhance your skills, my program caters to all levels of learners.</p>
+                            <p>Here's what you can expect:</p>
+                            <p>🚀 Personalized mentoring to address individual learning needs</p>
+                            <p>📚 Access to a wealth of resources including course notes, code examples, and project guides</p>
+                            <p>💻 Interactive coding exercises and real-world projects to build practical skills</p>
+                            <p>💬 Supportive learning community and regular live Q&A sessions</p>
+                            <p>Join my coaching program today and take the first step towards a successful career in web development!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-        <div style="padding-top: 3rem; padding-bottom: 4rem;" class="resume bg-less-dark">
+
+
+        <div class="instructor-section bg-less-dark">
+            <section class="wrapper instructor-information">
+                <div class="container">
+                    <h2 class="text-center mb-4">Meet Your Instructor</h2> <br>
+                    <div class="instructor-details">
+                        <h3>Api Alam</h3>
+                        <p>Your instructor, Api Alam, is a seasoned programmer and software engineer with extensive experience in the field. Currently, he serves as the Lead Software Engineer at iLearn.Live, where he has been instrumental in developing cutting-edge applications and mentoring upcoming talent.</p>
+                        <ul class="instructor-info">
+                            <li>💻 Extensive experience in web development, specializing in JavaScript, PHP, and modern frameworks.</li>
+                            <li>📚 Authored several programming books and tutorials.</li>
+                            <li>🏆 Proven track record of student success with high placement rates in reputable companies.</li>
+                            <li>🔧 Hands-on approach to teaching with practical projects and real-world examples.</li>
+                            <li>🎓 Dedicated mentor committed to providing personalized guidance and support.</li>
+                            <li>🌟 Co-founded several successful startups and worked at various renowned companies.</li>
+                            <li>🕔 Over 4+ years of experience in web development.</li>
+                        </ul>
+                        <p>Api's passion for teaching and his deep understanding of web development make him the ideal guide for your journey into web development. Enroll in his courses to gain the skills and knowledge needed to succeed in this dynamic field.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+
+        
+
+
+
+        <div  style="padding-top: 3rem; padding-bottom: 4rem;background-color: #1a1a1a;" class="resume ">
             <section class="wrapper">
                 <div class="container">
                     <h1 class="text-center mb-5">Web Development Coaching Packages</h1>
@@ -409,7 +656,7 @@
                         <div class="col-md-4">
                             <div class="package">
                                 <h2 class="package-title">Starter Pack</h2>
-                                <p class="package-price"><del>৳3000</del> now ৳2000 BDT <br>(Limited offer)</p>
+                                <p class="package-price"><del>৳3000</del> now 1999 BDT <br>(Limited offer)</p>
                                 <div class="section-title">Lectures Covered:</div>
                                 <ul class="package-details">
                                     <li>HTML Basics</li>
@@ -437,7 +684,7 @@
                         <div class="col-md-4">
                             <div class="package">
                                 <h2 class="package-title">Intermediate Pack</h2>
-                                <p class="package-price"><del>৳4000</del> now ৳3000 BDT <br>(Limited offer)</p>
+                                <p class="package-price"><del>৳4000</del> now 2999 BDT <br>(Limited offer)</p>
                                 <div class="section-title">Lectures Covered:</div>
                                 <ul class="package-details">
                                     <li>Data Structures and Algorithms</li>
@@ -467,7 +714,7 @@
                         <div class="col-md-4">
                             <div class="package">
                                 <h2 class="package-title">Pro Pack</h2>
-                                <p class="package-price"><del>৳7000</del> now ৳5000 BDT <br>(Limited offer)</p>
+                                <p class="package-price"><del>৳7000</del> now 4999 BDT <br>(Limited offer)</p>
                                 <div class="section-title">Lectures Covered:</div>
                                 <ul class="package-details">
                                     <li>Advanced PHP</li>
@@ -496,9 +743,51 @@
                     </div>
                 </div>
         
-                <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
             </section>
         </div>
+
+
+
+        <div class="feedback-section bg-less-dark">
+            <section class="wrapper">
+                <div class="container">
+                    <h2 class="text-center mb-4">What Our Students Say</h2>
+                    <div id="feedbackCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="feedback">
+                                    <p class="feedback-quote">"Api's teaching style is fantastic! He explains complex topics in an easy-to-understand way. I learned so much from his courses."</p>
+                                    <p class="feedback-author">- Sanzidul Islam</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="feedback">
+                                    <p class="feedback-quote">"The hands-on projects were extremely helpful. I now feel confident in my web development skills thanks to Api."</p>
+                                    <p class="feedback-author">- Showmitro Roy</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="feedback">
+                                    <p class="feedback-quote">"Api is an excellent mentor. His courses are well-structured and provide a lot of practical knowledge. Highly recommended!"</p>
+                                    <p class="feedback-author">- Avijit</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#feedbackCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true" style="color: #28a745;"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#feedbackCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true" style="color: #28a745;"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+
+
   <!-- Enroll Modal -->
 <div id="enrollModal" class="modal">
     <div class="modal-content">
@@ -511,8 +800,34 @@
         <p>Accepted payment methods: bKash, Nagad, Rocket.</p>
         <p>After payment, please send your transaction ID & Name to: <a href="https://wa.me/+8801745815676">01745815676</a></p>
         <p>Or send it via SMS to: <strong>01745815676</strong></p>
+        <button style="color: white;" type="button" class="btn " data-bs-toggle="modal" data-bs-target="#termsModal">
+            View Terms & Conditions
+        </button>
     </div>
 </div>
+
+<div class="counter-section bg-less-dark">
+    <section class="wrapper">
+        <div class="container">
+            <h2 class="text-center mb-4">Achievements at a Glance</h2>
+            <div class="counter-container">
+                <div class="counter">
+                    <span style="color: #f0ad4e;" class="count" data-target="100">0</span>
+                    <p>People who have Completed Coaching</p>
+                </div>
+                <div class="counter">
+                    <span class="count" data-target="40">0</span>
+                    <p>Students Placed</p>
+                </div>
+                <div class="counter">
+                    <span class="count" data-target="3">0</span>
+                    <p>Years of Teaching Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
 
         
 
@@ -520,7 +835,7 @@
         <!-- Terms & Conditions -->
         <div class="row mt-5 mb-5">
             <div class="col-md-12">
-                <div class="container">
+                <div class="container ">
 
                     <h2 class="text-center">Terms & Conditions</h2> <br>
                     <p>
@@ -566,6 +881,7 @@
                     codebyapi
                     <span class="visually-hidden">(to home page)</span>
                 </a>
+              
 
                 <a href="https://github.com/api00" target="_blank" class="header__social">
                     <svg xmlns="https://github.com/api00" width="25" height="24" aria-labelledby="socialGitHub" role="img">
@@ -603,6 +919,8 @@
         <div class="line"></div>
     </div>
     <script src="./assets/js/nav.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById('enrollModal');
@@ -628,6 +946,55 @@
                 }
             }
         });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const counters = document.querySelectorAll('.count');
+        
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+        
+                    const speed = 200; // The lower the slower
+        
+                    const inc = target / speed;
+        
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target+"+";
+                    }
+                };
+        
+                updateCount();
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var feedbackCarousel = document.querySelector('#feedbackCarousel');
+    
+            // Initialize the carousel
+            var carousel = new bootstrap.Carousel(feedbackCarousel, {
+                interval: 5000, // Adjust the interval as needed
+                ride: 'carousel'
+            });
+    
+            // Handle previous button click
+            var prevButton = document.querySelector('.carousel-control-prev');
+            prevButton.addEventListener('click', function () {
+                carousel.prev();
+            });
+    
+            // Handle next button click
+            var nextButton = document.querySelector('.carousel-control-next');
+            nextButton.addEventListener('click', function () {
+                carousel.next();
+            });
+        });
+        
+        
         
     </script>
 </body>
