@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png" />
-    <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/nav.css" />
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/nav.css" />
 
     <style>
         .float {
@@ -193,48 +193,77 @@
             }
 
         }
-        .blog-card {
+        .extended-blog {
+            padding-top: 3rem;
+            padding-bottom: 4rem;
+            background-color: #1e1e1e;
+        }
+        
+        .extended-blog .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .extended-blog h1 {
+            color: #4CE09D;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .extended-blog-content {
             background-color: #262626;
             border: 1px solid #333;
             border-radius: 8px;
-            padding: 1.5rem;
+            padding: 2rem;
             box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-            margin-bottom: 2rem;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
         }
         
-        .blog-image {
-            max-width: 300px;
-            max-height: 200px;
+        .extended-blog-img {
+            width: 100%;
+            height: auto;
             border-radius: 8px;
-            margin-right: 1.5rem;
-            object-fit: cover; /* Ensures the image covers the specified dimensions */
-        }
-        
-        .blog-content {
-            flex: 1;
-        }
-        
-        .blog-title {
-            color: #4CE09D;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        .blog-title:hover{
-            transition: .7s;
-            text-decoration: underline;
-
-        }
-        
-        .blog-excerpt {
-            color: #ffffff;
             margin-bottom: 1.5rem;
+        }
+        
+        .extended-blog-content h2 {
+            color: #4CE09D;
+            font-size: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .extended-blog-content h3 {
+            color: #4CE09D;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .extended-blog-content p {
+            color: #ffffff;
             line-height: 1.6;
+            margin-top: 1rem;
         }
         
-        .blog-read-more {
+        .extended-blog-content ul {
+            color: #ffffff;
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .extended-blog-content pre {
+            background-color: #333;
+            color: #ffffff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+        
+        .extended-blog-content code {
+            color: #4CE09D;
+        }
+        
+        .read-more-blogs-btn {
             display: inline-block;
             padding: 10px 20px;
             background-color: #4CE09D;
@@ -245,45 +274,28 @@
             transition: background-color 0.3s;
         }
         
-        .blog-read-more:hover {
-            background-color: #3bb47e;
-            color: #ffffff;
-            transition: .6s;
-
-
-        }
-        
-        .text-center .btn {
-            padding: 10px 20px;
-            background-color: #4CE09D;
-            color: #1e1e1e;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            display: inline-block;
-        }
-        
-        .text-center .btn:hover {
+        .read-more-blogs-btn:hover {
             background-color: #3bb47e;
             color: #ffffff;
         }
+        
         @media (max-width: 768px) {
-            .blog-card {
-                flex-direction: column;
-                text-align: center;
+            .extended-blog-content {
+                padding: 1rem;
             }
         
-            .blog-content {
-                padding-left: 0;
+            .extended-blog h1 {
+                font-size: 2rem;
             }
         
-            .blog-image {
-                margin-bottom: 1rem;
-                margin-right: 0px;
+            .extended-blog-content h2 {
+                font-size: 1.75rem;
+            }
+        
+            .extended-blog-content h3 {
+                font-size: 1.25rem;
             }
         }
-        
         
     </style>
     <title>API ALAM | Programmer</title>
@@ -295,7 +307,7 @@
         <div class="wrapper">
             <nav class="header__nav">
                 <h2 class="visually-hidden">Navigation</h2>
-                <a href="./" class="header__home">
+                <a href="../" class="header__home">
                     codebyapi
                     <span class="visually-hidden">(to home page)</span>
                 </a>
@@ -303,12 +315,12 @@
                     ☰
                 </div>
                 <div class="navlink" id="navLink">
-                    <a  href="./about">My Story</a>
-                    <a href="./coaching">Coaching</a>
-                    <a href="./services">What I Offer</a>
-                    <a href="./resume">Resume</a>
-                    <a href="./portfolio">My Portfolio</a>
-                    <a style="color: #4CE09D;" href="./blog">Blogs</a>
+                    <a  href="../about">My Story</a>
+                    <a href="../coaching">Coaching</a>
+                    <a href="../services">What I Offer</a>
+                    <a href="../resume">Resume</a>
+                    <a href="../portfolio">My Portfolio</a>
+                    <a style="color: #4CE09D;" href="../blog">Blogs</a>
 
                 </div>
 
@@ -344,87 +356,105 @@
         </div>
     </header>
 
-    <div style="padding-bottom: 4rem;" class="resume bg-less-dark">
-        <div style="padding-top: 3rem; padding-bottom: 4rem;" class="blogs bg-less-dark">
-            <section class="wrapper">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="blog-card">
-                                <img src="./assets/images/js-closer.png" alt="Understanding JavaScript Closures" class="blog-image">
-                                <div class="blog-content">
-                                    <a style="background-color:#3bb47e; color:#3bb47e;text-decoration:none;" href="./blog_details/Understanding-JavaScript-Closures"><h2 class="blog-title">Understanding JavaScript Closures</h2></a>
-                                    <p class="blog-excerpt">A deep dive into how closures work in JavaScript and why they are useful.</p>
-                                    <a href="./blog_details/Understanding-JavaScript-Closures" class="blog-read-more">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="blog-card">
-                                <img src="./assets/images/top-5-books-programmer.png" alt="Top 5 Books for Aspiring Programmers" class="blog-image">
-                                <div class="blog-content">
-                                    <a style="background-color:#3bb47e; color:#3bb47e;text-decoration:none;" href="./blog_details/Top-5-Books-for-Aspiring-Programmers.html"><h2 class="blog-title">Top 5 Books for Aspiring Programmers</h2></a>
-                                    <p class="blog-excerpt">A curated list of must-read books for anyone looking to get into programming.</p>
-                                    <a href="./blog_details/Top-5-Books-for-Aspiring-Programmers" class="blog-read-more">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="blog-card">
-                                <img src="./assets/images/db-index.png" alt="Latest Tech Updates in 2024" class="blog-image">
-                                <div class="blog-content">
-                                    <h2 class="blog-title">Understanding Database Indexing</h2>
-                                    <p class="blog-excerpt">Discover how to boost your database performance with effective indexing strategies, understand different types of indexes, and learn best practices for optimizing your queries.</p>
-                                    <a href="./blog_details/Understanding-Database-Indexing.html" class="blog-read-more">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="col-12">
-                            <div class="blog-card">
-                                <img src="./assets/images/entrepreneurship.jpg" alt="Entrepreneurship in the Digital Age" class="blog-image">
-                                <div class="blog-content">
-                                    <h2 class="blog-title">Entrepreneurship in the Digital Age</h2>
-                                    <p class="blog-excerpt">Tips and insights for aspiring entrepreneurs navigating the digital landscape.</p>
-                                    <a href="#" class="blog-read-more">Read More</a>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!-- <div class="col-12">
-                            <div class="blog-card">
-                                <img src="./assets/images/flutter-app.jpg" alt="Building Your First Mobile App with Flutter" class="blog-image">
-                                <div class="blog-content">
-                                    <h2 class="blog-title">Building Your First Mobile App with Flutter</h2>
-                                    <p class="blog-excerpt">A comprehensive guide to building your first mobile app using Flutter.</p>
-                                    <a href="#" class="blog-read-more">Read More</a>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!-- <div class="col-12">
-                            <div class="blog-card">
-                                <img src="./assets/images/dsa.jpg" alt="Mastering Data Structures and Algorithms" class="blog-image">
-                                <div class="blog-content">
-                                    <h2 class="blog-title">Mastering Data Structures and Algorithms</h2>
-                                    <p class="blog-excerpt">An essential guide to understanding and mastering data structures and algorithms.</p>
-                                    <a href="#" class="blog-read-more">Read More</a>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
-                   
+    <div class="extended-blog bg-less-dark">
+        <section class="wrapper">
+            <div class="container-md">
+                <h1 class="text-center mb-5">Understanding Database Indexing</h1>
+                <div class="extended-blog-content">
+                    <img src="../assets/images/db-index.png" alt="Understanding Database Indexing" class="extended-blog-img">
+                    <p>Database indexing is a crucial technique that significantly improves the performance of database queries. By understanding how indexing works and how to effectively use indexes, you can optimize the speed and efficiency of data retrieval operations in your database.</p>
+                    
+                    <h2>What is Database Indexing?</h2>
+                    <p>Indexing is a data structure technique used to quickly locate and access the data in a database table. An index is created on a table column, providing a way to improve the speed of data retrieval for queries that involve that column.</p>
+                    
+                    <pre><code class="language-sql">
+        CREATE INDEX idx_column_name
+        ON table_name (column_name);
+                    </code></pre>
+        
+                    <p>In the example above, an index named <code>idx_column_name</code> is created on <code>column_name</code> in <code>table_name</code>. This index helps speed up queries that search for values in <code>column_name</code>.</p>
+                    
+                    <h2>Types of Indexes</h2>
+                    <p>There are several types of indexes, each with different characteristics and use cases:</p>
+                    <ul>
+                        <li>**B-Tree Indexes**: The most common type, suitable for most queries.</li>
+                        <li>**Hash Indexes**: Efficient for equality comparisons, not suitable for range queries.</li>
+                        <li>**Bitmap Indexes**: Useful in data warehousing for columns with low cardinality.</li>
+                        <li>**Unique Indexes**: Ensure that all values in the indexed column are unique.</li>
+                        <li>**Full-text Indexes**: Used for searching text within a large body of text.</li>
+                    </ul>
+                    
+                    <h3>B-Tree Indexes</h3>
+                    <p>B-Tree indexes are the default indexing method in most database systems. They are balanced tree structures that maintain sorted data and allow searches, sequential access, insertions, and deletions in logarithmic time.</p>
+                    
+                    <pre><code class="language-sql">
+        CREATE INDEX idx_btree
+        ON table_name (column_name);
+                    </code></pre>
+                    
+                    <p>B-Tree indexes are suitable for a wide range of queries, including equality and range queries.</p>
+                    
+                    <h3>Hash Indexes</h3>
+                    <p>Hash indexes use a hash function to map keys to positions in a hash table. They are extremely fast for equality comparisons but not suitable for range queries.</p>
+                    
+                    <pre><code class="language-sql">
+        CREATE INDEX idx_hash
+        ON table_name USING HASH (column_name);
+                    </code></pre>
+                    
+                    <p>Hash indexes are ideal for queries like <code>SELECT * FROM table_name WHERE column_name = value</code>.</p>
+                    
+                    <h3>Bitmap Indexes</h3>
+                    <p>Bitmap indexes use bitmaps and bitwise operations to answer queries efficiently. They are particularly useful in data warehousing environments for columns with low cardinality.</p>
+                    
+                    <pre><code class="language-sql">
+        CREATE BITMAP INDEX idx_bitmap
+        ON table_name (column_name);
+                    </code></pre>
+                    
+                    <p>Bitmap indexes are suitable for scenarios where the column has a limited number of distinct values, such as gender or boolean fields.</p>
+                    
+                    <h2>Advantages and Disadvantages of Indexing</h2>
+                    <p>While indexes can greatly improve query performance, they also come with trade-offs.</p>
+                    <h3>Advantages</h3>
+                    <ul>
+                        <li>**Faster Data Retrieval**: Indexes significantly speed up data retrieval operations.</li>
+                        <li>**Efficient Search Operations**: Optimized for both equality and range queries.</li>
+                    </ul>
+                    <h3>Disadvantages</h3>
+                    <ul>
+                        <li>**Increased Storage Space**: Indexes consume additional storage space.</li>
+                        <li>**Slower Write Operations**: Insertions, deletions, and updates can be slower due to the need to maintain indexes.</li>
+                    </ul>
+                    
+                    <h2>Best Practices for Indexing</h2>
+                    <p>To maximize the benefits of indexing, follow these best practices:</p>
+                    <ul>
+                        <li>**Index Selective Columns**: Index columns that are frequently used in WHERE clauses and join conditions.</li>
+                        <li>**Avoid Over-Indexing**: Too many indexes can degrade performance and increase maintenance overhead.</li>
+                        <li>**Monitor Index Usage**: Use database tools to monitor index usage and identify unused or rarely used indexes.</li>
+                        <li>**Consider Composite Indexes**: For queries involving multiple columns, consider creating composite indexes.</li>
+                    </ul>
+                    
+                    <h2>Conclusion</h2>
+                    <p>Indexing is a fundamental aspect of database design that can greatly enhance the performance of your queries. By understanding the different types of indexes and following best practices, you can effectively use indexes to optimize your database operations.</p>
                 </div>
-                <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
-            </section>
-        </div>
+                <div class="text-center mt-4">
+                    <a href="../blog" class="read-more-blogs-btn">Back to Blogs</a>
+                </div>
+            </div>
+            <img class="skills__rings" src="../assets/images/pattern-rings.svg" alt="" width="530" height="129" />
+        </section>
     </div>
     
 
 
 
     <a href="https://wa.me/+8801745815676" class="float" target="_blank">
-        <img src="./assets/images/whatsapp-svgrepo-com (2).png" class="my-float" alt="WhatsApp">
+        <img src="../assets/images/whatsapp-svgrepo-com (2).png" class="my-float" alt="WhatsApp">
     </a>
 
-    <footer style="background-color: #131212;" class="footer bg-less-dark">
+    <footer class="footer bg-less-dark">
         <h2 class="visually-hidden">Footer</h2>
         <div class="wrapper">
             <nav class="header__nav">
@@ -469,7 +499,7 @@
         <div class="line"></div>
         <div class="line"></div>
     </div>
-    <script src="./assets/js/nav.js"> </script>
+    <script src="../assets/js/nav.js"> </script>
 
 </body>
 
