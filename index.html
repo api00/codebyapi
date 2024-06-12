@@ -1,557 +1,607 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/favicon-32x32.png"
+    />
+    <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/line.css" />
+    <link rel="stylesheet" href="./assets/css/nav.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png" />
-  <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/line.css" />
-  <link rel="stylesheet" href="./assets/css/nav.css">
-
-  <style>
-    .hero__image {
-      height: 420px;
-      width: auto;
-      border: 1px solid;
-      border-top: none;
-      background: #4CE09D;
-    }
-
-    @media (min-width: 62.5em) {
+    <style>
       .hero__image {
-        margin-block-start: 0px;
+        height: 420px;
+        width: auto;
+        border: 1px solid;
+        border-top: none;
+        background: #4ce09d;
       }
-    }
 
-    @media (max-width: 768px) {
-      .hero__image {
-        height: 300px;
+      @media (min-width: 62.5em) {
+        .hero__image {
+          margin-block-start: 0px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero__image {
+          height: 300px;
+          position: absolute;
+          top: 112px;
+          left: 50%;
+          translate: -50%;
+        }
+      }
+
+      .float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        border-radius: 50px;
+        text-align: center;
+        z-index: 1000;
+        overflow: hidden;
+        /* Ensure content inside the icon doesn't overflow */
+      }
+
+      .my-float {
+        margin: 6px;
+        width: 48px;
+        height: 50px;
+      }
+
+      .section-header {
+        position: relative;
+        padding-bottom: 10px;
+        text-align: center;
+        font-weight: 900;
+        padding-bottom: 25px;
+        color: #4ce09d;
+      }
+
+      .section-header:after {
+        content: "";
+        height: 3px;
+        width: 200px;
         position: absolute;
-        top: 112px;
-        left: 50%;
-        translate: -50%;
-
+        bottom: 0;
+        left: calc(50% - 100px);
+        background: #4ce09d;
       }
 
-    }
+      .section-header span {
+        display: block;
+        font-size: 15px;
+        font-weight: 300;
+      }
 
-    .float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 40px;
-      right: 40px;
-      border-radius: 50px;
-      text-align: center;
-      z-index: 1000;
-      overflow: hidden;
-      /* Ensure content inside the icon doesn't overflow */
-    }
+      .testimonials {
+        max-width: 1200px;
+        margin: 0 auto 40px auto;
+      }
 
-    .my-float {
-      margin: 6px;
-      width: 48px;
-      height: 50px;
-    }
+      .single-item {
+        background: #111;
+        color: #fff;
+        padding: 15px;
+        margin: 50px 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
 
-    .section-header {
-      position: relative;
-      padding-bottom: 10px;
-      text-align: center;
-      font-weight: 900;
-      padding-bottom: 25px;
-      color: #4CE09D;
-    }
+      .profile {
+        margin-bottom: 30px;
+        text-align: center;
+      }
 
-    .section-header:after {
-      content: '';
-      height: 3px;
-      width: 200px;
-      position: absolute;
-      bottom: 0;
-      left: calc(50% - 100px);
-      background: #4CE09D;
-    }
+      .img-area img {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        border: 7px solid #4ce09d;
+        transition: transform 0.3s;
+      }
 
-    .section-header span {
-      display: block;
-      font-size: 15px;
-      font-weight: 300;
-    }
+      .img-area img:hover {
+        transform: scale(1.1);
+      }
 
-    .testimonials {
-      max-width: 1200px;
-      margin: 0 auto 40px auto;
-    }
+      .content {
+        font-size: 18px;
+      }
 
-    .single-item {
-      background: #111;
-      color: #fff;
-      padding: 15px;
-      margin: 50px 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+      .content p {
+        text-align: justify;
+      }
 
+      .content p span {
+        font-size: 48px;
+        margin-right: 20px;
+        color: #4ce09d;
+      }
 
-    .profile {
-      margin-bottom: 30px;
-      text-align: center;
-    }
+      .socials i {
+        margin-right: 25px;
+      }
 
-    .img-area img {
-      height: 200px;
-      width: 200px;
-      border-radius: 50%;
-      border: 7px solid #4CE09D;
-      transition: transform 0.3s;
-    }
-
-    .img-area img:hover {
-      transform: scale(1.1);
-    }
-
-    .content {
-      font-size: 18px;
-    }
-
-    .content p {
-      text-align: justify;
-    }
-
-    .content p span {
-      font-size: 48px;
-      margin-right: 20px;
-      color: #4CE09D;
-    }
-
-    .socials i {
-      margin-right: 25px;
-    }
-
-    /* 
+      /* 
     .bio h4 {
       font-family: 'Berkshire Swash', cursive;
     } */
 
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      background-color: #4CE09D;
-    }
-
-    @media (min-width: 769px) and (max-width: 1000px) {
-      .hero__text {
-        margin-block-start: 90px;
-        margin-right: -30px;
-        flex: 1 0 58vw;
-        text-align: left;
-        z-index: 1;
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: #4ce09d;
       }
-    }
-    .skills-section {
-      padding: 4rem 0;
 
-    }
-    
-    .section-title {
-      font-weight: bold;
-      color: #4CE09D;
-      margin-bottom: 3rem;
-      text-align: center;
-    }
-    
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 2rem;
-    }
-    
-    .skill-card {
-      background-color: #1e1e1e;
-      border: 1px solid #333;
-      border-radius: 8px;
-      padding: 1.5rem;
-      width: 300px;
-      height: 250px;
-      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
-      text-align: center;
-    }
-    .skill-header {
-      border-bottom: 1px solid #4CE09D;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-    }
-    
-    .skill-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-    }
-    
-    .skill-title {
-      font-size: 1.5rem;
-      color: #4CE09D;
-      text-align: center;
-    }
-    
-    .skill-body {
-      text-align: left;
-    }
-    
-    .skill-description {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      color: #fff;
-      list-style-type: disc;
-      padding-left: 1.5rem;
-      margin-top: 0.5rem;
-    }
-    
-    /* Media query for responsiveness */
-    @media (max-width: 768px) {
+      @media (min-width: 769px) and (max-width: 1000px) {
+        .hero__text {
+          margin-block-start: 90px;
+          margin-right: -30px;
+          flex: 1 0 58vw;
+          text-align: left;
+          z-index: 1;
+        }
+      }
+      .skills-section {
+        padding: 4rem 0;
+      }
+
+      .section-title {
+        font-weight: bold;
+        color: #4ce09d;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
       .skills-container {
-        flex-direction: row;
+        display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 2rem;
       }
-    
+
       .skill-card {
-        flex: 1 1 calc(50% - 1rem);
-        margin-bottom: 2rem;
+        background-color: #1e1e1e;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 1.5rem;
+        width: 300px;
+        height: 250px;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+        text-align: center;
       }
-    }
-    .text-center .btn-primary {
-      background-color: #4CE09D;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      color: #1e1e1e;
-      border-radius: 4px;
-      transition: background-color 0.3s;
-      text-decoration: none;
-      font-family: 'Space Grotesk', sans-serif;
-    }
-  
-    .text-center .btn-primary:hover{
-      color: #fff;
-      background-color: #39a879;
-      transition: 0.6s;
-    }
+      .skill-header {
+        border-bottom: 1px solid #4ce09d;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+      }
 
+      .skill-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+      }
 
-    .blog-card {
-      background-color: #1e1e1e;
-      border: 1px solid #333;
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-  }
-  
-  .blog-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-  }
-  
-  .blog-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-  }
-  
-  .blog-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-  }
-  
-  .blog-title {
-      font-size: 1.75rem;
-      margin-top: 1rem;
-      color: #4CE09D;
-  }
-  .blog-title:hover{
-    text-decoration: underline;
-}
-  
-  .blog-text {
-      font-size: 1rem;
-      margin-top: 0.5rem;
-      color: white;
-  }
-  
-  .blog-link {
-      align-self: flex-start;
-      margin-top: 1rem;
-      color: #4CE09D;
-      text-decoration: none;
-      font-weight: bold;
-  }
-  
-  .blog-link:hover {
-      text-decoration: underline;
-  }
+      .skill-title {
+        font-size: 1.5rem;
+        color: #4ce09d;
+        text-align: center;
+      }
 
-  .read-more-blogs-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #4CE09D;
-    color: #1e1e1e;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
+      .skill-body {
+        text-align: left;
+      }
 
-.read-more-blogs-btn:hover {
-    background-color: #3bb47e;
-    color: #fff;
-    transition: 0.6s;
-}
-  
-  @media (max-width: 768px) {
+      .skill-description {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: #fff;
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      /* Media query for responsiveness */
+      @media (max-width: 768px) {
+        .skills-container {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+
+        .skill-card {
+          flex: 1 1 calc(50% - 1rem);
+          margin-bottom: 2rem;
+        }
+      }
+      .text-center .btn-primary {
+        background-color: #4ce09d;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        color: #1e1e1e;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+        text-decoration: none;
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .text-center .btn-primary:hover {
+        color: #fff;
+        background-color: #39a879;
+        transition: 0.6s;
+      }
+
       .blog-card {
-          margin-bottom: 1rem;
+        background-color: #1e1e1e;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
       }
-  
+
+      .blog-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+      }
+
       .blog-img {
-          height: 150px;
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
       }
-  }
-  @media (min-width: 900px) {
-    .line{
-      height: 500vh;
-  
-  }
-  @keyframes drop {
-    0% {
-      top: -50%;
-    }
-    20% {
-      top: 20%;
-    }
-    40% {
-      top: 50%;
-    }
-    60% {
-      top: 70%;
-    }
-    80% {
-      top: 90%;
-    }
-    100% {
-      top: 110%;
-    }
-  }  
-  
-  }
 
+      .blog-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
 
-  
-    
-  </style>
-  <title>API ALAM | Programmer</title>
-</head>
+      .blog-title {
+        font-size: 1.75rem;
+        margin-top: 1rem;
+        color: #4ce09d;
+      }
+      .blog-title:hover {
+        text-decoration: underline;
+      }
 
-<body>
-  <header class="header">
-    <h2 class="visually-hidden">Header</h2>
-    <div class="wrapper">
-      <nav class="header__nav">
-        <h2 class="visually-hidden">Navigation</h2>
-        <a href="./" class="header__home">
-          codebyapi
-          <span class="visually-hidden">(to home page)</span>
-        </a>
-        <div class="nav-toggle" id="navToggle">
-          ☰
-        </div>
-        <div class="navlink" id="navLink">
-          <a href="./about">My Story</a>
-          <a href="./coaching">Coaching</a>
-          <a href="./services">What I Offer</a>
-          <a href="./resume">Resume</a>
-          <a href="./portfolio">My Portfolio</a>
-          <a href="./blog">Blogs</a>
+      .blog-text {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        color: white;
+      }
 
-        </div>
+      .blog-link {
+        align-self: flex-start;
+        margin-top: 1rem;
+        color: #4ce09d;
+        text-decoration: none;
+        font-weight: bold;
+      }
 
-        <a href="https://github.com/api00" target="_blank" class="header__social">
-          <svg xmlns="https://github.com/api00" width="25" height="24" aria-labelledby="socialGitHub" role="img">
-            <title id="socialGitHub">GitHub</title>
-            <path fill="#FFF" fill-rule="evenodd" d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z" />
-          </svg>
-        </a>
-        <a href="https://www.instagram.com/codebyapi/" target="_blank" class="header__social">
-          <svg xmlns="https://www.instagram.com/codebyapi/" width="24" height="24" aria-labelledby="socialInstagram" role="img">
-            <title id="socialInstagram">Instagram</title>
-            <path fill="#FFF" d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.056 1.97.24 2.428.405a4.92 4.92 0 0 1 1.769 1.141 4.92 4.92 0 0 1 1.141 1.769c.165.458.349 1.258.405 2.428.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.405 2.428a4.92 4.92 0 0 1-1.141 1.769 4.92 4.92 0 0 1-1.769 1.141c-.458.165-1.258.349-2.428.405-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.428-.405a4.92 4.92 0 0 1-1.769-1.141 4.92 4.92 0 0 1-1.141-1.769c-.165-.458-.349-1.258-.405-2.428C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.056-1.17.24-1.97.405-2.428A4.92 4.92 0 0 1 3.779 3.063a4.92 4.92 0 0 1 1.769-1.141c.458-.165 1.258-.349 2.428-.405 1.266-.058 1.646-.07 4.85-.07m0-2.163C8.736 0 8.332.014 7.052.072 5.78.13 4.802.326 3.964.692 3.156 1.043 2.439 1.563 1.782 2.22c-.657.657-1.177 1.374-1.528 2.182-.366.838-.562 1.816-.62 3.088C.014 8.332 0 8.736 0 12s.014 3.668.072 4.948c.058 1.272.254 2.25.62 3.088.351.808.871 1.525 1.528 2.182.657.657 1.374 1.177 2.182 1.528.838.366 1.816.562 3.088.62C8.332 23.986 8.736 24 12 24s3.668-.014 4.948-.072c1.272-.058 2.25-.254 3.088-.62.808-.351 1.525-.871 2.182-1.528.657-.657 1.177-1.374 1.528-2.182.366-.838.562-1.816.62-3.088.058-1.28.072-1.684.072-4.948s-.014-3.668-.072-4.948c-.058-1.272-.254-2.25-.62-3.088-.351-.808-.871-1.525-1.528-2.182-.657-.657-1.374-1.177-2.182-1.528-.838-.366-1.816-.562-3.088-.62C15.668.014 15.264 0 12 0z" />
-            <circle cx="18.406" cy="5.594" r="1.44" fill="#FFF" />
-            <path fill="#FFF" d="M12 5.838a6.162 6.162 0 1 0 6.162 6.162A6.17 6.17 0 0 0 12 5.838zm0 10.163a3.99 3.99 0 1 1 3.99-3.99 3.994 3.994 0 0 1-3.99 3.99z" />
-          </svg>
-        </a>
+      .blog-link:hover {
+        text-decoration: underline;
+      }
 
-        <a href="https://www.linkedin.com/in/api-alam/" target="_blank" class="header__social">
-          <svg xmlns="https://www.linkedin.com/in/api-alam/" width="25" height="24" aria-labelledby="socialLinkedIn" role="img">
-            <title id="socialLinkedIn">LinkedIn</title>
-            <path fill="#FFF" fill-rule="evenodd" d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z" />
-          </svg>
-        </a>
-        <a href="https://www.facebook.com/apialamapu/" target="_blank" class="header__social">
-          <svg xmlns="https://www.facebook.com/apialamapu/" width="24" height="24" aria-labelledby="socialFacebook" role="img">
-            <title id="socialFacebook">Facebook</title>
-            <path fill="#FFF" d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24H12.82v-9.294H9.692V11.01h3.128V8.353c0-3.1 1.892-4.788 4.659-4.788 1.325 0 2.463.098 2.794.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0z" />
-          </svg>
-        </a>
+      .read-more-blogs-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4ce09d;
+        color: #1e1e1e;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
 
-      </nav>
-    </div>
-  </header>
+      .read-more-blogs-btn:hover {
+        background-color: #3bb47e;
+        color: #fff;
+        transition: 0.6s;
+      }
 
-  <main id="main">
-    <section class="hero">
-      <div class="wrapper hero__wrapper bottom-border">
-        <div class="hero__content">
-          <picture>
-            <!-- Large screens (desktops) -->
-            <source media="(min-width: 62.5em)" srcset="./assets/images/hero1.png" />
-            <!-- Medium screens (tablets) -->
-            <source media="(min-width: 37.5em)" srcset="./assets/images/hero1.png" />
-            <!-- Default image for small screens (mobiles) -->
-            <img class="hero__image" src="./assets/images/hero1.png" alt="Description of new image" height="174" width="383" />
-          </picture>
-          <img class="hero__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
-          <img class="hero__circle" src="./assets/images/pattern-circle.svg" alt="" width="129" height="129" />
-          <div class="hero__text">
-            <h1 class="hero__headline header-xl">
-              Nice to<br />
-              meet you! I'm <span>Api Alam</span>.
-            </h1>
-            <p class="hero__description">
-              Based in BD, I'm a computer science graduate and startup co-founder, passionate about developing innovative solutions and teaching programming. I specialize in creating impactful, user-friendly applications.
-            </p>
-            <a href="#contact" class="hero__contact underline">Contact me</a>
+      @media (max-width: 768px) {
+        .blog-card {
+          margin-bottom: 1rem;
+        }
+
+        .blog-img {
+          height: 150px;
+        }
+      }
+      @media (min-width: 900px) {
+        .line {
+          height: 440vh;
+        }
+        @keyframes drop {
+          0% {
+            top: -50%;
+          }
+          20% {
+            top: 20%;
+          }
+          40% {
+            top: 50%;
+          }
+          60% {
+            top: 70%;
+          }
+          80% {
+            top: 90%;
+          }
+          100% {
+            top: 110%;
+          }
+        }
+      }
+    </style>
+    <title>API ALAM | Programmer</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <h2 class="visually-hidden">Header</h2>
+      <div class="wrapper">
+        <nav class="header__nav">
+          <h2 class="visually-hidden">Navigation</h2>
+          <a href="./" class="header__home">
+            codebyapi
+            <span class="visually-hidden">(to home page)</span>
+          </a>
+          <div class="nav-toggle" id="navToggle">☰</div>
+          <div class="navlink" id="navLink">
+            <a href="./about">My Story</a>
+            <a href="./coaching">Coaching</a>
+            <a href="./services">What I Offer</a>
+            <a href="./resume">Resume</a>
+            <a href="./portfolio">My Portfolio</a>
+            <a href="./blog">Blogs</a>
           </div>
-        </div>
+
+          <a
+            href="https://github.com/api00"
+            target="_blank"
+            class="header__social"
+          >
+            <svg
+              xmlns="https://github.com/api00"
+              width="25"
+              height="24"
+              aria-labelledby="socialGitHub"
+              role="img"
+            >
+              <title id="socialGitHub">GitHub</title>
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z"
+              />
+            </svg>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/api-alam/"
+            target="_blank"
+            class="header__social"
+          >
+            <svg
+              xmlns="https://www.linkedin.com/in/api-alam/"
+              width="25"
+              height="24"
+              aria-labelledby="socialLinkedIn"
+              role="img"
+            >
+              <title id="socialLinkedIn">LinkedIn</title>
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.facebook.com/apialamapu/"
+            target="_blank"
+            class="header__social"
+          >
+            <svg
+              xmlns="https://www.facebook.com/apialamapu/"
+              width="24"
+              height="24"
+              aria-labelledby="socialFacebook"
+              role="img"
+            >
+              <title id="socialFacebook">Facebook</title>
+              <path
+                fill="#FFF"
+                d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24H12.82v-9.294H9.692V11.01h3.128V8.353c0-3.1 1.892-4.788 4.659-4.788 1.325 0 2.463.098 2.794.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0z"
+              />
+            </svg>
+          </a>
+        </nav>
       </div>
-    </section>
+    </header>
 
-    
- <!-- skill section -->
-
-    <div class="skills-section">
-      <section class="wrapper">
-        <div class="skills-container">
-          <!-- Skill 1 -->
-          <div class="skill-card">
-            <div class="skill-header">
-              <h2 class="skill-title">API Development</h2>
-            </div>
-            <div class="skill-body">
-              <ul class="skill-description">
-                <li>RESTful API Design</li>
-                <li>GraphQL</li>
-                <li>Integration</li>
-                <li>Authentication</li>
-              </ul>
-            </div>
-          </div>
-          <!-- Skill 2 -->
-          <div class="skill-card">
-            <div class="skill-header">
-              <h2 class="skill-title">PHP & Laravel</h2>
-            </div>
-            <div class="skill-body">
-              <ul class="skill-description">
-                <li>Backend Development</li>
-                <li>Laravel Framework</li>
-                <li>Web Applications</li>
-                <li>Security</li>
-              </ul>
-            </div>
-          </div>
-        
-          <!-- Skill 4 -->
-          <div class="skill-card">
-            <div class="skill-header">
-              <h2 class="skill-title">Database Management</h2>
-            </div>
-            <div class="skill-body">
-              <ul class="skill-description">
-                <li>SQL</li>
-                <li>MySQL & PostgreSQL</li>
-                <li>Database Design</li>
-                <li>Performance Tuning</li>
-              </ul>
-            </div>
-          </div>
-          <!-- Skill 5 -->
-          <div class="skill-card">
-            <div class="skill-header">
-              <h2 class="skill-title">Data Structures & Algorithms</h2>
-            </div>
-            <div class="skill-body">
-              <ul class="skill-description">
-                <li>Complex Problem Solving</li>
-                <li>Optimization </li>
-                <li>Algorithm Design</li>
-                <li>Data Handling</li>
-              </ul>
+    <main id="main">
+      <section class="hero">
+        <div class="wrapper hero__wrapper bottom-border">
+          <div class="hero__content">
+            <picture>
+              <!-- Large screens (desktops) -->
+              <source
+                media="(min-width: 62.5em)"
+                srcset="./assets/images/hero1.png"
+              />
+              <!-- Medium screens (tablets) -->
+              <source
+                media="(min-width: 37.5em)"
+                srcset="./assets/images/hero1.png"
+              />
+              <!-- Default image for small screens (mobiles) -->
+              <img
+                class="hero__image"
+                src="./assets/images/hero1.png"
+                alt="Description of new image"
+                height="174"
+                width="383"
+              />
+            </picture>
+            <img
+              class="hero__rings"
+              src="./assets/images/pattern-rings.svg"
+              alt=""
+              width="530"
+              height="129"
+            />
+            <img
+              class="hero__circle"
+              src="./assets/images/pattern-circle.svg"
+              alt=""
+              width="129"
+              height="129"
+            />
+            <div class="hero__text">
+              <h1 class="hero__headline header-xl">
+                Nice to<br />
+                meet you! I'm <span>Api Alam</span>.
+              </h1>
+              <p class="hero__description">
+                Based in BD, I'm a computer science graduate and startup
+                co-founder, passionate about developing innovative solutions and
+                teaching programming. I specialize in creating impactful,
+                user-friendly applications.
+              </p>
+              <a href="#contact" class="hero__contact underline">Contact me</a>
             </div>
           </div>
-          <!-- Skill 6 -->
-          <div class="skill-card">
-            <div class="skill-header">
-              <h2 class="skill-title">Software Architecture</h2>
-            </div>
-            <div class="skill-body">
-              <ul class="skill-description">
-                <li>System Design</li>
-                <li>Scalability</li>
-                <li>Microservices</li>
-                <li>Architecture Patterns</li>
-              </ul>
-            </div>
-          </div>
-         
-          <!-- Skill 8 -->
-          <div class="skill-card">
-            <div class="skill-header">
-              <h2 class="skill-title">Teaching & Mentoring</h2>
-            </div>
-            <div class="skill-body">
-              <ul class="skill-description">
-                <li>Web Development</li>
-                <li>Mobile Dev with Flutter</li>
-                <li>Project-Based Learning</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="text-center mt-4">
-          <a href="./services" class="btn btn-primary">Discover More</a>
         </div>
       </section>
-    </div>
-    
-    
-    
 
+      <!-- skill section -->
 
-    <!-- 
+      <div class="skills-section">
+        <section class="wrapper">
+          <div class="skills-container">
+            <!-- Skill 1 -->
+            <div class="skill-card">
+              <div class="skill-header">
+                <h2 class="skill-title">API Development</h2>
+              </div>
+              <div class="skill-body">
+                <ul class="skill-description">
+                  <li>RESTful API Design</li>
+                  <li>GraphQL</li>
+                  <li>Integration</li>
+                  <li>Authentication</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Skill 2 -->
+            <div class="skill-card">
+              <div class="skill-header">
+                <h2 class="skill-title">PHP & Laravel</h2>
+              </div>
+              <div class="skill-body">
+                <ul class="skill-description">
+                  <li>Backend Development</li>
+                  <li>Laravel Framework</li>
+                  <li>Web Applications</li>
+                  <li>Security</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Skill 4 -->
+            <div class="skill-card">
+              <div class="skill-header">
+                <h2 class="skill-title">Database Management</h2>
+              </div>
+              <div class="skill-body">
+                <ul class="skill-description">
+                  <li>SQL</li>
+                  <li>MySQL & PostgreSQL</li>
+                  <li>Database Design</li>
+                  <li>Performance Tuning</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Skill 5 -->
+            <div class="skill-card">
+              <div class="skill-header">
+                <h2 class="skill-title">Data Structures & Algorithms</h2>
+              </div>
+              <div class="skill-body">
+                <ul class="skill-description">
+                  <li>Complex Problem Solving</li>
+                  <li>Optimization</li>
+                  <li>Algorithm Design</li>
+                  <li>Data Handling</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Skill 6 -->
+            <div class="skill-card">
+              <div class="skill-header">
+                <h2 class="skill-title">Software Architecture</h2>
+              </div>
+              <div class="skill-body">
+                <ul class="skill-description">
+                  <li>System Design</li>
+                  <li>Scalability</li>
+                  <li>Microservices</li>
+                  <li>Architecture Patterns</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Skill 8 -->
+            <div class="skill-card">
+              <div class="skill-header">
+                <h2 class="skill-title">Teaching & Mentoring</h2>
+              </div>
+              <div class="skill-body">
+                <ul class="skill-description">
+                  <li>Web Development</li>
+                  <li>Mobile Dev with Flutter</li>
+                  <li>Project-Based Learning</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <a href="./services" class="btn btn-primary">Discover More</a>
+          </div>
+        </section>
+      </div>
+
+      <!-- 
     <section class="projects">
       <div class="wrapper projects__wrapper">
         <div class="projects__grid">
@@ -610,314 +660,576 @@
       </div>
     </section> -->
 
-    <div style="padding-top: 3rem;padding-bottom: 4rem;" class="resume">
-      <section class="wrapper ">
-        <!-- ======= Resume Section ======= -->
-        <section id="resume" class="resume bottom-border">
-          <div class="container">
-            <div class="testimonials">
-              <h2 class="projects__headline header-xl">What Our Clients Say</h2> <br>
-              <p class="contact__description">
-                Hear directly from our satisfied clients about their experiences working with us. <br> Our commitment to excellence and customer satisfaction is reflected in their words.
-              </p>
-              <div id="carouselExampleControls" class="carousel " data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="single-item">
-                      <div class="row">
-                        <div class="col-md-5">
-                          <div class="profile">
-                            <div class="img-area">
-                              <img src="./assets/images/img1.jpeg" alt="">
-                            </div>
-                            <div class="bio">
-                              <h2>Tanzina</h2>
-                              <h4>Digital Content planner</h4>
-
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="content">
-                            <p><span><i class="fa fa-quote-left"></i></span>The professionalism and quality of work delivered by API are unmatched. They brought our vision to life with precision and creativity, making the entire process enjoyable and stress-free. Their commitment to excellence is truly commendable!</p>
-                            <p class="socials">
-                              <a style="color: #fff;" href="https://www.facebook.com/tanzina.smritee"><i class="fa fa-facebook"></i></a>
-                              <a style="color: #fff;" href="https://www.linkedin.com/in/tanzina-akhter-65b04b1b0/"><i class="fa fa-linkedin"></i></a>
-                              <a style="color: #fff;" href="https://www.instagram.com/this_is_tanzina/"><i class="fa fa-instagram"></i></a>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="single-item">
-                      <div class="row">
-                        <div class="col-md-5">
-                          <div class="profile">
-                            <div class="img-area">
-                              <img src="./assets/images/img5.jpeg" alt="">
-                            </div>
-                            <div class="bio">
-                              <h2>Sajib Barman</h2>
-                              <h4>Startup founder</h4>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="content">
-                            <p><span><i class="fa fa-quote-left"></i></span>API's technical skills and problem-solving abilities are top-notch. Their team delivered a robust and scalable solution that has significantly improved our operations. Their expertise and dedication have been invaluable to our success!</p>
-                            <p class="socials">
-                              <a style="color: #fff;" href="https://www.facebook.com/profile.php?id=100074754914545"><i class="fa fa-facebook"></i></a>
-                              <a style="color: #fff;" href="https://www.linkedin.com/in/sajib-barman-549698288/"><i class="fa fa-linkedin"></i></a>
-                              <!-- <i class="fa fa-instagram"></i> -->
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="single-item">
-                      <div class="row">
-                        <div class="col-md-5">
-                          <div class="profile">
-                            <div class="img-area">
-                              <img src="./assets/images/img4.jpeg" alt="">
-                            </div>
-                            <div class="bio">
-                              <h2>Mir Monjur Morshed</h2>
-                              <h4>Dot NET Devloper</h4>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="content">
-                            <p><span><i class="fa fa-quote-left"></i></span>Choosing API was the best decision for our startup. Their insights and strategic approach helped us navigate complex challenges and achieve our goals faster than expected. They are true partners in success and we are grateful for their support!</p>
-                            <p class="socials">
-                              <a style="color: #fff;" href="https://www.facebook.com/morshedmirmonjur"><i class="fa fa-facebook"></i></a>
-                              <a style="color: #fff;" href="https://www.linkedin.com/in/mirmonjur/"><i class="fa fa-linkedin"></i></a>
-                              <a style="color: #fff;" href="https://www.instagram.com/morshedmirmonjur/"><i class="fa fa-instagram"></i></a>
-                            </p>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="single-item">
-                      <div class="row">
-                        <div class="col-md-5">
-                          <div class="profile">
-                            <div class="img-area">
-                              <img src="./assets/images/img8.jpeg" alt="">
-                            </div>
-                            <div class="bio">
-                              <h2>Munira Zebin</h2>
-                              <h4>SQA</h4>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="content">
-                            <p><span><i class="fa fa-quote-left"></i></span>The team at API is a pleasure to work with. Their professionalism, coupled with their innovative solutions, has significantly enhanced our business operations. We highly recommend them to anyone seeking excellence and reliable partners!</p>
-                            <p class="socials">
-                              <a style="color: #fff;" href="https://www.facebook.com/christinajenifer.christinajenifar"><i class="fa fa-facebook"></i></a>
-                              <a style="color: #fff;" href="https://www.linkedin.com/in/munirazebin/"><i class="fa fa-linkedin"></i></a>
-                              <a style="color: #fff;" href="https://www.instagram.com/zebin_ruhi/"><i class="fa fa-instagram"></i></a>
-                            </p>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-
-            </div>
-          </div>
-
-        </section><!-- End Resume Section -->
-        <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
-      </section>
-    </div>
-
-
-     <!-- blog section -->
-
-     <div class="blog-section">
-      <div style="padding-top: 3rem; padding-bottom: 4rem;" class="resume bg-less-dark">
+      <div style="padding-top: 3rem; padding-bottom: 4rem" class="resume">
         <section class="wrapper">
+          <!-- ======= Resume Section ======= -->
+          <section id="resume" class="resume bottom-border">
+            <div class="container">
+              <div class="testimonials">
+                <h2 class="projects__headline header-xl">
+                  What Our Clients Say
+                </h2>
+                <br />
+                <p class="contact__description">
+                  Hear directly from our satisfied clients about their
+                  experiences working with us. <br />
+                  Our commitment to excellence and customer satisfaction is
+                  reflected in their words.
+                </p>
+                <div
+                  id="carouselExampleControls"
+                  class="carousel"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="single-item">
+                        <div class="row">
+                          <div class="col-md-5">
+                            <div class="profile">
+                              <div class="img-area">
+                                <img src="./assets/images/img1.jpeg" alt="" />
+                              </div>
+                              <div class="bio">
+                                <h2>Tanzina</h2>
+                                <h4>Digital Content planner</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="content">
+                              <p>
+                                <span><i class="fa fa-quote-left"></i></span>The
+                                professionalism and quality of work delivered by
+                                API are unmatched. They brought our vision to
+                                life with precision and creativity, making the
+                                entire process enjoyable and stress-free. Their
+                                commitment to excellence is truly commendable!
+                              </p>
+                              <p class="socials">
+                                <a
+                                  style="color: #fff"
+                                  href="https://www.facebook.com/tanzina.smritee"
+                                  ><i class="fa fa-facebook"></i
+                                ></a>
+                                <a
+                                  style="color: #fff"
+                                  href="https://www.linkedin.com/in/tanzina-akhter-65b04b1b0/"
+                                  ><i class="fa fa-linkedin"></i
+                                ></a>
+                                <a
+                                  style="color: #fff"
+                                  href="https://www.instagram.com/this_is_tanzina/"
+                                  ><i class="fa fa-instagram"></i
+                                ></a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="single-item">
+                        <div class="row">
+                          <div class="col-md-5">
+                            <div class="profile">
+                              <div class="img-area">
+                                <img src="./assets/images/img5.jpeg" alt="" />
+                              </div>
+                              <div class="bio">
+                                <h2>Sajib Barman</h2>
+                                <h4>Startup founder</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="content">
+                              <p>
+                                <span><i class="fa fa-quote-left"></i></span
+                                >API's technical skills and problem-solving
+                                abilities are top-notch. Their team delivered a
+                                robust and scalable solution that has
+                                significantly improved our operations. Their
+                                expertise and dedication have been invaluable to
+                                our success!
+                              </p>
+                              <p class="socials">
+                                <a
+                                  style="color: #fff"
+                                  href="https://www.facebook.com/profile.php?id=100074754914545"
+                                  ><i class="fa fa-facebook"></i
+                                ></a>
+                                <a
+                                  style="color: #fff"
+                                  href="https://www.linkedin.com/in/sajib-barman-549698288/"
+                                  ><i class="fa fa-linkedin"></i
+                                ></a>
+                                <!-- <i class="fa fa-instagram"></i> -->
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="single-item">
+                        <div class="row">
+                          <div class="col-md-5">
+                            <div class="profile">
+                              <div class="img-area">
+                                <img src="./assets/images/img4.jpeg" alt="" />
+                              </div>
+                              <div class="bio">
+                                <h2>Mir Monjur Morshed</h2>
+                                <h4>Dot NET Devloper</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="content">
+                              <p>
+                                <span><i class="fa fa-quote-left"></i></span
+                                >Choosing API was the best decision for our
+                                startup. Their insights and strategic approach
+                                helped us navigate complex challenges and
+                                achieve our goals faster than expected. They are
+                                true partners in success and we are grateful for
+                                their support!
+                              </p>
+                              <p class="socials">
+                                <a
+                                  style="color: #fff"
+                                  href="https://www.facebook.com/morshedmirmonjur"
+                                  ><i class="fa fa-facebook"></i
+                                ></a>
+                                <a
+                                  style="color: #fff"
+                                  href="https://www.linkedin.com/in/mirmonjur/"
+                                  ><i class="fa fa-linkedin"></i
+                                ></a>
+                                <a
+                                  style="color: #fff"
+                                  href="https://www.instagram.com/morshedmirmonjur/"
+                                  ><i class="fa fa-instagram"></i
+                                ></a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="single-item">
+                        <div class="row">
+                          <div class="col-md-5">
+                            <div class="profile">
+                              <div class="img-area">
+                                <img src="./assets/images/img8.jpeg" alt="" />
+                              </div>
+                              <div class="bio">
+                                <h2>Munira Zebin</h2>
+                                <h4>SQA</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="content">
+                              <p>
+                                <span><i class="fa fa-quote-left"></i></span>The
+                                team at API is a pleasure to work with. Their
+                                professionalism, coupled with their innovative
+                                solutions, has significantly enhanced our
+                                business operations. We highly recommend them to
+                                anyone seeking excellence and reliable partners!
+                              </p>
+                              <p class="socials">
+                                <a
+                                  style="color: #fff"
+                                  href="https://www.facebook.com/christinajenifer.christinajenifar"
+                                  ><i class="fa fa-facebook"></i
+                                ></a>
+                                <a
+                                  style="color: #fff"
+                                  href="https://www.linkedin.com/in/munirazebin/"
+                                  ><i class="fa fa-linkedin"></i
+                                ></a>
+                                <a
+                                  style="color: #fff"
+                                  href="https://www.instagram.com/zebin_ruhi/"
+                                  ><i class="fa fa-instagram"></i
+                                ></a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- End Resume Section -->
+          <img
+            class="skills__rings"
+            src="./assets/images/pattern-rings.svg"
+            alt=""
+            width="530"
+            height="129"
+          />
+        </section>
+      </div>
+
+      <!-- blog section -->
+
+      <div class="blog-section">
+        <div
+          style="padding-top: 3rem; padding-bottom: 4rem"
+          class="resume bg-less-dark"
+        >
+          <section class="wrapper">
             <div class="container">
               <h2 class="contact__headline header-xl">Latest Blog's</h2>
-              <br>
-                <div class="row">
-                    <!-- Blog Post 1 -->
-                    <div class="col-md-4">
-                        <div class="blog-card">
-                            <img src="./assets/images/js-closer.png" alt="Blog Post 1" class="blog-img">
-                            <div class="blog-content">
-                              <a style="color:#3bb47e;text-decoration:none;" href="./blog_details/Understanding-JavaScript-Closures"> <h2 class="blog-title">Understanding JavaScript Closures</h2></a> 
-                                <p class="blog-text">Dive deep into the concept of closures in JavaScript, understand how they work, and see practical examples.</p>
-                                <a href="./blog_details/Understanding-JavaScript-Closures.html" class="blog-link">Read More</a>
-                            </div>
-                        </div>
+              <br />
+              <div class="row">
+                <!-- Blog Post 1 -->
+                <div class="col-md-4">
+                  <div class="blog-card">
+                    <img
+                      src="./assets/images/js-closer.png"
+                      alt="Blog Post 1"
+                      class="blog-img"
+                    />
+                    <div class="blog-content">
+                      <a
+                        style="color: #3bb47e; text-decoration: none"
+                        href="./blog_details/Understanding-JavaScript-Closures"
+                      >
+                        <h2 class="blog-title">
+                          Understanding JavaScript Closures
+                        </h2></a
+                      >
+                      <p class="blog-text">
+                        Dive deep into the concept of closures in JavaScript,
+                        understand how they work, and see practical examples.
+                      </p>
+                      <a
+                        href="./blog_details/Understanding-JavaScript-Closures.html"
+                        class="blog-link"
+                        >Read More</a
+                      >
                     </div>
-                    <!-- Blog Post 2 -->
-                    <div class="col-md-4">
-                        <div class="blog-card">
-                            <img src="./assets/images/top-5-books-programmer.png" alt="Blog Post 2" class="blog-img">
-                            <div class="blog-content">
-                                <a style="color:#3bb47e;text-decoration:none;" href="./blog_details/Top-5-Books-for-Aspiring-Programmers"><h2 class="blog-title">Top 5 Books for Developers</h2></a>
-                                <p class="blog-text">A curated list of must-read books for developers, covering topics from programming to personal growth.</p>
-                                <a href="./blog_details/Top-5-Books-for-Aspiring-Programmers.html" class="blog-link">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Blog Post 3 -->
-                    <div class="col-md-4">
-                        <div class="blog-card">
-                            <img src="./assets/images/db-index.png" alt="Blog Post 3" class="blog-img">
-                            <div class="blog-content">
-                                <h2 class="blog-title">Understanding Database Indexing</h2>
-                                <p class="blog-text">Discover how to boost your database performance with effective indexing strategies, understand different types of indexes, and learn best practices for optimizing your queries.</p>
-                                <a href="./blog_details/Understanding-Database-Indexing.html" class="blog-link">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-                <div class="text-center mt-4">
-                  <a href="./blog" class="read-more-blogs-btn">Read More Blogs</a>
+                <!-- Blog Post 2 -->
+                <div class="col-md-4">
+                  <div class="blog-card">
+                    <img
+                      src="./assets/images/top-5-books-programmer.png"
+                      alt="Blog Post 2"
+                      class="blog-img"
+                    />
+                    <div class="blog-content">
+                      <a
+                        style="color: #3bb47e; text-decoration: none"
+                        href="./blog_details/Top-5-Books-for-Aspiring-Programmers"
+                        ><h2 class="blog-title">
+                          Top 5 Books for Developers
+                        </h2></a
+                      >
+                      <p class="blog-text">
+                        A curated list of must-read books for developers,
+                        covering topics from programming to personal growth.
+                      </p>
+                      <a
+                        href="./blog_details/Top-5-Books-for-Aspiring-Programmers.html"
+                        class="blog-link"
+                        >Read More</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- Blog Post 3 -->
+                <div class="col-md-4">
+                  <div class="blog-card">
+                    <img
+                      src="./assets/images/db-index.png"
+                      alt="Blog Post 3"
+                      class="blog-img"
+                    />
+                    <div class="blog-content">
+                      <h2 class="blog-title">
+                        Understanding Database Indexing
+                      </h2>
+                      <p class="blog-text">
+                        Discover how to boost your database performance with
+                        effective indexing strategies, understand different
+                        types of indexes, and learn best practices for
+                        optimizing your queries.
+                      </p>
+                      <a
+                        href="./blog_details/Understanding-Database-Indexing.html"
+                        class="blog-link"
+                        >Read More</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center mt-4">
+                <a href="./blog" class="read-more-blogs-btn">Read More Blogs</a>
               </div>
             </div>
-            <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
-        </section>
-    </div>
-      
-    </div>
-    
-
-
-
-    <section id="contact" class="contact ">
-      <div class="wrapper contact__wrapper bottom-border">
-        <div class="contact__text">
-          <h2 class="contact__headline header-xl">Contact</h2>
-          <p class="contact__description">
-            I would love to hear about your project and how I could help.
-            Please fill in the form, and I'll get back to you as soon as
-            possible.
-          </p>
+            <img
+              class="skills__rings"
+              src="./assets/images/pattern-rings.svg"
+              alt=""
+              width="530"
+              height="129"
+            />
+          </section>
         </div>
-        <form onsubmit="sendEmail(); reset(); return false;" class="contact__form">
-          <div class="contact__control">
-            <label for="name" class="visually-hidden">Name</label>
-            <input type="text" id="name" name="name" placeholder="Name" required />
-            <img src="./assets/images/icon-invalid.svg" alt="" class="contact__invalid-icon" width="24" height="24" />
-          </div>
-          <div class="contact__control">
-            <label for="email" class="visually-hidden">Email</label>
-            <input type="email" id="email" name="email" placeholder="Email" required />
-            <img src="./assets/images/icon-invalid.svg" alt="" class="contact__invalid-icon" width="24" height="24" />
-          </div>
-          <div class="contact__control">
-            <label for="message" class="visually-hidden">Message</label>
-            <textarea name="message" id="message" cols="30" rows="3" placeholder="Message" required></textarea>
-            <img src="./assets/images/icon-invalid.svg" alt="" class="contact__invalid-icon" width="24" height="24" />
-          </div>
-          <div class="contact__control align-right">
-            <button type="submit">Send Message</button>
-          </div>
-        </form>
       </div>
-      <img class="contact__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
-    </section>
-  </main>
 
+      <section id="contact" class="contact">
+        <div class="wrapper contact__wrapper bottom-border">
+          <div class="contact__text">
+            <h2 class="contact__headline header-xl">Contact</h2>
+            <p class="contact__description">
+              I would love to hear about your project and how I could help.
+              Please fill in the form, and I'll get back to you as soon as
+              possible.
+            </p>
+          </div>
+          <form
+            onsubmit="sendEmail(); reset(); return false;"
+            class="contact__form"
+          >
+            <div class="contact__control">
+              <label for="name" class="visually-hidden">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                required
+              />
+              <img
+                src="./assets/images/icon-invalid.svg"
+                alt=""
+                class="contact__invalid-icon"
+                width="24"
+                height="24"
+              />
+            </div>
+            <div class="contact__control">
+              <label for="email" class="visually-hidden">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+              <img
+                src="./assets/images/icon-invalid.svg"
+                alt=""
+                class="contact__invalid-icon"
+                width="24"
+                height="24"
+              />
+            </div>
+            <div class="contact__control">
+              <label for="message" class="visually-hidden">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="3"
+                placeholder="Message"
+                required
+              ></textarea>
+              <img
+                src="./assets/images/icon-invalid.svg"
+                alt=""
+                class="contact__invalid-icon"
+                width="24"
+                height="24"
+              />
+            </div>
+            <div class="contact__control align-right">
+              <button type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+        <img
+          class="contact__rings"
+          src="./assets/images/pattern-rings.svg"
+          alt=""
+          width="530"
+          height="129"
+        />
+      </section>
+    </main>
 
-  <a href="https://wa.me/+8801745815676" class="float" target="_blank">
-    <img src="./assets/images/whatsapp-svgrepo-com (2).png" class="my-float" alt="WhatsApp">
-  </a>
+    <a href="https://wa.me/+8801745815676" class="float" target="_blank">
+      <img
+        src="./assets/images/whatsapp-svgrepo-com (2).png"
+        class="my-float"
+        alt="WhatsApp"
+      />
+    </a>
 
-  <footer class="footer bg-less-dark">
-    <h2 class="visually-hidden">Footer</h2>
-    <div class="wrapper">
-      <nav class="header__nav">
-        <h2 class="visually-hidden">Navigation</h2>
-        <a href="/" class="header__home">
-          codebyapi
-          <span class="visually-hidden">(to home page)</span>
-        </a>
+    <footer class="footer bg-less-dark">
+      <h2 class="visually-hidden">Footer</h2>
+      <div class="wrapper">
+        <nav class="header__nav">
+          <h2 class="visually-hidden">Navigation</h2>
+          <a href="/" class="header__home">
+            codebyapi
+            <span class="visually-hidden">(to home page)</span>
+          </a>
 
-        <a href="https://github.com/api00" target="_blank" class="header__social">
-          <svg xmlns="https://github.com/api00" width="25" height="24" aria-labelledby="socialGitHub" role="img">
-            <title id="socialGitHub">GitHub</title>
-            <path fill="#FFF" fill-rule="evenodd" d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z" />
-          </svg>
-        </a>
-        <a href="https://www.instagram.com/codebyapi/" target="_blank" class="header__social">
-          <svg xmlns="https://www.instagram.com/codebyapi/" width="24" height="24" aria-labelledby="socialInstagram" role="img">
-            <title id="socialInstagram">Instagram</title>
-            <path fill="#FFF" d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.056 1.97.24 2.428.405a4.92 4.92 0 0 1 1.769 1.141 4.92 4.92 0 0 1 1.141 1.769c.165.458.349 1.258.405 2.428.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.405 2.428a4.92 4.92 0 0 1-1.141 1.769 4.92 4.92 0 0 1-1.769 1.141c-.458.165-1.258.349-2.428.405-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.428-.405a4.92 4.92 0 0 1-1.769-1.141 4.92 4.92 0 0 1-1.141-1.769c-.165-.458-.349-1.258-.405-2.428C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.056-1.17.24-1.97.405-2.428A4.92 4.92 0 0 1 3.779 3.063a4.92 4.92 0 0 1 1.769-1.141c.458-.165 1.258-.349 2.428-.405 1.266-.058 1.646-.07 4.85-.07m0-2.163C8.736 0 8.332.014 7.052.072 5.78.13 4.802.326 3.964.692 3.156 1.043 2.439 1.563 1.782 2.22c-.657.657-1.177 1.374-1.528 2.182-.366.838-.562 1.816-.62 3.088C.014 8.332 0 8.736 0 12s.014 3.668.072 4.948c.058 1.272.254 2.25.62 3.088.351.808.871 1.525 1.528 2.182.657.657 1.374 1.177 2.182 1.528.838.366 1.816.562 3.088.62C8.332 23.986 8.736 24 12 24s3.668-.014 4.948-.072c1.272-.058 2.25-.254 3.088-.62.808-.351 1.525-.871 2.182-1.528.657-.657 1.177-1.374 1.528-2.182.366-.838.562-1.816.62-3.088.058-1.28.072-1.684.072-4.948s-.014-3.668-.072-4.948c-.058-1.272-.254-2.25-.62-3.088-.351-.808-.871-1.525-1.528-2.182-.657-.657-1.374-1.177-2.182-1.528-.838-.366-1.816-.562-3.088-.62C15.668.014 15.264 0 12 0z" />
-            <circle cx="18.406" cy="5.594" r="1.44" fill="#FFF" />
-            <path fill="#FFF" d="M12 5.838a6.162 6.162 0 1 0 6.162 6.162A6.17 6.17 0 0 0 12 5.838zm0 10.163a3.99 3.99 0 1 1 3.99-3.99 3.994 3.994 0 0 1-3.99 3.99z" />
-          </svg>
-        </a>
+          <a
+            href="https://github.com/api00"
+            target="_blank"
+            class="header__social"
+          >
+            <svg
+              xmlns="https://github.com/api00"
+              width="25"
+              height="24"
+              aria-labelledby="socialGitHub"
+              role="img"
+            >
+              <title id="socialGitHub">GitHub</title>
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/codebyapi/"
+            target="_blank"
+            class="header__social"
+          >
+            <svg
+              xmlns="https://www.instagram.com/codebyapi/"
+              width="24"
+              height="24"
+              aria-labelledby="socialInstagram"
+              role="img"
+            >
+              <title id="socialInstagram">Instagram</title>
+              <path
+                fill="#FFF"
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.056 1.97.24 2.428.405a4.92 4.92 0 0 1 1.769 1.141 4.92 4.92 0 0 1 1.141 1.769c.165.458.349 1.258.405 2.428.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.405 2.428a4.92 4.92 0 0 1-1.141 1.769 4.92 4.92 0 0 1-1.769 1.141c-.458.165-1.258.349-2.428.405-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.428-.405a4.92 4.92 0 0 1-1.769-1.141 4.92 4.92 0 0 1-1.141-1.769c-.165-.458-.349-1.258-.405-2.428C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.056-1.17.24-1.97.405-2.428A4.92 4.92 0 0 1 3.779 3.063a4.92 4.92 0 0 1 1.769-1.141c.458-.165 1.258-.349 2.428-.405 1.266-.058 1.646-.07 4.85-.07m0-2.163C8.736 0 8.332.014 7.052.072 5.78.13 4.802.326 3.964.692 3.156 1.043 2.439 1.563 1.782 2.22c-.657.657-1.177 1.374-1.528 2.182-.366.838-.562 1.816-.62 3.088C.014 8.332 0 8.736 0 12s.014 3.668.072 4.948c.058 1.272.254 2.25.62 3.088.351.808.871 1.525 1.528 2.182.657.657 1.374 1.177 2.182 1.528.838.366 1.816.562 3.088.62C8.332 23.986 8.736 24 12 24s3.668-.014 4.948-.072c1.272-.058 2.25-.254 3.088-.62.808-.351 1.525-.871 2.182-1.528.657-.657 1.177-1.374 1.528-2.182.366-.838.562-1.816.62-3.088.058-1.28.072-1.684.072-4.948s-.014-3.668-.072-4.948c-.058-1.272-.254-2.25-.62-3.088-.351-.808-.871-1.525-1.528-2.182-.657-.657-1.374-1.177-2.182-1.528-.838-.366-1.816-.562-3.088-.62C15.668.014 15.264 0 12 0z"
+              />
+              <circle cx="18.406" cy="5.594" r="1.44" fill="#FFF" />
+              <path
+                fill="#FFF"
+                d="M12 5.838a6.162 6.162 0 1 0 6.162 6.162A6.17 6.17 0 0 0 12 5.838zm0 10.163a3.99 3.99 0 1 1 3.99-3.99 3.994 3.994 0 0 1-3.99 3.99z"
+              />
+            </svg>
+          </a>
 
-        <a href="https://www.linkedin.com/in/api-alam/" target="_blank" class="header__social">
-          <svg xmlns="https://www.linkedin.com/in/api-alam/" width="25" height="24" aria-labelledby="socialLinkedIn" role="img">
-            <title id="socialLinkedIn">LinkedIn</title>
-            <path fill="#FFF" fill-rule="evenodd" d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z" />
-          </svg>
-        </a>
-        <a href="https://www.facebook.com/apialamapu/" target="_blank" class="header__social">
-          <svg xmlns="https://www.facebook.com/apialamapu/" width="24" height="24" aria-labelledby="socialFacebook" role="img">
-            <title id="socialFacebook">Facebook</title>
-            <path fill="#FFF" d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24H12.82v-9.294H9.692V11.01h3.128V8.353c0-3.1 1.892-4.788 4.659-4.788 1.325 0 2.463.098 2.794.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0z" />
-          </svg>
-        </a>
-      </nav>
+          <a
+            href="https://www.linkedin.com/in/api-alam/"
+            target="_blank"
+            class="header__social"
+          >
+            <svg
+              xmlns="https://www.linkedin.com/in/api-alam/"
+              width="25"
+              height="24"
+              aria-labelledby="socialLinkedIn"
+              role="img"
+            >
+              <title id="socialLinkedIn">LinkedIn</title>
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.facebook.com/apialamapu/"
+            target="_blank"
+            class="header__social"
+          >
+            <svg
+              xmlns="https://www.facebook.com/apialamapu/"
+              width="24"
+              height="24"
+              aria-labelledby="socialFacebook"
+              role="img"
+            >
+              <title id="socialFacebook">Facebook</title>
+              <path
+                fill="#FFF"
+                d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24H12.82v-9.294H9.692V11.01h3.128V8.353c0-3.1 1.892-4.788 4.659-4.788 1.325 0 2.463.098 2.794.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0z"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </footer>
+    <div class="lines">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
     </div>
-  </footer>
-  <div class="lines">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
 
-  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendEmail() {
+        var name = document.getElementById("name").value;
 
-  <script>
-    function sendEmail() {
-      var name = document.getElementById("name").value;
-
-      Email.send({
-        Host: "smtp.elasticemail.com",
-        Username: "apialam008@gmail.com",
-        Password: "76F7822DF9F0AE5D00901D66FD6A97E9A8B7",
-        To: 'apialam008@gmail.com',
-        From: document.getElementById("email").value,
-        Subject: name + " send you a messge!",
-        Body: document.getElementById("message").value
-      }).then(
-        message => alert("Thank you! Your message has been successfully sent. We will contact you very soon!")
-      );
-    }
-  </script>
-  <script src="./assets/js/nav.js"></script>
-</body>
-
+        Email.send({
+          Host: "smtp.elasticemail.com",
+          Username: "apialam008@gmail.com",
+          Password: "76F7822DF9F0AE5D00901D66FD6A97E9A8B7",
+          To: "apialam008@gmail.com",
+          From: document.getElementById("email").value,
+          Subject: name + " send you a messge!",
+          Body: document.getElementById("message").value,
+        }).then((message) =>
+          alert(
+            "Thank you! Your message has been successfully sent. We will contact you very soon!"
+          )
+        );
+      }
+    </script>
+    <script src="./assets/js/nav.js"></script>
+  </body>
 </html>
