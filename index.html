@@ -185,21 +185,21 @@
         border: 1px solid #333;
         border-radius: 8px;
         padding: 1.5rem;
-        width: 300px;
-        height: 250px;
+        width: 240px; /* Adjusted width for smaller cards */
+        height: 100px; /* Adjusted height for smaller cards */
         box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-        transition: transform 0.2s, box-shadow 0.2s;
+        transition: transform 0.2s, box-shadow 0.2s, border 1s linear;
         text-align: center;
-      }
-      .skill-header {
-        border-bottom: 1px solid #4ce09d;
-        margin-bottom: 1rem;
-        padding-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .skill-card:hover {
         transform: scale(1.05);
         box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        border-color: #4ce09d; /* Initial border color */
+        animation: border-rotate 1s linear infinite;
       }
 
       .skill-title {
@@ -208,17 +208,22 @@
         text-align: center;
       }
 
-      .skill-body {
-        text-align: left;
-      }
-
-      .skill-description {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-        color: #fff;
-        list-style-type: disc;
-        padding-left: 1.5rem;
-        margin-top: 0.5rem;
+      @keyframes border-rotate {
+        0% {
+          border-color: #4ce09d;
+        }
+        25% {
+          border-color: #ff6f61;
+        }
+        50% {
+          border-color: #f0ad4e;
+        }
+        75% {
+          border-color: #5bc0de;
+        }
+        100% {
+          border-color: #4ce09d;
+        }
       }
 
       /* Media query for responsiveness */
@@ -233,6 +238,7 @@
           margin-bottom: 2rem;
         }
       }
+
       .text-center .btn-primary {
         background-color: #4ce09d;
         border: none;
@@ -338,7 +344,7 @@
       }
       @media (min-width: 900px) {
         .line {
-          height: 440vh;
+          height: 400vh;
         }
         @keyframes drop {
           0% {
@@ -361,6 +367,49 @@
           }
         }
       }
+
+      .animated-border {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .animated-border::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 3.5px;
+        background-color: #4ce09d;
+        transition: transform 0.3s;
+        transform-origin: left;
+      }
+
+      .animated-border:hover::after {
+        transform: scaleX(0);
+      }
+
+      .animated-border:hover::after {
+        animation: hoverEffect 0.6s forwards;
+      }
+
+      @keyframes hoverEffect {
+        0% {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+        50% {
+          transform: scaleX(0);
+          transform-origin: left;
+        }
+        100% {
+          transform: scaleX(1);
+          transform-origin: right;
+        }
+      }
+
+
     </style>
     <title>API ALAM | Programmer</title>
   </head>
@@ -490,7 +539,7 @@
             <div class="hero__text">
               <h1 class="hero__headline header-xl">
                 Nice to<br />
-                meet you! I'm <span>Api Alam</span>.
+                meet you! I'm <span class="animated-border">Api Alam</span>.
               </h1>
               <p class="hero__description">
                 Based in BD, I'm a computer science graduate and startup
@@ -503,96 +552,34 @@
           </div>
         </div>
       </section>
-
-      <!-- skill section -->
-
+<br>
+      <!-- Skill Section -->
       <div class="skills-section">
         <section class="wrapper">
           <div class="skills-container">
-            <!-- Skill 1 -->
+            <!-- Skill Card 1 -->
             <div class="skill-card">
-              <div class="skill-header">
-                <h2 class="skill-title">API Development</h2>
-              </div>
-              <div class="skill-body">
-                <ul class="skill-description">
-                  <li>RESTful API Design</li>
-                  <li>GraphQL</li>
-                  <li>Integration</li>
-                  <li>Authentication</li>
-                </ul>
-              </div>
+              <h2 class="skill-title">REST API Development</h2>
             </div>
-            <!-- Skill 2 -->
+            <!-- Skill Card 2 -->
             <div class="skill-card">
-              <div class="skill-header">
-                <h2 class="skill-title">PHP & Laravel</h2>
-              </div>
-              <div class="skill-body">
-                <ul class="skill-description">
-                  <li>Backend Development</li>
-                  <li>Laravel Framework</li>
-                  <li>Web Applications</li>
-                  <li>Security</li>
-                </ul>
-              </div>
+              <h2 class="skill-title">E-commerce Website</h2>
             </div>
-
-            <!-- Skill 4 -->
+            <!-- Skill Card 3 -->
             <div class="skill-card">
-              <div class="skill-header">
-                <h2 class="skill-title">Database Management</h2>
-              </div>
-              <div class="skill-body">
-                <ul class="skill-description">
-                  <li>SQL</li>
-                  <li>MySQL & PostgreSQL</li>
-                  <li>Database Design</li>
-                  <li>Performance Tuning</li>
-                </ul>
-              </div>
+              <h2 class="skill-title">Database Design</h2>
             </div>
-            <!-- Skill 5 -->
+            <!-- Skill Card 4 -->
             <div class="skill-card">
-              <div class="skill-header">
-                <h2 class="skill-title">Data Structures & Algorithms</h2>
-              </div>
-              <div class="skill-body">
-                <ul class="skill-description">
-                  <li>Complex Problem Solving</li>
-                  <li>Optimization</li>
-                  <li>Algorithm Design</li>
-                  <li>Data Handling</li>
-                </ul>
-              </div>
+              <h2 class="skill-title">Data Structures & Algorithms</h2>
             </div>
-            <!-- Skill 6 -->
+            <!-- Skill Card 5 -->
             <div class="skill-card">
-              <div class="skill-header">
-                <h2 class="skill-title">Software Architecture</h2>
-              </div>
-              <div class="skill-body">
-                <ul class="skill-description">
-                  <li>System Design</li>
-                  <li>Scalability</li>
-                  <li>Microservices</li>
-                  <li>Architecture Patterns</li>
-                </ul>
-              </div>
+              <h2 class="skill-title">Software Architecture</h2>
             </div>
-
-            <!-- Skill 8 -->
+            <!-- Skill Card 6 -->
             <div class="skill-card">
-              <div class="skill-header">
-                <h2 class="skill-title">Teaching & Mentoring</h2>
-              </div>
-              <div class="skill-body">
-                <ul class="skill-description">
-                  <li>Web Development</li>
-                  <li>Mobile Dev with Flutter</li>
-                  <li>Project-Based Learning</li>
-                </ul>
-              </div>
+              <h2 class="skill-title">Teaching & Mentoring</h2>
             </div>
           </div>
           <div class="text-center mt-4">
@@ -601,64 +588,7 @@
         </section>
       </div>
 
-      <!-- 
-    <section class="projects">
-      <div class="wrapper projects__wrapper">
-        <div class="projects__grid">
-          <h2 class="projects__headline header-xl">Projects</h2>
-          <a href="#contact" class="projects__contact underline">Contact me</a>
 
-          <div class="projects__item">
-            <picture class="projects__picture">
-              <source media="(min-width: 62.5em)" srcset="./assets/images/hero1.png" />
-              <img class="projects__image" src="./assets/images/hero1.png" alt="grid of thumbnails of famous works of art" width-="343" height="253" />
-            </picture>
-            <h3 class="projects__name">Art Gallery Showcase</h3>
-            <p class="projects__tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </p>
-            <div class="projects__links">
-              <a href="" class="underline">View Project</a>
-              <a href="" class="underline">View Code</a>
-            </div>
-          </div>
-          <div class="projects__item">
-            <picture class="projects__picture">
-              <source media="(min-width: 62.5em)" srcset="./assets/images/hero1.png" />
-              <img class="projects__image" src="./assets/images/hero1.png" alt="grid of thumbnails of famous works of art" width-="343" height="253" />
-            </picture>
-            <h3 class="projects__name">Art Gallery Showcase</h3>
-            <p class="projects__tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </p>
-            <div class="projects__links">
-              <a href="" class="underline">View Project</a>
-              <a href="" class="underline">View Code</a>
-            </div>
-          </div>
-          <div class="projects__item">
-            <picture class="projects__picture">
-              <source media="(min-width: 62.5em)" srcset="./assets/images/hero1.png" />
-              <img class="projects__image" src="./assets/images/hero1.png" alt="grid of thumbnails of famous works of art" width-="343" height="253" />
-            </picture>
-            <h3 class="projects__name">Art Gallery Showcase</h3>
-            <p class="projects__tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </p>
-            <div class="projects__links">
-              <a href="" class="underline">View Project</a>
-              <a href="" class="underline">View Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
 
       <div style="padding-top: 3rem; padding-bottom: 4rem" class="resume">
         <section class="wrapper">
@@ -667,11 +597,11 @@
             <div class="container">
               <div class="testimonials">
                 <h2 class="projects__headline header-xl">
-                  What Our Clients Say
+                 My Achievements So Far
                 </h2>
                 <br />
                 <p class="contact__description">
-                  Hear directly from our satisfied clients about their
+                  Hear directly from my satisfied clients about their
                   experiences working with us. <br />
                   Our commitment to excellence and customer satisfaction is
                   reflected in their words.
