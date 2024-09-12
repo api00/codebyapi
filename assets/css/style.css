@@ -185,6 +185,18 @@ svg {
   transition: fill var(--transition);
 }
 
+.header__social > svg {
+  transition: transform var(--transition);
+}
+
+.header__social:hover > svg {
+  transform: scale(1.5);
+}
+
+.header__social > svg > path {
+  transition: fill var(--transition);
+}
+
 .header__social:hover > svg > path {
   fill: var(--accent);
 }
@@ -829,7 +841,7 @@ footer {
 
 @media (min-width: 62.5em) {
   footer {
-    padding-block: 47px 92px;
+    padding-block: 47px 47px;
   }
 }
 

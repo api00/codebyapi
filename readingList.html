@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png" />
+  <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/nav.css" />
+
+  <style>
+    .float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      border-radius: 50px;
+      text-align: center;
+      z-index: 1000;
+      overflow: hidden;
+      /* Ensure content inside the icon doesn't overflow */
+    }
+
+    .my-float {
+      margin: 6px;
+      width: 48px;
+      height: 50px;
+    }
+
+    /* Base styles */
+    .navlink a {
+      position: relative;
+      color: inherit;
+      text-decoration: none;
+      padding-right: 1.7rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 20px;
+    }
+
+    /* Hover effect styles */
+    .navlink a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      /* Adjust as needed */
+      width: 0;
+      height: 1px;
+      background-color: #4ce09d;
+      transition: width 0.3s ease-out;
+    }
+
+    .navlink a:hover {
+      color: #4ce09d;
+    }
+
+    /* Hover state */
+    .navlink a:hover::after {
+      width: 100%;
+    }
+
+    /* Media query for tablets and mobile devices */
+    @media (max-width: 768px) {
+      .navlink {
+        display: none;
+      }
+    }
+
+    .header {
+      margin-block-start: 40px;
+      margin-block-end: 35px;
+    }
+
+    /* Base styles */
+    .navlink a {
+      position: relative;
+      color: inherit;
+      text-decoration: none;
+      padding-right: 1.7rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 20px;
+    }
+
+    /* Hover effect styles */
+    .navlink a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 0;
+      height: 1px;
+      background-color: #4ce09d;
+      transition: width 0.3s ease-out;
+    }
+
+    .navlink a:hover {
+      color: #4ce09d;
+    }
+
+    /* Hover state */
+    .navlink a:hover::after {
+      width: 100%;
+    }
+
+    .nav-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #4ce09d;
+    }
+
+    /* Media query for tablets and mobile devices */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+        font-size: 29px;
+        margin-top: -8px;
+      }
+
+      .navlink {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        background-color: #1e1e1e;
+        opacity: 0;
+        overflow: hidden;
+        transition: width 0.3s ease-out, opacity 0.3s ease-out;
+      }
+
+      .navlink.show {
+        opacity: 1;
+        width: 250px;
+        /* Adjust this value to the desired width */
+      }
+
+      .navlink a {
+        margin: 0px 0;
+        /* Add top and bottom margin */
+        padding: 10px;
+        /* Add padding for better touch targets */
+      }
+
+      .skills__rings {
+        display: none;
+      }
+
+      .img-area {
+        position: relative;
+        left: 7rem;
+        margin: 0 15px 15px 15px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .navlink {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .navlink {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .img-area {
+        position: relative;
+        left: 6rem;
+        margin: 0 15px 15px 15px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .img-area {
+        position: relative;
+        left: 3rem;
+        margin: 0 15px 15px 15px;
+      }
+    }
+
+    .book-card {
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .book-card.hidden {
+      opacity: 0;
+      transform: scale(0.9);
+      pointer-events: none;
+    }
+
+    .card-img {
+      max-height: 200px;
+      object-fit: cover;
+    }
+    .header__home {
+      border-bottom: 3px solid #3bb47e;
+      padding-bottom: 5px;
+      transform: rotate(-5deg);
+    }
+
+    @media (max-width: 768px) {
+      .header__home {
+        border: none;
+        transform: rotate(-0deg);
+      }
+    }
+  </style>
+  <title>API ALAM | Programmer</title>
+</head>
+
+<body>
+  <header class="header">
+    <h2 class="visually-hidden">Header</h2>
+    <div class="wrapper">
+      <nav class="header__nav">
+        <h2 class="visually-hidden">Navigation</h2>
+        <a href="./" class="header__home">
+          codebyapi👨🏻‍💻
+          <span class="visually-hidden">(to home page)</span>
+        </a>
+        <div class="nav-toggle" id="navToggle">☰</div>
+        <div class="navlink" id="navLink">
+          <a href="./about">My Story</a>
+          <!-- <a href="./coaching">Coaching</a> -->
+          <!-- <a href="./services">What I Offer</a> -->
+          <a href="./resume">Resume</a>
+          <a href="./portfolio">My Portfolio</a>
+          <a style="color: #4ce09d;" href="./readingList">Reading List 📚</a>
+        </div>
+
+        <a href="https://github.com/api00" target="_blank" class="header__social">
+          <svg xmlns="https://github.com/api00" width="25" height="24" aria-labelledby="socialGitHub" role="img">
+            <title id="socialGitHub">GitHub</title>
+            <path fill="#FFF" fill-rule="evenodd"
+              d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z" />
+          </svg>
+        </a>
+
+        <a href="https://www.linkedin.com/in/api-alam/" target="_blank" class="header__social">
+          <svg xmlns="https://www.linkedin.com/in/api-alam/" width="25" height="24" aria-labelledby="socialLinkedIn"
+            role="img">
+            <title id="socialLinkedIn">LinkedIn</title>
+            <path fill="#FFF" fill-rule="evenodd"
+              d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z" />
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/apialamapu/" target="_blank" class="header__social">
+          <svg xmlns="https://www.facebook.com/apialamapu/" width="24" height="24" aria-labelledby="socialFacebook"
+            role="img">
+            <title id="socialFacebook">Facebook</title>
+            <path fill="#FFF"
+              d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24H12.82v-9.294H9.692V11.01h3.128V8.353c0-3.1 1.892-4.788 4.659-4.788 1.325 0 2.463.098 2.794.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0z" />
+          </svg>
+        </a>
+        <a href="https://www.researchgate.net/profile/Api-Alam" target="_blank" class="header__social">
+          <svg style="background-color: white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="29px" height="29px">
+            <path
+              d="M 5 5 L 5 27 L 27 27 L 27 5 L 5 5 z M 7 7 L 25 7 L 25 25 L 7 25 L 7 7 z M 19.164062 10.001953 C 17.881062 10.001953 17.441406 10.919156 17.441406 11.535156 L 17.441406 13.169922 C 17.441406 13.999922 17.8935 14.792969 19.0625 14.792969 C 21.0245 14.790969 20.787109 13.306391 20.787109 12.275391 L 19.253906 12.275391 L 19.253906 12.816406 L 20.158203 12.816406 C 20.158203 13.621406 19.781453 14.162109 19.064453 14.162109 C 18.498453 14.162109 18.171875 13.671188 18.171875 12.992188 L 18.171875 11.634766 C 18.171875 11.005766 18.762062 10.642578 19.164062 10.642578 C 19.881062 10.642578 20.15625 11.271484 20.15625 11.271484 L 20.697266 10.90625 C 20.697266 10.90625 20.434062 10.001953 19.164062 10.001953 z M 13.583984 13.091797 C 12.678984 13.091797 11.296953 13.178906 10.001953 13.128906 L 10.001953 13.53125 C 10.781953 13.68225 11.107422 13.606281 11.107422 14.738281 L 11.107422 20.269531 C 11.107422 21.413531 10.780953 21.325563 10.001953 21.476562 L 10.001953 21.892578 C 10.378953 21.879578 11.031266 21.841797 11.697266 21.841797 C 12.326266 21.841797 13.144094 21.867578 13.496094 21.892578 L 13.496094 21.476562 C 12.490094 21.338562 12.1875 21.451531 12.1875 20.269531 L 12.1875 17.931641 C 12.5275 17.956641 12.817531 17.955078 13.269531 17.955078 C 14.124531 19.489078 14.94125 20.634781 15.40625 21.175781 C 16.24825 22.193781 17.594875 22.043578 17.921875 21.892578 L 17.921875 21.515625 C 17.418875 21.514625 16.914781 21.175437 16.550781 20.773438 C 15.934781 20.107437 15.104781 19.025641 14.425781 17.806641 C 15.557781 17.529641 16.400391 16.461297 16.400391 15.404297 C 16.400391 13.820297 15.179984 13.091797 13.583984 13.091797 z M 13.320312 13.730469 C 14.502313 13.730469 15.205078 14.346516 15.205078 15.478516 C 15.204078 16.586516 14.450359 17.326172 13.193359 17.326172 C 12.728359 17.326172 12.5145 17.314063 12.1875 17.289062 L 12.1875 13.767578 C 12.5145 13.729578 12.942312 13.730469 13.320312 13.730469 z" />
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+  <div style="padding-bottom: 4rem" class="resume bg-less-dark">
+    <div style="padding-top: 3rem; padding-bottom: 4rem" class="books bg-less-dark">
+      <section class="wrapper">
+        <div class="container">
+          <div class="row mb-4">
+            <div class="col-12 text-center">
+              <h2 class="text-light">My Reading List</h2>
+              <p class="text-muted">Select a genre to filter the books</p>
+              <div class="btn-group d-flex flex-wrap justify-content-center" role="group" aria-label="Genre filter">
+                <button type="button" class="btn btn-outline-light m-1" onclick="filterBooks('all')">All</button>
+                <button type="button" class="btn btn-outline-light m-1"
+                  onclick="filterBooks('productivity')">Productivity</button>
+                <button type="button" class="btn btn-outline-light m-1"
+                  onclick="filterBooks('self-learning')">Self-Learning</button>
+                <button type="button" class="btn btn-outline-light m-1"
+                  onclick="filterBooks('personal-development')">Personal Development</button>
+                <button type="button" class="btn btn-outline-light m-1"
+                  onclick="filterBooks('spirituality')">Spirituality</button>
+                <!-- Add more genres as needed -->
+              </div>
+            </div>
+          </div>
+          <div class="row" id="bookList">
+            <div class="col-md-6 mb-4 book-card" data-genre="spirituality">
+              <div class="card h-100 bg-dark text-light">
+                <div class="row no-gutters">
+                  <div class="col-12 col-md-4">
+                    <img src="./assets/images/kuran.webp" alt="The Quran" class="card-img img-fluid" />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">The Quran</h5>
+                      <p class="card-text">by Various Authors</p>
+                      <p class="card-text">
+                        The holy book of Islam, providing spiritual guidance and wisdom.
+                      </p>
+                      <p class="card-text">
+                        <strong>Why read:</strong> Offers profound insights into spirituality, ethics, and the human
+                        condition.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 book-card" data-genre="personal-development">
+              <div class="card h-100 bg-dark text-light">
+                <div class="row no-gutters">
+                  <div class="col-12 col-md-4">
+                    <img src="./assets/images/the secrect.webp" alt="The Secret by Rhonda Byrne"
+                      class="card-img img-fluid" />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">The Secret</h5>
+                      <p class="card-text">by Rhonda Byrne</p>
+                      <p class="card-text">
+                        Discover the power of positive thinking and the law of attraction.
+                      </p>
+                      <p class="card-text">
+                        <strong>Why read:</strong> It teaches you how to harness the power of your thoughts to achieve
+                        your dreams.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 book-card" data-genre="personal-development">
+              <div class="card h-100 bg-dark text-light">
+                <div class="row no-gutters">
+                  <div class="col-12 col-md-4">
+                    <img src="./assets/images/htwaio.webp"
+                      alt="How to Win Friends and Influence People by Dale Carnegie" class="card-img img-fluid" />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">How to Win Friends and Influence People</h5>
+                      <p class="card-text">by Dale Carnegie</p>
+                      <p class="card-text">
+                        Learn the fundamental techniques in handling people and making them like you.
+                      </p>
+                      <p class="card-text">
+                        <strong>Why read:</strong> Essential for improving your social skills and building better
+                        relationships.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 book-card" data-genre="productivity">
+              <div class="card h-100 bg-dark text-light">
+                <div class="row no-gutters">
+                  <div class="col-12 col-md-4">
+                    <img src="./assets/images/zto.webp" alt="Zero to One by Peter Thiel" class="card-img img-fluid" />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Zero to One</h5>
+                      <p class="card-text">by Peter Thiel</p>
+                      <p class="card-text">
+                        Insights on startups and how to build the future.
+                      </p>
+                      <p class="card-text">
+                        <strong>Why read:</strong> Offers a unique perspective on innovation and entrepreneurship.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 book-card" data-genre="personal-development">
+              <div class="card h-100 bg-dark text-light">
+                <div class="row no-gutters">
+                  <div class="col-12 col-md-4">
+                    <img src="./assets/images/chrism.webp" alt="The Charisma Myth by Olivia Fox Cabane"
+                      class="card-img img-fluid" />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">The Charisma Myth</h5>
+                      <p class="card-text">by Olivia Fox Cabane</p>
+                      <p class="card-text">
+                        Learn how to master the art of personal magnetism.
+                      </p>
+                      <p class="card-text">
+                        <strong>Why read:</strong> Provides practical tips to enhance your charisma and influence.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 book-card" data-genre="personal-development">
+              <div class="card h-100 bg-dark text-light">
+                <div class="row no-gutters">
+                  <div class="col-12 col-md-4">
+                    <img src="./assets/images/cues2.webp" alt="Cues by Vanessa Van Edwards"
+                      class="card-img img-fluid" />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Cues</h5>
+                      <p class="card-text">by Vanessa Van Edwards</p>
+                      <p class="card-text">
+                        Understand the hidden signals that make or break your relationships.
+                      </p>
+                      <p class="card-text">
+                        <strong>Why read:</strong> Helps you decode non-verbal communication to improve your
+                        interactions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 book-card" data-genre="personal-development">
+              <div class="card h-100 bg-dark text-light">
+                <div class="row no-gutters">
+                  <div class="col-12 col-md-4">
+                    <img src="./assets/images/captive.webp" alt="Vanessa Van Edwards" class="card-img img-fluid" />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Captive</h5>
+                      <p class="card-text">by Vanessa Van Edwards</p>
+                      <p class="card-text">
+                        Broder Understand the hidden signals (cues) that make or break your relationships.
+                      </p>
+                      <p class="card-text">
+                        <strong>Why read:</strong> Helps you decode non-verbal communication to improve your
+                        interactions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 book-card" data-genre="spirituality">
+              <div class="card h-100 bg-dark text-light">
+                <div class="row no-gutters">
+                  <div class="col-12 col-md-4">
+                    <img src="./assets/images/super.webp" alt="Becoming Supernatural by Dr. Joe Dispenza"
+                      class="card-img img-fluid" />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Becoming Supernatural</h5>
+                      <p class="card-text">by Dr. Joe Dispenza</p>
+                      <p class="card-text">
+                        How common people are doing the uncommon.
+                      </p>
+                      <p class="card-text">
+                        <strong>Why read:</strong> Explores the connection between science and spirituality to unlock
+                        your full potential.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 book-card" data-genre="personal-development">
+              <div class="card h-100 bg-dark text-light">
+                <div class="row no-gutters">
+                  <div class="col-12 col-md-4">
+                    <img src="./assets/images/superh.webp" alt="The Way of the Superior Man by David Deida"
+                      class="card-img img-fluid" />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">The Way of the Superior Man</h5>
+                      <p class="card-text">by David Deida</p>
+                      <p class="card-text">
+                        A spiritual guide to mastering the challenges of women, work, and sexual desire.
+                      </p>
+                      <p class="card-text">
+                        <strong>Why read:</strong> Offers profound insights into masculinity and personal growth.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 book-card" data-genre="spirituality">
+              <div class="card h-100 bg-dark text-light">
+                <div class="row no-gutters">
+                  <div class="col-12 col-md-4">
+                    <img src="./assets/images/meditation.jpg" alt="Meditations by Marcus Aurelius"
+                      class="card-img img-fluid" />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Meditations</h5>
+                      <p class="card-text">by Marcus Aurelius</p>
+                      <p class="card-text">
+                        A series of personal writings by the Roman Emperor, reflecting on his philosophy and guidance.
+                      </p>
+                      <p class="card-text">
+                        <strong>Why read:</strong> Provides timeless wisdom on leadership, resilience, and
+                        self-discipline.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 book-card" data-genre="self-learning">
+              <div class="card h-100 bg-dark text-light">
+                <div class="row no-gutters">
+                  <div class="col-12 col-md-4">
+                    <img src="./assets/images/outliers.webp" alt="Outliers by Malcolm Gladwell"
+                      class="card-img img-fluid" />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Outliers</h5>
+                      <p class="card-text">by Malcolm Gladwell</p>
+                      <p class="card-text">
+                        The story of success and what makes high-achievers different.
+                      </p>
+                      <p class="card-text">
+                        <strong>Why read:</strong> Challenges conventional wisdom about success and offers new insights.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 book-card" data-genre="self-learning">
+              <div class="card h-100 bg-dark text-light">
+                <div class="row no-gutters">
+                  <div class="col-12 col-md-4">
+                    <img src="./assets/images/attached.webp" alt="Attached by Amir Levine and Rachel Heller"
+                      class="card-img img-fluid" />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Attached</h5>
+                      <p class="card-text">by Amir Levine and Rachel Heller</p>
+                      <p class="card-text">
+                        The new science of adult attachment and how it can help you find and keep love.
+                      </p>
+                      <p class="card-text">
+                        <strong>Why read:</strong> Offers valuable insights into relationship dynamics and attachment
+                        styles.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 book-card" data-genre="productivity">
+              <div class="card h-100 bg-dark text-light">
+                <div class="row no-gutters">
+                  <div class="col-12 col-md-4">
+                    <img src="./assets/images/100m.webp" alt="100M Offers by Alex Hormozi" class="card-img img-fluid" />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">100M Offers</h5>
+                      <p class="card-text">by Alex Hormozi</p>
+                      <p class="card-text">
+                        How to make offers so good people feel stupid saying no.
+                      </p>
+                      <p class="card-text">
+                        <strong>Why read:</strong> Provides actionable strategies for creating irresistible offers in
+                        business.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 book-card" data-genre="productivity">
+              <div class="card h-100 bg-dark text-light">
+                <div class="row no-gutters">
+                  <div class="col-12 col-md-4">
+                    <img src="./assets/images/12w.webp" alt="The 12 Week Year by Brian P. Moran"
+                      class="card-img img-fluid" />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">The 12 Week Year</h5>
+                      <p class="card-text">by Brian P. Moran</p>
+                      <p class="card-text">
+                        Get more done in 12 weeks than others do in 12 months.
+                      </p>
+                      <p class="card-text">
+                        <strong>Why read:</strong> Offers a powerful system for achieving your goals faster.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <img class="skills__rings" src="./assets/images/pattern-rings.svg" alt="" width="530" height="129" />
+      </section>
+    </div>
+  </div>
+
+
+
+  <a href="https://wa.me/+8801745815676" class="float" target="_blank">
+    <img src="./assets/images/whatsapp-svgrepo-com (2).png" class="my-float" alt="WhatsApp" />
+  </a>
+
+  <footer style="background-color: #131212" class="footer bg-less-dark">
+    <h2 class="visually-hidden">Footer</h2>
+    <div class="wrapper">
+      <nav class="header__nav">
+        <h2 class="visually-hidden">Navigation</h2>
+        <a href="/index" class="header__home">
+          codebyapi
+          <span class="visually-hidden">(to home page)</span>
+        </a>
+
+        <a href="https://github.com/api00" target="_blank" class="header__social">
+          <svg xmlns="https://github.com/api00" width="25" height="24" aria-labelledby="socialGitHub" role="img">
+            <title id="socialGitHub">GitHub</title>
+            <path fill="#FFF" fill-rule="evenodd"
+              d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z" />
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/codebyapi/" target="_blank" class="header__social">
+          <svg xmlns="https://www.instagram.com/codebyapi/" width="24" height="24" aria-labelledby="socialInstagram"
+            role="img">
+            <title id="socialInstagram">Instagram</title>
+            <path fill="#FFF"
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.056 1.97.24 2.428.405a4.92 4.92 0 0 1 1.769 1.141 4.92 4.92 0 0 1 1.141 1.769c.165.458.349 1.258.405 2.428.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.405 2.428a4.92 4.92 0 0 1-1.141 1.769 4.92 4.92 0 0 1-1.769 1.141c-.458.165-1.258.349-2.428.405-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.428-.405a4.92 4.92 0 0 1-1.769-1.141 4.92 4.92 0 0 1-1.141-1.769c-.165-.458-.349-1.258-.405-2.428C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.056-1.17.24-1.97.405-2.428A4.92 4.92 0 0 1 3.779 3.063a4.92 4.92 0 0 1 1.769-1.141c.458-.165 1.258-.349 2.428-.405 1.266-.058 1.646-.07 4.85-.07m0-2.163C8.736 0 8.332.014 7.052.072 5.78.13 4.802.326 3.964.692 3.156 1.043 2.439 1.563 1.782 2.22c-.657.657-1.177 1.374-1.528 2.182-.366.838-.562 1.816-.62 3.088C.014 8.332 0 8.736 0 12s.014 3.668.072 4.948c.058 1.272.254 2.25.62 3.088.351.808.871 1.525 1.528 2.182.657.657 1.374 1.177 2.182 1.528.838.366 1.816.562 3.088.62C8.332 23.986 8.736 24 12 24s3.668-.014 4.948-.072c1.272-.058 2.25-.254 3.088-.62.808-.351 1.525-.871 2.182-1.528.657-.657 1.177-1.374 1.528-2.182.366-.838.562-1.816.62-3.088.058-1.28.072-1.684.072-4.948s-.014-3.668-.072-4.948c-.058-1.272-.254-2.25-.62-3.088-.351-.808-.871-1.525-1.528-2.182-.657-.657-1.374-1.177-2.182-1.528-.838-.366-1.816-.562-3.088-.62C15.668.014 15.264 0 12 0z" />
+            <circle cx="18.406" cy="5.594" r="1.44" fill="#FFF" />
+            <path fill="#FFF"
+              d="M12 5.838a6.162 6.162 0 1 0 6.162 6.162A6.17 6.17 0 0 0 12 5.838zm0 10.163a3.99 3.99 0 1 1 3.99-3.99 3.994 3.994 0 0 1-3.99 3.99z" />
+          </svg>
+        </a>
+
+        <a href="https://www.linkedin.com/in/api-alam/" target="_blank" class="header__social">
+          <svg xmlns="https://www.linkedin.com/in/api-alam/" width="25" height="24" aria-labelledby="socialLinkedIn"
+            role="img">
+            <title id="socialLinkedIn">LinkedIn</title>
+            <path fill="#FFF" fill-rule="evenodd"
+              d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z" />
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/apialamapu/" target="_blank" class="header__social">
+          <svg xmlns="https://www.facebook.com/apialamapu/" width="24" height="24" aria-labelledby="socialFacebook"
+            role="img">
+            <title id="socialFacebook">Facebook</title>
+            <path fill="#FFF"
+              d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24H12.82v-9.294H9.692V11.01h3.128V8.353c0-3.1 1.892-4.788 4.659-4.788 1.325 0 2.463.098 2.794.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0z" />
+          </svg>
+        </a>
+        <a href="https://www.researchgate.net/profile/Api-Alam" target="_blank" class="header__social">
+          <svg style="background-color: white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="29px" height="29px">
+            <path
+              d="M 5 5 L 5 27 L 27 27 L 27 5 L 5 5 z M 7 7 L 25 7 L 25 25 L 7 25 L 7 7 z M 19.164062 10.001953 C 17.881062 10.001953 17.441406 10.919156 17.441406 11.535156 L 17.441406 13.169922 C 17.441406 13.999922 17.8935 14.792969 19.0625 14.792969 C 21.0245 14.790969 20.787109 13.306391 20.787109 12.275391 L 19.253906 12.275391 L 19.253906 12.816406 L 20.158203 12.816406 C 20.158203 13.621406 19.781453 14.162109 19.064453 14.162109 C 18.498453 14.162109 18.171875 13.671188 18.171875 12.992188 L 18.171875 11.634766 C 18.171875 11.005766 18.762062 10.642578 19.164062 10.642578 C 19.881062 10.642578 20.15625 11.271484 20.15625 11.271484 L 20.697266 10.90625 C 20.697266 10.90625 20.434062 10.001953 19.164062 10.001953 z M 13.583984 13.091797 C 12.678984 13.091797 11.296953 13.178906 10.001953 13.128906 L 10.001953 13.53125 C 10.781953 13.68225 11.107422 13.606281 11.107422 14.738281 L 11.107422 20.269531 C 11.107422 21.413531 10.780953 21.325563 10.001953 21.476562 L 10.001953 21.892578 C 10.378953 21.879578 11.031266 21.841797 11.697266 21.841797 C 12.326266 21.841797 13.144094 21.867578 13.496094 21.892578 L 13.496094 21.476562 C 12.490094 21.338562 12.1875 21.451531 12.1875 20.269531 L 12.1875 17.931641 C 12.5275 17.956641 12.817531 17.955078 13.269531 17.955078 C 14.124531 19.489078 14.94125 20.634781 15.40625 21.175781 C 16.24825 22.193781 17.594875 22.043578 17.921875 21.892578 L 17.921875 21.515625 C 17.418875 21.514625 16.914781 21.175437 16.550781 20.773438 C 15.934781 20.107437 15.104781 19.025641 14.425781 17.806641 C 15.557781 17.529641 16.400391 16.461297 16.400391 15.404297 C 16.400391 13.820297 15.179984 13.091797 13.583984 13.091797 z M 13.320312 13.730469 C 14.502313 13.730469 15.205078 14.346516 15.205078 15.478516 C 15.204078 16.586516 14.450359 17.326172 13.193359 17.326172 C 12.728359 17.326172 12.5145 17.314063 12.1875 17.289062 L 12.1875 13.767578 C 12.5145 13.729578 12.942312 13.730469 13.320312 13.730469 z" />
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </footer>
+  <div class="lines">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <script src="./assets/js/nav.js"></script>
+  <script>
+    function filterBooks(genre) {
+      const books = document.querySelectorAll('.book-card');
+      books.forEach(book => {
+        if (genre === 'all' || book.getAttribute('data-genre') === genre) {
+          book.style.display = 'block';
+        } else {
+          book.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
