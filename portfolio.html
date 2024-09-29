@@ -11,7 +11,11 @@
   <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="./assets/css/line.css" />
+  <link rel="stylesheet" href="./assets/css/nav.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  
+
   <style>
     .float {
       position: fixed;
@@ -75,7 +79,6 @@
       margin-block-start: 40px;
       margin-block-end: 35px;
     }
-
 
     /* Base styles */
     .navlink a {
@@ -188,6 +191,24 @@
       }
     }
 
+    .line {
+      height: 150vh;
+    }
+
+    @keyframes drop {
+      0% {
+        top: -50%;
+      }
+
+      50% {
+        top: 50%;
+      }
+
+      100% {
+        top: 110%;
+      }
+    }
+
     .header__home {
       border-bottom: 3px solid #3bb47e;
       padding-bottom: 5px;
@@ -201,68 +222,6 @@
       }
     }
 
-    .float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 40px;
-      right: 40px;
-      border-radius: 50px;
-      text-align: center;
-      z-index: 1000;
-      overflow: hidden;
-      /* Ensure content inside the icon doesn't overflow */
-    }
-
-    .my-float {
-      margin: 6px;
-      width: 48px;
-      height: 50px;
-    }
-
-    /* Base styles */
-    .navlink a {
-      position: relative;
-      color: inherit;
-      text-decoration: none;
-      padding-right: 1.7rem;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 20px;
-    }
-
-    /* Hover effect styles */
-    .navlink a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -10px;
-      /* Adjust as needed */
-      width: 0;
-      height: 1px;
-      background-color: #4ce09d;
-      transition: width 0.3s ease-out;
-    }
-
-    .navlink a:hover {
-      color: #4ce09d;
-    }
-
-    /* Hover state */
-    .navlink a:hover::after {
-      width: 100%;
-    }
-
-    /* Media query for tablets and mobile devices */
-    @media (max-width: 768px) {
-      .navlink {
-        display: none;
-      }
-    }
-
-    .header {
-      margin-block-start: 40px;
-      margin-block-end: 35px;
-    }
 
     .portfolio-title {
       font-size: 2.3rem;
@@ -270,7 +229,7 @@
     }
 
     .portfolio-item {
-    
+
       position: relative;
       overflow: hidden;
       border-radius: 8px;
@@ -279,7 +238,7 @@
       height: 0;
       padding-bottom: 60%;
       border: 3px solid #4ce09d;
-      
+
       /* 4:3 aspect ratio */
     }
 
@@ -300,11 +259,12 @@
       height: 100%;
       object-fit: cover;
     }
+
     .portfolio-title {
-        text-align: center;
-        font-weight: bold;
-        margin-bottom: 2rem;
-      }
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
 
     .portfolio-overlay {
       position: absolute;
@@ -375,7 +335,7 @@
         </a>
         <div class="nav-toggle" id="navToggle">☰</div>
         <div class="navlink" id="navLink">
-          <a href="./about">My Story</a>
+          <a  href="./about">My Story</a>
           <!-- <a href="./coaching">Coaching</a> -->
           <!-- <a href="./services">What I Offer</a> -->
           <a href="./resume">Resume</a>
