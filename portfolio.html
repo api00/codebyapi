@@ -441,6 +441,26 @@
         /* 1:1 aspect ratio for mobile */
       }
     }
+
+    .status-badge {
+      position: absolute;
+      top: 20px;
+      /* Position below category badge */
+      left: 10px;
+      background: rgba(255, 152, 0, 0.9);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .work-in-progress {
+      background: rgba(255, 152, 0, 0.9);
+      /* Orange color for work in progress */
+    }
   </style>
   <title>API ALAM | Indie Hacker </title>
 </head>
@@ -712,10 +732,12 @@
                   </a>
                 </div>
               </div>
+              <!-- Project 4 -->
+
               <div class="col-md-6 mb-4 portfolio-item-wrapper" data-category="chatbot">
                 <div class="portfolio-item">
                   <div class="category-badge">Chatbot</div>
-              
+                  <div class="status-badge work-in-progress">Work in Progress</div>
                   <a href="#" target="_blank" rel="noopener noreferrer">
                     <div class="portfolio-image">
                       <img src="./assets/images/automation.png" alt="RAG Telegram Chatbot" class="img-fluid">
@@ -727,15 +749,17 @@
                           <i class="fab fa-telegram-plane fa-2x mr-3" title="Telegram"></i>
                           <i class="fab fa-node-js fa-2x mr-3"></i>
                           <i class="fas fa-server fa-2x mr-3" title="Hostinger"></i>
-                          <img src="./assets/images/ollama.png" alt="ollama" title="ollama" style="width: 32px; height: 32px; object-fit: contain;">
-                          <img src="./assets/images/n8n-color.png" alt="n8n" title="n8n" style="width: 32px; height: 32px; object-fit: contain;">
+                          <img src="./assets/images/ollama.png" alt="ollama" title="ollama"
+                            style="width: 32px; height: 32px; object-fit: contain;">
+                          <img src="./assets/images/n8n-color.png" alt="n8n" title="n8n"
+                            style="width: 32px; height: 32px; object-fit: contain;">
                         </div>
                       </div>
                     </div>
                   </a>
                 </div>
               </div>
-              <!-- Project 4 -->
+              <!-- Project 5 -->
               <div class="col-md-6 mb-4 portfolio-item-wrapper" data-category="landing-page">
                 <div class="portfolio-item">
                   <div class="category-badge">Landing Page</div>
@@ -757,7 +781,7 @@
                   </a>
                 </div>
               </div>
-              <!-- Project 5 -->
+              <!-- Project 6 -->
 
               <div class="col-md-6 mb-4 portfolio-item-wrapper" data-category="landing-page">
                 <div class="portfolio-item ">
@@ -780,7 +804,7 @@
                   </a>
                 </div>
               </div>
-              <!--Project 6-->
+              <!--Project 7-->
               <div class="col-md-6 mb-4 portfolio-item-wrapper" data-category="saas">
                 <div class="portfolio-item">
                   <div class="category-badge">SaaS</div>
